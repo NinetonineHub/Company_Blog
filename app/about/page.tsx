@@ -44,7 +44,7 @@ export default function AboutPage() {
 
                 {/* Supporting Description */}
                 <p className="text-[#6F6261] text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-sans leading-relaxed mb-8 font-medium">
-                  Nine to Nine Hub is a UAE-based digital agency focused on data-driven growth, creative execution, and high-performance technology.
+                  Nine to Nine Hub is a UAE-based digital agency focused on data-driven growth, creative execution and high-performance technology.
                 </p>
 
                 {/* CTA Button */}
