@@ -1,7 +1,7 @@
 export interface JobPosition {
   id: string;
   title: string;
-  location: "India" | "Dubai";
+  location: "India" | "UAE";
   status: "HIRING";
 }
 
@@ -19,12 +19,18 @@ export const INDIA_ROLES: JobPosition[] = [
   { id: "ind-content-writer", title: "Content Writer", location: "India", status: "HIRING" },
   { id: "ind-graphic-des", title: "Graphic Designer", location: "India", status: "HIRING" },
   { id: "ind-video-editor", title: "Video Editor", location: "India", status: "HIRING" },
+  { id: "ind-telecalling", title: "Telecalling", location: "India", status: "HIRING" },
+  { id: "ind-admin", title: "Admin", location: "India", status: "HIRING" },
 ];
 
-export const DUBAI_ROLES: JobPosition[] = [
-  { id: "dubai-admin", title: "Admin", location: "Dubai", status: "HIRING" },
-  { id: "dubai-sales-exec", title: "Sales Executive", location: "Dubai", status: "HIRING" },
+export const UAE_ROLES: JobPosition[] = [
+  { id: "uae-admin", title: "Admin", location: "UAE", status: "HIRING" },
+  { id: "uae-sales-exec", title: "Sales Executive", location: "UAE", status: "HIRING" },
+  { id: "uae-videography", title: "Videography", location: "UAE", status: "HIRING" },
 ];
+
+export const DUBAI_ROLES = UAE_ROLES;
+
 
 export const TEAM_MEMBERS: TeamMember[] = [
   { id: "ganesh", name: "Ganesh", role: "Web Development" },

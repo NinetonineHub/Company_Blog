@@ -161,7 +161,7 @@ export default function Navbar() {
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
               <div className="flex justify-between text-xs text-[#6F6261] font-mono pt-2">
-                <span>DUBAI, UAE</span>
+                <span>UAE</span>
                 <span>{COMPANY_INFO.phone}</span>
               </div>
             </div>

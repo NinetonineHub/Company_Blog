@@ -58,6 +58,15 @@ const config: Config = {
         "soft-card": "0 4px 20px rgba(91, 15, 24, 0.04)",
         "glass": "0 8px 32px 0 rgba(91, 15, 24, 0.06)",
       },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 30s linear infinite",
+      },
     },
   },
   plugins: [],

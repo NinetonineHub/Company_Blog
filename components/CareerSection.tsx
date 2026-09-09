@@ -3,12 +3,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionReveal from "./SectionReveal";
-import { INDIA_ROLES, DUBAI_ROLES, TEAM_MEMBERS, COMPANY_VALUES, JobPosition } from "@/data/careers";
+import { INDIA_ROLES, UAE_ROLES, TEAM_MEMBERS, COMPANY_VALUES, JobPosition } from "@/data/careers";
 import { Send, Check, Upload, ArrowDown, MapPin, AlertCircle, Users, Briefcase } from "lucide-react";
 
 export default function CareerSection() {
-  const [activeLocation, setActiveLocation] = useState<"India" | "Dubai">("India");
-  const [formLocation, setFormLocation] = useState<"India" | "Dubai">("India");
+  const [activeLocation, setActiveLocation] = useState<"India" | "UAE">("India");
+  const [formLocation, setFormLocation] = useState<"India" | "UAE">("India");
   const [formPosition, setFormPosition] = useState<string>(INDIA_ROLES[0].title);
 
   const [formData, setFormData] = useState({
@@ -24,25 +24,25 @@ export default function CareerSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Active roles based on selected location filter toggle
-  const activeRoles = activeLocation === "India" ? INDIA_ROLES : DUBAI_ROLES;
+  const activeRoles = activeLocation === "India" ? INDIA_ROLES : UAE_ROLES;
 
   // Available positions based on selected form location dropdown
-  const availableFormPositions = formLocation === "Dubai" ? DUBAI_ROLES : INDIA_ROLES;
+  const availableFormPositions = formLocation === "UAE" ? UAE_ROLES : INDIA_ROLES;
 
-  const handleLocationToggle = (loc: "India" | "Dubai") => {
+  const handleLocationToggle = (loc: "India" | "UAE") => {
     setActiveLocation(loc);
   };
 
-  const handleFormLocationChange = (newLocation: "India" | "Dubai") => {
+  const handleFormLocationChange = (newLocation: "India" | "UAE") => {
     setFormLocation(newLocation);
-    const newPositions = newLocation === "Dubai" ? DUBAI_ROLES : INDIA_ROLES;
+    const newPositions = newLocation === "UAE" ? UAE_ROLES : INDIA_ROLES;
     setFormPosition(newPositions[0].title);
     if (formErrors.location) {
       setFormErrors((prev) => ({ ...prev, location: "" }));
     }
   };
 
-  const handleApplyNowClick = (roleTitle: string, roleLocation: "India" | "Dubai") => {
+  const handleApplyNowClick = (roleTitle: string, roleLocation: "India" | "UAE") => {
     setFormLocation(roleLocation);
     setFormPosition(roleTitle);
 
@@ -178,7 +178,7 @@ export default function CareerSection() {
               // CAREER OPPORTUNITIES
             </span>
             
-            {/* LOCATION SELECTOR / TOGGLE: [ INDIA ] [ DUBAI ] */}
+            {/* LOCATION SELECTOR / TOGGLE: [ INDIA ] [ UAE ] */}
             <div className="flex items-center justify-center gap-3 p-2 rounded-2xl bg-white border border-[#5B0F18]/15 w-max mx-auto mb-6 shadow-sm">
               <button
                 onClick={() => handleLocationToggle("India")}
@@ -192,14 +192,14 @@ export default function CareerSection() {
               </button>
               
               <button
-                onClick={() => handleLocationToggle("Dubai")}
+                onClick={() => handleLocationToggle("UAE")}
                 className={`relative px-8 py-3 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-300 ${
-                  activeLocation === "Dubai"
+                  activeLocation === "UAE"
                     ? "bg-[#5B0F18] text-[#F8F1E7] shadow-wine"
                     : "bg-transparent text-[#24191A] hover:text-[#5B0F18]"
                 }`}
               >
-                <span>DUBAI</span>
+                <span>UAE</span>
               </button>
             </div>
 
@@ -223,8 +223,8 @@ export default function CareerSection() {
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.35, ease: "easeInOut" }}
               className={`grid grid-cols-1 ${
-                activeLocation === "Dubai"
-                  ? "sm:grid-cols-2 max-w-3xl mx-auto"
+                activeLocation === "UAE"
+                  ? "sm:grid-cols-3 max-w-4xl mx-auto"
                   : "sm:grid-cols-2 lg:grid-cols-3"
               } gap-6`}
             >
@@ -361,18 +361,18 @@ export default function CareerSection() {
                       )}
                     </div>
 
-                    {/* LOCATION DROPDOWN (India / Dubai) */}
+                    {/* LOCATION DROPDOWN (India / UAE) */}
                     <div>
                       <label className="block text-xs font-mono text-[#24191A] mb-2 font-bold">
                         LOCATION *
                       </label>
                       <select
                         value={formLocation}
-                        onChange={(e) => handleFormLocationChange(e.target.value as "India" | "Dubai")}
+                        onChange={(e) => handleFormLocationChange(e.target.value as "India" | "UAE")}
                         className="w-full px-4 py-3 rounded-xl bg-[#FCF9F5] border border-[#5B0F18]/15 text-[#24191A] text-sm focus:border-[#5B0F18] focus:outline-none transition-colors"
                       >
                         <option value="India">India</option>
-                        <option value="Dubai">Dubai</option>
+                        <option value="UAE">UAE</option>
                       </select>
                       {formErrors.location && (
                         <span className="text-[11px] font-mono text-red-600 mt-1 flex items-center gap-1">

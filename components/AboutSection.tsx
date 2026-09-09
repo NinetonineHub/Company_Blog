@@ -2,7 +2,7 @@
 
 import React from "react";
 import SectionReveal from "./SectionReveal";
-import { TEAM_MEMBERS } from "@/data/team";
+import OrgChartSection from "./OrgChartSection";
 import Link from "next/link";
 import { ArrowUpRight, Target, Eye } from "lucide-react";
 
@@ -179,141 +179,10 @@ export default function AboutSection() {
         </div>
       </section>
 
-      {/* 3. LEADERSHIP SECTION (NO 01 / 02 NUMBERING) */}
-      <section className="relative py-20 sm:py-28 border-b border-[#5B0F18]/12 bg-[#FCF9F5]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
-          
-          <SectionReveal className="mb-16 text-center max-w-3xl mx-auto">
-            <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase font-bold block mb-3">
-              // LEADERSHIP
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-[#24191A] tracking-tight">
-              THE PEOPLE BEHIND THE HUB.
-            </h2>
-          </SectionReveal>
+      {/* 3. COMBINED ORGANIZATIONAL FLOWCHART SECTION */}
+      <OrgChartSection />
 
-          {/* Two Leadership Profiles without 01 / 02 Numbering */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
-            {/* LEADER 01: KHISHORE */}
-            <SectionReveal>
-              <div className="h-full p-8 sm:p-12 rounded-3xl bg-white border border-[#5B0F18]/15 shadow-soft-card flex flex-col justify-between group hover:border-[#5B0F18]/35 transition-all">
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="px-3 py-1 rounded-full bg-[#FCF9F5] border border-[#5B0F18]/12 text-[10px] font-mono text-[#5B0F18] font-bold uppercase tracking-wider">
-                      EXECUTIVE LEADERSHIP
-                    </span>
-                  </div>
-
-                  <h3 className="text-3xl sm:text-4xl font-display font-extrabold text-[#24191A] mb-1">
-                    Khishore
-                  </h3>
-
-                  <p className="text-xs font-mono text-[#5B0F18] font-bold uppercase tracking-widest mb-6">
-                    FOUNDER &amp; OPERATIONS DIRECTOR
-                  </p>
-
-                  <p className="text-sm text-[#6F6261] leading-relaxed font-sans font-medium">
-                    &ldquo;As the Founder and Operations Director of ninetoninehub, Nandhakhishore is the main driving force behind our daily business operations. He works directly with our clients to understand their needs and build strong partnerships. Leading our execution teams, he ensures every project is delivered with high quality and speed. His hands-on leadership keeps our company focused on real growth and business success across Dubai and the GCC.&rdquo;
-                  </p>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-[#5B0F18]/10 flex items-center justify-between text-xs font-mono text-[#6F6261]">
-                  <span>OPERATIONS &amp; CLIENT PARTNERSHIPS</span>
-                  <span className="text-[#5B0F18] font-bold">DUBAI, UAE</span>
-                </div>
-              </div>
-            </SectionReveal>
-
-            {/* LEADER 02: RIAS */}
-            <SectionReveal delay={0.1}>
-              <div className="h-full p-8 sm:p-12 rounded-3xl bg-white border border-[#5B0F18]/15 shadow-soft-card flex flex-col justify-between group hover:border-[#5B0F18]/35 transition-all">
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="px-3 py-1 rounded-full bg-[#FCF9F5] border border-[#5B0F18]/12 text-[10px] font-mono text-[#5B0F18] font-bold uppercase tracking-wider">
-                      EXECUTIVE LEADERSHIP
-                    </span>
-                  </div>
-
-                  <h3 className="text-3xl sm:text-4xl font-display font-extrabold text-[#24191A] mb-1">
-                    Rias
-                  </h3>
-
-                  <p className="text-xs font-mono text-[#5B0F18] font-bold uppercase tracking-widest mb-6">
-                    PRINCIPAL SHAREHOLDER &amp; CHIEF DECISION MAKER
-                  </p>
-
-                  <p className="text-sm text-[#6F6261] leading-relaxed font-sans font-medium">
-                    &ldquo;Rias is the primary decision maker and principal financial backbone of ninetoninehub. Beyond providing visionary financial backing, he shapes the company’s long-term business vision, operational strategy, and future expansion plans. His strategic leadership and decisive direction ensure sustained growth, digital innovation, and long-term success for our clients across the GCC.&rdquo;
-                  </p>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-[#5B0F18]/10 flex items-center justify-between text-xs font-mono text-[#6F6261]">
-                  <span>STRATEGY &amp; FINANCIAL BACKBONE</span>
-                  <span className="text-[#5B0F18] font-bold">GCC REGION</span>
-                </div>
-              </div>
-            </SectionReveal>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 4. OUR TEAM DIRECTORY (Entire Card Turns Wine #5B0F18 On Hover) */}
-      <section className="relative py-20 sm:py-28 border-b border-[#5B0F18]/12 bg-[#F8F1E7]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
-          
-          <SectionReveal className="mb-16 text-center max-w-3xl mx-auto">
-            <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase font-bold block mb-3">
-              // THE TEAM
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-[#24191A] tracking-tight mb-4">
-              MEET THE TEAM BEHIND THE WORK.
-            </h2>
-            <p className="text-[#6F6261] text-sm sm:text-base font-sans">
-              Our multi-disciplinary execution team driving digital marketing, SEO, video production, web design, and development.
-            </p>
-          </SectionReveal>
-
-          {/* 4 columns x 2 rows Desktop directory grid with full card wine background on hover */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {TEAM_MEMBERS.map((member, idx) => (
-              <SectionReveal key={member.id} delay={idx * 0.04}>
-                <div className="group relative p-6 rounded-2xl bg-white border border-[#5B0F18]/12 hover:bg-[#5B0F18] hover:border-[#5B0F18] transition-all duration-300 shadow-sm hover:shadow-wine-lg hover:-translate-y-1 flex flex-col justify-between h-full cursor-pointer">
-                  
-                  {/* Top Bar: Number Tag & Avatar Initial */}
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-sm font-mono font-bold text-[#5B0F18] group-hover:text-[#F8F1E7] transition-colors">
-                      {member.number}
-                    </span>
-
-                    {/* Avatar Initial Badge */}
-                    <div className="w-10 h-10 rounded-xl bg-[#FCF9F5] border border-[#5B0F18]/15 flex items-center justify-center text-[#5B0F18] font-display font-bold text-sm group-hover:bg-[#F8F1E7]/20 group-hover:text-[#F8F1E7] group-hover:border-[#F8F1E7]/30 transition-all">
-                      {member.name.charAt(0)}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-xl font-display font-bold text-[#24191A] group-hover:text-[#F8F1E7] transition-colors mb-1 tracking-wide">
-                      {member.name}
-                    </h3>
-                    <p className="text-xs font-mono text-[#6F6261] group-hover:text-[#F8F1E7]/90 font-semibold transition-colors">
-                      {member.role}
-                    </p>
-                  </div>
-
-                  <div className="mt-6 pt-3 border-t border-[#5B0F18]/10 group-hover:border-[#F8F1E7]/20 text-[10px] font-mono text-[#5B0F18] group-hover:text-[#F8F1E7]/80 font-bold transition-colors">
-                    // EXECUTION TEAM
-                  </div>
-                </div>
-              </SectionReveal>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* 5. FINAL CTA */}
+      {/* 4. FINAL CTA */}
       <section className="py-20 bg-white text-center">
         <div className="max-w-4xl mx-auto px-6">
           <SectionReveal>
@@ -337,3 +206,4 @@ export default function AboutSection() {
     </div>
   );
 }
+

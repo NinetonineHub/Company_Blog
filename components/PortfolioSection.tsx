@@ -38,7 +38,7 @@ export default function PortfolioSection() {
               </span>
             </h2>
             <p className="text-[#6F6261] max-w-md text-sm sm:text-base leading-relaxed font-sans">
-              Explore our real client engagements across tax advisory, construction, dining, and travel in Dubai.
+              Explore our real client engagements across tax advisory, construction, dining, and travel in the UAE.
             </p>
           </div>
         </SectionReveal>
@@ -152,7 +152,7 @@ export default function PortfolioSection() {
                     )}
 
                     <span className="text-[10px] font-mono text-[#6F6261]">
-                      DUBAI, UAE
+                      UAE
                     </span>
                   </div>
                 </div>

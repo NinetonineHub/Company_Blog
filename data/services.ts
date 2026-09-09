@@ -25,7 +25,7 @@ export const SERVICES_DATA: Service[] = [
     number: "01",
     title: "Social Media Management",
     shortDescription: "End-to-end content creation, strategic post scheduling, community engagement and brand management across social media platforms.",
-    detailedDescription: "End-to-end content creation, strategic post scheduling, community engagement and brand management across social media platforms tailored for Dubai and GCC audiences. We curate visual brand feeds, maintain daily community engagement, and optimize brand authority.",
+    detailedDescription: "End-to-end content creation, strategic post scheduling, community engagement and brand management across social media platforms tailored for UAE and GCC audiences. We curate visual brand feeds, maintain daily community engagement, and optimize brand authority.",
     tag: "SOCIAL & BRAND",
     accentColor: "#e6193c",
     deliverables: [
@@ -67,7 +67,7 @@ export const SERVICES_DATA: Service[] = [
     number: "03",
     title: "Google My Business",
     shortDescription: "Complete profile setup, local SEO optimization, review management and map positioning to improve local search visibility.",
-    detailedDescription: "Complete profile setup, local SEO optimization, review management and map positioning to improve local search visibility across Dubai and local GCC search areas.",
+    detailedDescription: "Complete profile setup, local SEO optimization, review management and map positioning to improve local search visibility across UAE and local GCC search areas.",
     tag: "LOCAL SEARCH",
     accentColor: "#00f0ff",
     deliverables: [

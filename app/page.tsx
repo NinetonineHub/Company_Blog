@@ -7,16 +7,21 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
 
-const REAL_CLIENTS = [
-  "BEYOND NUMBERS",
-  "BLUEMOON",
-  "CURRY XPRESS",
-  "KANZ AL ARAB",
-  "NOOR ALTRHAL",
-  "TAZA BIRYANI",
-  "TAZA MEAT SHOP",
-  "VASANTA BHAVAN",
-  "GO BUS TOURISM",
+const CLIENT_LOGOS = [
+  // Top Tier: Go Bus Tourism, Taza Meat Shop, Noor Altrhal
+  { id: "gobus", name: "Go Bus Tourism", logo: "/images/portfolio/logo (9).png", animClass: "animate-float-1", offset: "lg:-translate-y-3" },
+  { id: "tazameat", name: "Taza Meat Shop", logo: "/images/portfolio/logo (7).png", animClass: "animate-float-2", offset: "lg:translate-y-4" },
+  { id: "noor", name: "Noor Altrhal", logo: "/images/portfolio/logo (6).png", animClass: "animate-float-3", offset: "lg:-translate-y-2" },
+  
+  // Middle Tier: Taza Biryani, Curry Xpress (flanking Center Card)
+  { id: "tazabiryani", name: "Taza Biryani", logo: "/images/portfolio/logo (5).png", animClass: "animate-float-2", offset: "lg:translate-y-3" },
+  { id: "curryxpress", name: "Curry Xpress", logo: "/images/portfolio/logo (3).png", animClass: "animate-float-1", offset: "lg:-translate-y-4" },
+  
+  // Bottom Tier: BlueMoon, Beyond Numbers, Kanz Al Arab, Vasanta Bhavan
+  { id: "bluemoon", name: "BlueMoon", logo: "/images/portfolio/logo (2).png", animClass: "animate-float-3", offset: "lg:translate-y-2" },
+  { id: "beyond", name: "Beyond Numbers", logo: "/images/portfolio/logo (1).png", animClass: "animate-float-1", offset: "lg:-translate-y-2" },
+  { id: "kanz", name: "Kanz Al Arab", logo: "/images/portfolio/logo (4).png", animClass: "animate-float-2", offset: "lg:translate-y-4" },
+  { id: "vasanta", name: "Vasanta Bhavan", logo: "/images/portfolio/logo (8).png", animClass: "animate-float-3", offset: "lg:-translate-y-3" },
 ];
 
 export default function HomePage() {
@@ -25,22 +30,118 @@ export default function HomePage() {
       {/* 1. Interactive 3D Canvas Hero Section */}
       <Hero />
 
-      {/* 1.5 TRUSTED BY BUSINESSES ACROSS THE UAE MARQUEE SECTION */}
-      <section className="relative py-12 bg-white border-b border-[#5B0F18]/12 overflow-hidden select-none">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center mb-6">
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#5B0F18] uppercase font-bold">
-            // TRUSTED BY BUSINESSES ACROSS THE UAE
+      {/* 1.5 TRUSTED BY BUSINESSES ACROSS THE UAE — CINEMATIC FLOATING LOGO SHOWCASE */}
+      <section className="relative py-20 sm:py-28 bg-[#F8F1E7] border-b border-[#5B0F18]/12 overflow-hidden select-none">
+        {/* Subtle Ambient Wine Depth Glow */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#5B0F18]/5 rounded-full blur-[150px] pointer-events-none" />
+
+        {/* Section Heading */}
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center mb-12 sm:mb-16 relative z-10">
+          <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase font-bold block mb-3">
+            // SELECTED CLIENTS
           </span>
+          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-[#24191A] tracking-tight">
+            TRUSTED BY BUSINESSES ACROSS THE UAE
+          </h2>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs sm:text-sm font-display font-extrabold text-[#24191A]/85 uppercase tracking-wider">
-            {REAL_CLIENTS.map((client, idx) => (
-              <div key={idx} className="flex items-center gap-8">
-                <span className="hover:text-[#5B0F18] transition-colors cursor-default">{client}</span>
-                {idx < REAL_CLIENTS.length - 1 && (
-                  <span className="text-[#5B0F18]/40 font-mono text-xs">•</span>
-                )}
+        {/* Desktop Orbital Floating Layout (lg+) */}
+        <div className="hidden lg:block max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+          {/* Top Tier (Go Bus Tourism, Taza Meat Shop, Noor Altrhal) */}
+          <div className="flex items-center justify-center gap-12 xl:gap-16 mb-12">
+            {CLIENT_LOGOS.slice(0, 3).map((client) => (
+              <div key={client.id} className={`${client.animClass} ${client.offset}`}>
+                <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
+                  <img
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    className="h-16 sm:h-20 lg:h-24 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain rounded-[18px]"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Middle Tier (Taza Biryani — CENTER STATEMENT — Curry Xpress) */}
+          <div className="flex items-center justify-center gap-12 xl:gap-16 mb-12">
+            {/* Taza Biryani */}
+            <div className={`${CLIENT_LOGOS[3].animClass} ${CLIENT_LOGOS[3].offset}`}>
+              <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
+                <img
+                  src={CLIENT_LOGOS[3].logo}
+                  alt={`${CLIENT_LOGOS[3].name} logo`}
+                  className="h-16 sm:h-20 lg:h-24 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain rounded-[18px]"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Center Statement Focal Card */}
+            <div className="relative px-12 xl:px-16 py-8 rounded-3xl bg-white/80 backdrop-blur-md border border-[#5B0F18]/20 shadow-soft-card text-center min-w-[320px] transform hover:scale-[1.02] transition-transform duration-300">
+              <div className="w-10 h-1 bg-[#5B0F18] mx-auto mb-3 rounded-full" />
+              <h3 className="text-3xl font-display font-extrabold text-[#24191A] tracking-tight leading-tight">
+                REAL BRANDS. <br />
+                <span className="text-[#5B0F18]">REAL GROWTH.</span>
+              </h3>
+              <span className="text-[10px] font-mono text-[#6F6261] uppercase tracking-widest block mt-2 font-bold">
+                // UAE PORTFOLIO IMPACT
+              </span>
+            </div>
+
+            {/* Curry Xpress */}
+            <div className={`${CLIENT_LOGOS[4].animClass} ${CLIENT_LOGOS[4].offset}`}>
+              <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
+                <img
+                  src={CLIENT_LOGOS[4].logo}
+                  alt={`${CLIENT_LOGOS[4].name} logo`}
+                  className="h-16 sm:h-20 lg:h-24 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain rounded-[18px]"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Tier (BlueMoon, Beyond Numbers, Kanz Al Arab, Vasanta Bhavan) */}
+          <div className="flex items-center justify-center gap-10 xl:gap-14">
+            {CLIENT_LOGOS.slice(5, 9).map((client) => (
+              <div key={client.id} className={`${client.animClass} ${client.offset}`}>
+                <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
+                  <img
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    className="h-16 sm:h-20 lg:h-24 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain rounded-[18px]"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile & Tablet Floating Composition (< lg) */}
+        <div className="lg:hidden max-w-5xl mx-auto px-6 sm:px-8 relative z-10 space-y-10">
+          {/* Mobile Center Statement */}
+          <div className="relative px-8 py-6 rounded-3xl bg-white/80 backdrop-blur-md border border-[#5B0F18]/20 shadow-soft-card text-center max-w-sm mx-auto">
+            <div className="w-8 h-1 bg-[#5B0F18] mx-auto mb-2 rounded-full" />
+            <h3 className="text-2xl font-display font-extrabold text-[#24191A] tracking-tight leading-tight">
+              REAL BRANDS. <br />
+              <span className="text-[#5B0F18]">REAL GROWTH.</span>
+            </h3>
+          </div>
+
+          {/* Mobile Floating Grid of all 9 logos */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+            {CLIENT_LOGOS.map((client) => (
+              <div key={`m-${client.id}`} className={`${client.animClass}`}>
+                <div className="group relative p-1 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center h-24 sm:h-28">
+                  <img
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    className="h-14 sm:h-18 w-auto max-w-full object-contain rounded-[16px]"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             ))}
           </div>
@@ -64,7 +165,7 @@ export default function HomePage() {
               {COMPANY_INFO.positioning.aboutDescription}
             </p>
             <p className="text-base text-[#6F6261] leading-relaxed font-sans">
-              Operating at the heart of Dubai&apos;s digital ecosystem, Nine to Nine Hub merges data-driven marketing, cinematic video production, search dominance, and Next.js technology into scalable digital growth engines.
+              Operating at the heart of UAE&apos;s digital ecosystem, Nine to Nine Hub merges data-driven marketing, cinematic video production, search dominance, and Next.js technology into scalable digital growth engines.
             </p>
           </SectionReveal>
 
@@ -72,7 +173,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-[#5B0F18]/12">
             <SectionReveal delay={0.1}>
               <div className="space-y-2">
-                <span className="text-3xl font-display font-extrabold text-[#24191A]">DUBAI, UAE</span>
+                <span className="text-3xl font-display font-extrabold text-[#24191A]">UAE</span>
                 <p className="text-xs font-mono text-[#6F6261] uppercase font-bold">Operational Headquarters</p>
                 <p className="text-xs text-[#6F6261] leading-relaxed pt-1">
                   Engineered specifically for competitive GCC and international markets.
@@ -151,7 +252,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 text-center">
           <SectionReveal>
             <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase block mb-3 font-bold">
-              // READY TO SCALE YOUR BRAND IN DUBAI?
+              // READY TO SCALE YOUR BRAND IN THE UAE?
             </span>
             <h2 className="text-4xl sm:text-6xl font-display font-extrabold text-[#24191A] tracking-tight leading-tight mb-6 max-w-4xl mx-auto">
               LET&apos;S BUILD <br />

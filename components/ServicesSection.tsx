@@ -52,7 +52,7 @@ export default function ServicesSection() {
               </span>
             </h2>
             <p className="text-[#6F6261] max-w-md text-sm sm:text-base leading-relaxed font-sans">
-              Explore our 8 specialized services engineered to build, position, and scale Dubai client brands.
+              Explore our 8 specialized services engineered to build, position, and scale UAE client brands.
             </p>
           </div>
         </SectionReveal>
@@ -299,7 +299,7 @@ export default function ServicesSection() {
               {/* Modal Footer CTA */}
               <div className="pt-6 border-t border-[#5B0F18]/12 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <span className="text-xs font-mono text-[#6F6261]">
-                  DISCUSS THIS SERVICE FOR YOUR DUBAI BRAND
+                  DISCUSS THIS SERVICE FOR YOUR UAE BRAND
                 </span>
                 <a
                   href="/contact"

@@ -21,9 +21,9 @@ export const COMPANY_INFO = {
     youtube: "https://youtube.com/@9to9hub?si=Rkyl7-PedmmjZJrT",
   },
   positioning: {
-    heroSubhead: "A Dubai-based digital growth agency combining strategy, creative media, performance marketing and technology to help brands grow, connect and convert.",
+    heroSubhead: "A UAE-based digital growth agency combining strategy, creative media, performance marketing and technology to help brands grow, connect and convert.",
     aboutHeadline: "WE BUILD THE FUTURE OF DIGITAL GROWTH.",
-    aboutDescription: "Nine to Nine Hub is a premier Dubai-based digital growth agency bridging the gap between data-driven marketing strategy, high-impact creative execution, and robust technical infrastructure. We scale ambitious brands across the GCC and internationally by engineering digital ecosystems designed for measurable ROI.",
+    aboutDescription: "Nine to Nine Hub is a premier UAE-based digital growth agency bridging the gap between data-driven marketing strategy, high-impact creative execution, and robust technical infrastructure. We scale ambitious brands across the GCC and internationally by engineering digital ecosystems designed for measurable ROI.",
   },
   pillars: [
     {

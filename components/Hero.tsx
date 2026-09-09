@@ -98,7 +98,7 @@ export default function Hero() {
       <div className="w-full flex items-center justify-center pt-6 border-t border-[#5B0F18]/12 bg-[#FCF9F5]">
         <div className="flex items-center gap-3 text-[11px] font-mono text-[#6F6261] tracking-widest uppercase font-semibold">
           <span className="w-6 h-[1px] bg-[#5B0F18]" />
-          <span>NINE TO NINE HUB // DUBAI, UAE</span>
+          <span>NINE TO NINE HUB // UAE</span>
           <span className="w-6 h-[1px] bg-[#5B0F18]" />
         </div>
       </div>

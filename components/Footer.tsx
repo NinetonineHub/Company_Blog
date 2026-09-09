@@ -33,7 +33,7 @@ export default function Footer() {
               {COMPANY_INFO.tagline}
             </p>
             <p className="text-xs text-[#F8F1E7]/80 leading-relaxed max-w-sm font-sans">
-              A Dubai-based digital growth agency combining strategy, creative media, performance marketing, SEO, and web technology.
+              A UAE-based digital growth agency combining strategy, creative media, performance marketing, SEO, and web technology.
             </p>
 
             <div className="flex items-center gap-3 pt-3">
@@ -118,7 +118,7 @@ export default function Footer() {
           {/* Location & Contact Summary */}
           <div className="md:col-span-4 space-y-3">
             <h4 className="text-xs font-mono text-[#F8F1E7] tracking-widest uppercase mb-4 font-bold">
-              // DUBAI OPERATIONAL HQ
+              // UAE OPERATIONAL HQ
             </h4>
             <p className="text-xs text-[#F8F1E7]/85 font-mono leading-relaxed">
               {COMPANY_INFO.address}
@@ -132,7 +132,7 @@ export default function Footer() {
             <div className="pt-4">
               <span className="inline-flex items-center gap-2 text-[10px] font-mono px-3.5 py-1.5 rounded-full bg-[#F8F1E7]/10 border border-[#F8F1E7]/20 text-[#F8F1E7] font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                ACCEPTING NEW DUBAI CLIENT BRANDS
+                ACCEPTING NEW UAE CLIENT BRANDS
               </span>
             </div>
           </div>

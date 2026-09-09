@@ -9,21 +9,21 @@ import ScrollProgress from "@/components/ScrollProgress";
 export const metadata: Metadata = {
   title: "Nine to Nine Hub | The Hub of Digital Growth",
   description:
-    "Nine to Nine Hub is a Dubai-based digital agency delivering data-driven marketing, creative content, branding, SEO and high-performance web development solutions.",
+    "Nine to Nine Hub is a UAE-based digital agency delivering data-driven marketing, creative content, branding, SEO and high-performance web development solutions.",
   keywords: [
-    "Dubai Digital Agency",
-    "Digital Marketing Dubai",
+    "UAE Digital Agency",
+    "Digital Marketing UAE",
     "Performance Marketing UAE",
-    "Videography Reels Dubai",
-    "SEO Google Maps Dubai",
-    "Next.js Web Development Dubai",
+    "Videography Reels UAE",
+    "SEO Google Maps UAE",
+    "Next.js Web Development UAE",
     "Luxury Branding Agency UAE",
   ],
   authors: [{ name: "Nine to Nine Hub" }],
   openGraph: {
     title: "Nine to Nine Hub | The Hub of Digital Growth",
     description:
-      "A visionary Dubai digital agency crafting high-performance marketing, creative experiences and technology solutions that help brands grow, connect and convert.",
+      "A visionary UAE digital agency crafting high-performance marketing, creative experiences and technology solutions that help brands grow, connect and convert.",
     url: "https://ninetoninehub.com",
     siteName: "Nine to Nine Hub",
     locale: "en_US",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nine to Nine Hub | The Hub of Digital Growth",
     description:
-      "Dubai-based digital agency delivering data-driven marketing, creative content, branding, SEO and high-performance web development solutions.",
+      "UAE-based digital agency delivering data-driven marketing, creative content, branding, SEO and high-performance web development solutions.",
   },
   robots: {
     index: true,

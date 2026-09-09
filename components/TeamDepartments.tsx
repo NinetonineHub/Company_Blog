@@ -34,7 +34,7 @@ export default function TeamDepartments() {
             <span className="text-[#6F6261] font-normal">ONE UNIFIED GROWTH ENGINE.</span>
           </h2>
           <p className="text-[#6F6261] text-base font-sans leading-relaxed">
-            Our multi-disciplinary specialists drive strategy, creative media, search optimization, design, and software engineering for Dubai brands.
+            Our multi-disciplinary specialists drive strategy, creative media, search optimization, design, and software engineering for UAE brands.
           </p>
         </SectionReveal>
 

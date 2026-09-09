@@ -150,14 +150,14 @@ export default function ContactSection() {
         {/* Mobile: Office Info -> Map -> Form */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* LEFT COLUMN: Dubai Office Information & Google Map */}
+          {/* LEFT COLUMN: UAE Office Information & Google Map */}
           <div className="lg:col-span-5 space-y-8">
             
-            {/* Dubai Office Contact Info Card */}
+            {/* UAE Office Contact Info Card */}
             <SectionReveal>
               <div className="p-8 rounded-3xl bg-white border border-[#5B0F18]/15 shadow-soft-card">
                 <h2 className="text-2xl font-display font-bold text-[#24191A] mb-6">
-                  Dubai Office
+                  UAE Office
                 </h2>
 
                 <div className="space-y-6">
@@ -229,7 +229,7 @@ export default function ContactSection() {
                   title="Open Google Maps Location in New Tab"
                 >
                   <iframe
-                    title="Dubai Office Location Map"
+                    title="UAE Office Location Map"
                     src={COMPANY_INFO.mapCoordinates.embedUrl}
                     width="100%"
                     height="100%"
@@ -245,7 +245,7 @@ export default function ContactSection() {
                   <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-[#5B0F18]/15 text-xs font-mono text-[#24191A] flex items-center justify-between shadow-sm">
                     <span className="font-bold text-[#5B0F18] flex items-center gap-1.5">
                       <MapPin className="w-3.5 h-3.5" />
-                      DUBAI OFFICE MAP
+                      UAE OFFICE MAP
                     </span>
                     <span className="text-[#6F6261] font-bold flex items-center gap-1 group-hover:text-[#5B0F18] transition-colors">
                       OPEN MAP
