@@ -37,10 +37,10 @@ export default function HomePage() {
 
         {/* Section Heading */}
         <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center mb-12 sm:mb-16 relative z-10">
-          <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase font-bold block mb-3">
+          <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase font-medium block mb-3">
             // SELECTED CLIENTS
           </span>
-          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-[#24191A] tracking-tight">
+          <h2 className="text-[34px] sm:text-[42px] lg:text-[52px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.15]">
             TRUSTED BY BUSINESSES ACROSS THE UAE
           </h2>
         </div>
@@ -80,11 +80,11 @@ export default function HomePage() {
             {/* Center Statement Focal Card */}
             <div className="relative px-12 xl:px-16 py-8 rounded-3xl bg-white/80 backdrop-blur-md border border-[#5B0F18]/20 shadow-soft-card text-center min-w-[320px] transform hover:scale-[1.02] transition-transform duration-300">
               <div className="w-10 h-1 bg-[#5B0F18] mx-auto mb-3 rounded-full" />
-              <h3 className="text-3xl font-display font-extrabold text-[#24191A] tracking-tight leading-tight">
+              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-semibold text-[#24191A] tracking-tight leading-tight">
                 REAL BRANDS. <br />
                 <span className="text-[#5B0F18]">REAL GROWTH.</span>
               </h3>
-              <span className="text-[10px] font-mono text-[#6F6261] uppercase tracking-widest block mt-2 font-bold">
+              <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#6F6261] uppercase tracking-widest block mt-2 font-medium">
                 // UAE PORTFOLIO IMPACT
               </span>
             </div>
@@ -124,7 +124,7 @@ export default function HomePage() {
           {/* Mobile Center Statement */}
           <div className="relative px-8 py-6 rounded-3xl bg-white/80 backdrop-blur-md border border-[#5B0F18]/20 shadow-soft-card text-center max-w-sm mx-auto">
             <div className="w-8 h-1 bg-[#5B0F18] mx-auto mb-2 rounded-full" />
-            <h3 className="text-2xl font-display font-extrabold text-[#24191A] tracking-tight leading-tight">
+            <h3 className="text-[24px] sm:text-[28px] font-display font-semibold text-[#24191A] tracking-tight leading-tight">
               REAL BRANDS. <br />
               <span className="text-[#5B0F18]">REAL GROWTH.</span>
             </h3>
@@ -152,19 +152,19 @@ export default function HomePage() {
       <section className="relative py-28 bg-[#FCF9F5] border-b border-[#5B0F18]/12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
           <SectionReveal className="max-w-4xl mb-16">
-            <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase block mb-3 font-bold">
+            <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase block mb-3 font-medium">
               // WHO WE ARE
             </span>
-            <h2 className="text-4xl sm:text-6xl font-display font-extrabold text-[#24191A] tracking-tight leading-tight mb-8">
+            <h2 className="text-[38px] sm:text-[54px] lg:text-[68px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.12] mb-8">
               WE BUILD THE FUTURE <br />
               <span className="text-[#5B0F18]">
                 OF DIGITAL GROWTH.
               </span>
             </h2>
-            <p className="text-lg text-[#24191A] font-medium leading-relaxed font-sans mb-6">
+            <p className="text-[16px] sm:text-[18px] lg:text-[19px] text-[#24191A] font-normal leading-relaxed font-sans mb-6">
               {COMPANY_INFO.positioning.aboutDescription}
             </p>
-            <p className="text-base text-[#6F6261] leading-relaxed font-sans">
+            <p className="text-[15px] sm:text-[16px] lg:text-[17px] text-[#6F6261] leading-relaxed font-sans font-normal">
               Operating at the heart of UAE&apos;s digital ecosystem, Nine to Nine Hub merges data-driven marketing, cinematic video production, search dominance, and Next.js technology into scalable digital growth engines.
             </p>
           </SectionReveal>
@@ -173,9 +173,9 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-[#5B0F18]/12">
             <SectionReveal delay={0.1}>
               <div className="space-y-2">
-                <span className="text-3xl font-display font-extrabold text-[#24191A]">UAE</span>
-                <p className="text-xs font-mono text-[#6F6261] uppercase font-bold">Operational Headquarters</p>
-                <p className="text-xs text-[#6F6261] leading-relaxed pt-1">
+                <span className="text-[32px] sm:text-[36px] lg:text-[40px] font-display font-medium text-[#24191A]">UAE</span>
+                <p className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#6F6261] uppercase font-medium">Operational Headquarters</p>
+                <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#6F6261] leading-relaxed pt-1 font-sans font-normal">
                   Engineered specifically for competitive GCC and international markets.
                 </p>
               </div>
@@ -183,9 +183,9 @@ export default function HomePage() {
 
             <SectionReveal delay={0.2}>
               <div className="space-y-2">
-                <span className="text-3xl font-display font-extrabold text-[#5B0F18]">360°</span>
-                <p className="text-xs font-mono text-[#6F6261] uppercase font-bold">Full-Funnel Agency Ecosystem</p>
-                <p className="text-xs text-[#6F6261] leading-relaxed pt-1">
+                <span className="text-[32px] sm:text-[36px] lg:text-[40px] font-display font-medium text-[#5B0F18]">360°</span>
+                <p className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#6F6261] uppercase font-medium">Full-Funnel Agency Ecosystem</p>
+                <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#6F6261] leading-relaxed pt-1 font-sans font-normal">
                   Unifying creative media reels, SEO, paid ads, and high-speed web apps.
                 </p>
               </div>
@@ -193,9 +193,9 @@ export default function HomePage() {
 
             <SectionReveal delay={0.3}>
               <div className="space-y-2">
-                <span className="text-3xl font-display font-extrabold text-[#24191A]">8</span>
-                <p className="text-xs font-mono text-[#6F6261] uppercase font-bold">Core Service Offerings</p>
-                <p className="text-xs text-[#6F6261] leading-relaxed pt-1">
+                <span className="text-[32px] sm:text-[36px] lg:text-[40px] font-display font-medium text-[#24191A]">8</span>
+                <p className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#6F6261] uppercase font-medium">Core Service Offerings</p>
+                <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#6F6261] leading-relaxed pt-1 font-sans font-normal">
                   Social media management, SEO, GMB, video promotion, web creation, branding, ads & leads.
                 </p>
               </div>
@@ -214,13 +214,13 @@ export default function HomePage() {
       <section className="relative py-28 bg-[#F8F1E7] border-t border-[#5B0F18]/12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
           <SectionReveal className="mb-16 text-center max-w-3xl mx-auto">
-            <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase block mb-3 font-bold">
+            <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase block mb-3 font-medium">
               // AGENCY DIFFERENTIATORS
             </span>
-            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-[#24191A] tracking-tight leading-tight">
+            <h2 className="text-[34px] sm:text-[42px] lg:text-[52px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.15]">
               WHY NINE TO NINE HUB?
             </h2>
-            <p className="text-[#6F6261] text-base font-sans mt-4">
+            <p className="text-[#6F6261] text-[15px] sm:text-[16px] lg:text-[17px] font-sans font-normal mt-4">
               We replace vanity metrics with real client revenue growth, high organic search rankings, and cinematic visual dominance.
             </p>
           </SectionReveal>
@@ -230,13 +230,13 @@ export default function HomePage() {
               <SectionReveal key={pillar.id} delay={idx * 0.08}>
                 <div className="p-6 rounded-2xl bg-white border border-[#5B0F18]/12 hover:border-[#5B0F18]/40 transition-all h-full flex flex-col justify-between hover:shadow-soft-card">
                   <div>
-                    <span className="text-xs font-mono text-[#5B0F18] font-bold block mb-3">
+                    <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium block mb-3 uppercase">
                       // 0{idx + 1}
                     </span>
-                    <h3 className="text-lg font-display font-bold text-[#24191A] mb-2">
+                    <h3 className="text-[24px] sm:text-[26px] font-display font-semibold text-[#24191A] mb-2 leading-snug">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs text-[#6F6261] leading-relaxed font-sans">
+                    <p className="text-[15px] sm:text-[16px] text-[#6F6261] leading-relaxed font-sans font-normal">
                       {pillar.description}
                     </p>
                   </div>
@@ -251,23 +251,23 @@ export default function HomePage() {
       <section className="relative py-28 bg-[#FCF9F5] border-t border-[#5B0F18]/12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 text-center">
           <SectionReveal>
-            <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase block mb-3 font-bold">
+            <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase block mb-3 font-medium">
               // READY TO SCALE YOUR BRAND IN THE UAE?
             </span>
-            <h2 className="text-4xl sm:text-6xl font-display font-extrabold text-[#24191A] tracking-tight leading-tight mb-6 max-w-4xl mx-auto">
+            <h2 className="text-[38px] sm:text-[54px] lg:text-[68px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.12] mb-6 max-w-4xl mx-auto">
               LET&apos;S BUILD <br />
               <span className="text-[#5B0F18]">
                 WHAT&apos;S NEXT.
               </span>
             </h2>
-            <p className="text-[#6F6261] max-w-xl mx-auto text-base font-sans mb-10">
+            <p className="text-[#6F6261] max-w-xl mx-auto text-[15px] sm:text-[16px] lg:text-[17px] font-sans font-normal mb-10">
               Partner with Nine to Nine Hub for data-driven social media management, local SEO, commercial video promotion, paid ads, and Next.js web development.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center gap-3 px-9 py-4 rounded-full bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-mono text-sm font-bold tracking-wider shadow-wine transition-all transform hover:-translate-y-0.5"
+                className="group relative inline-flex items-center gap-3 px-9 py-4 rounded-full bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider shadow-wine transition-all transform hover:-translate-y-0.5"
               >
                 <span>START A PROJECT</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -275,7 +275,7 @@ export default function HomePage() {
               
               <Link
                 href="/career"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white border border-[#5B0F18]/25 text-[#5B0F18] font-mono text-sm font-semibold tracking-wider hover:bg-[#5B0F18] hover:text-[#F8F1E7] transition-all shadow-sm"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white border border-[#5B0F18]/25 text-[#5B0F18] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider hover:bg-[#5B0F18] hover:text-[#F8F1E7] transition-all shadow-sm"
               >
                 <span>JOIN OUR TEAM</span>
               </Link>

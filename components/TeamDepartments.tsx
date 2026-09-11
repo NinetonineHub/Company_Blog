@@ -26,14 +26,14 @@ export default function TeamDepartments() {
         
         {/* Section Header */}
         <SectionReveal className="mb-16 text-center max-w-3xl mx-auto">
-          <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase mb-3 block font-bold">
+          <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase mb-3 block font-medium">
             // OUR TEAM
           </span>
-          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-[#24191A] tracking-tight leading-tight mb-4">
+          <h2 className="text-[34px] sm:text-[42px] lg:text-[52px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.15] mb-4">
             EIGHT SPECIALISTS. <br />
             <span className="text-[#6F6261] font-normal">ONE UNIFIED GROWTH ENGINE.</span>
           </h2>
-          <p className="text-[#6F6261] text-base font-sans leading-relaxed">
+          <p className="text-[#6F6261] text-[15px] sm:text-[16px] lg:text-[17px] font-sans leading-relaxed font-normal">
             Our multi-disciplinary specialists drive strategy, creative media, search optimization, design, and software engineering for UAE brands.
           </p>
         </SectionReveal>
@@ -51,17 +51,17 @@ export default function TeamDepartments() {
                     <div className="w-11 h-11 rounded-xl bg-[#FCF9F5] border border-[#5B0F18]/15 flex items-center justify-center text-[#5B0F18] group-hover:bg-[#5B0F18] group-hover:text-[#F8F1E7] transition-colors">
                       <IconComponent className="w-5 h-5" />
                     </div>
-                    <span className="text-[11px] font-mono text-[#6F6261]">{member.code}</span>
+                    <span className="text-[10px] sm:text-[11px] font-sans text-[#6F6261]">{member.code}</span>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-display font-bold text-[#24191A] group-hover:text-[#5B0F18] transition-colors mb-1 tracking-wide">
+                    <h3 className="text-[24px] sm:text-[28px] font-display font-semibold text-[#24191A] group-hover:text-[#5B0F18] transition-colors mb-1 tracking-wide">
                       {member.name}
                     </h3>
-                    <p className="text-xs font-mono text-[#5B0F18] font-semibold mb-3">
+                    <p className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-wider mb-3">
                       {member.role}
                     </p>
-                    <span className="inline-block px-2.5 py-1 rounded-md bg-[#FCF9F5] border border-[#5B0F18]/10 text-[10px] font-mono text-[#24191A]">
+                    <span className="inline-block px-2.5 py-1 rounded-md bg-[#FCF9F5] border border-[#5B0F18]/10 text-[10px] sm:text-[11px] font-sans text-[#24191A]">
                       {member.department}
                     </span>
                   </div>

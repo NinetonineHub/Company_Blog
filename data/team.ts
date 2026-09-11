@@ -16,9 +16,9 @@ export const TEAM_MEMBERS: TeamMember[] = [
     code: "TEAM-01",
   },
   {
-    id: "manosharee",
+    id: "manosree",
     number: "02",
-    name: "Manosharee",
+    name: "Manosree",
     role: "Digital Marketing Executive",
     code: "TEAM-02",
   },

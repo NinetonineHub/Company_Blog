@@ -118,12 +118,12 @@ export default function ContactSection() {
         {/* 1. CONTACT CTA HERO SECTION */}
         <SectionReveal className="mb-20 sm:mb-24 text-center max-w-4xl mx-auto">
           {/* Eyebrow */}
-          <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase font-bold mb-4 block">
+          <span className="text-xs font-sans tracking-[0.25em] text-[#5B0F18] uppercase font-medium mb-4 block">
             LET&apos;S TALK GROWTH
           </span>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-[#24191A] tracking-tight leading-[1.08] mb-6">
+          <h1 className="text-[38px] sm:text-[54px] lg:text-[68px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.12] mb-6">
             READY TO SCALE YOUR <br />
             <span className="text-[#5B0F18]">
               BRAND?
@@ -131,14 +131,14 @@ export default function ContactSection() {
           </h1>
 
           {/* Supporting Paragraph */}
-          <p className="text-[#6F6261] text-base sm:text-lg max-w-2xl mx-auto font-sans leading-relaxed mb-8">
+          <p className="text-[#6F6261] text-base sm:text-lg lg:text-xl max-w-2xl mx-auto font-sans font-normal leading-relaxed mb-8">
             Fill out the form below to start a conversation with our team. We&apos;ll understand your business goals and create a digital growth strategy tailored to your brand.
           </p>
 
           {/* CTA Button */}
           <button
             onClick={scrollToForm}
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#5B0F18] text-[#F8F1E7] font-mono text-xs font-bold tracking-wider hover:bg-[#430B12] shadow-wine transition-all"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#5B0F18] text-[#F8F1E7] font-sans text-xs sm:text-sm font-semibold tracking-wider hover:bg-[#430B12] shadow-wine transition-all"
           >
             <span>LET&apos;S TALK GROWTH</span>
             <ArrowDown className="w-4 h-4 text-[#F8F1E7]" />
@@ -156,7 +156,7 @@ export default function ContactSection() {
             {/* UAE Office Contact Info Card */}
             <SectionReveal>
               <div className="p-8 rounded-3xl bg-white border border-[#5B0F18]/15 shadow-soft-card">
-                <h2 className="text-2xl font-display font-bold text-[#24191A] mb-6">
+                <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-semibold text-[#24191A] mb-6">
                   UAE Office
                 </h2>
 
@@ -167,10 +167,10 @@ export default function ContactSection() {
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-xs font-mono text-[#6F6261] uppercase tracking-wider block mb-1 font-bold">
+                      <span className="text-xs font-sans text-[#6F6261] uppercase tracking-wider block mb-1 font-medium">
                         ADDRESS
                       </span>
-                      <p className="text-[#24191A] font-sans text-sm leading-snug font-semibold whitespace-pre-line">
+                      <p className="text-[#24191A] font-sans text-xs sm:text-sm leading-snug font-medium whitespace-pre-line">
                         Residence - 1072, Block-B,{"\n"}
                         Best Benefit Business Center,{"\n"}
                         Abu Baker Al Siddique St. UAE
@@ -184,12 +184,12 @@ export default function ContactSection() {
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-xs font-mono text-[#6F6261] uppercase tracking-wider block mb-1 font-bold">
+                      <span className="text-xs font-sans text-[#6F6261] uppercase tracking-wider block mb-1 font-medium">
                         EMAIL
                       </span>
                       <a
                         href="mailto:info@ninetoninehub.com"
-                        className="text-[#24191A] hover:text-[#5B0F18] transition-colors font-sans text-sm font-semibold block"
+                        className="text-[#24191A] hover:text-[#5B0F18] transition-colors font-sans text-xs sm:text-sm font-medium block"
                       >
                         info@ninetoninehub.com
                       </a>
@@ -202,12 +202,12 @@ export default function ContactSection() {
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-xs font-mono text-[#6F6261] uppercase tracking-wider block mb-1 font-bold">
+                      <span className="text-xs font-sans text-[#6F6261] uppercase tracking-wider block mb-1 font-medium">
                         PHONE
                       </span>
                       <a
                         href="tel:+971501282100"
-                        className="text-[#24191A] hover:text-[#5B0F18] transition-colors font-sans text-sm font-semibold block"
+                        className="text-[#24191A] hover:text-[#5B0F18] transition-colors font-sans text-xs sm:text-sm font-medium block"
                       >
                         +971 50 128 2100
                       </a>
@@ -242,12 +242,12 @@ export default function ContactSection() {
                   {/* Subtle click overlay bar */}
                   <div className="absolute inset-0 bg-[#5B0F18]/0 group-hover:bg-[#5B0F18]/10 transition-colors flex items-center justify-center pointer-events-none" />
                   
-                  <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-[#5B0F18]/15 text-xs font-mono text-[#24191A] flex items-center justify-between shadow-sm">
-                    <span className="font-bold text-[#5B0F18] flex items-center gap-1.5">
+                  <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-[#5B0F18]/15 text-xs font-sans text-[#24191A] flex items-center justify-between shadow-sm">
+                    <span className="font-medium text-[#5B0F18] flex items-center gap-1.5">
                       <MapPin className="w-3.5 h-3.5" />
                       UAE OFFICE MAP
                     </span>
-                    <span className="text-[#6F6261] font-bold flex items-center gap-1 group-hover:text-[#5B0F18] transition-colors">
+                    <span className="text-[#6F6261] font-medium flex items-center gap-1 group-hover:text-[#5B0F18] transition-colors">
                       OPEN MAP
                       <ExternalLink className="w-3 h-3" />
                     </span>
@@ -264,7 +264,7 @@ export default function ContactSection() {
               <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#5B0F18]/15 shadow-soft-card">
                 
                 {/* Form Title */}
-                <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#24191A] mb-8">
+                <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-semibold text-[#24191A] mb-8">
                   PROJECT INQUIRY FORM
                 </h3>
 
@@ -274,10 +274,10 @@ export default function ContactSection() {
                     <div className="w-16 h-16 rounded-full bg-[#5B0F18]/10 text-[#5B0F18] mx-auto flex items-center justify-center mb-6">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
-                    <h4 className="text-2xl font-display font-extrabold text-[#24191A] mb-3">
+                    <h4 className="text-2xl font-display font-semibold text-[#24191A] mb-3">
                       THANK YOU FOR REACHING OUT.
                     </h4>
-                    <p className="text-sm text-[#6F6261] leading-relaxed max-w-md mx-auto font-sans font-medium">
+                    <p className="text-sm font-sans font-normal text-[#6F6261] leading-relaxed max-w-md mx-auto">
                       Your enquiry has been received. Our team will get back to you shortly.
                     </p>
                   </div>
@@ -286,7 +286,7 @@ export default function ContactSection() {
                     
                     {/* Error Banner if submit fails */}
                     {submitError && (
-                      <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-mono flex items-start gap-3">
+                      <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-sans flex items-start gap-3">
                         <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                         <span>{submitError}</span>
                       </div>
@@ -295,7 +295,7 @@ export default function ContactSection() {
                     {/* Name & Company */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-xs font-mono text-[#24191A] mb-2 font-bold uppercase tracking-wider">
+                        <label className="block text-xs sm:text-sm font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
                           YOUR NAME *
                         </label>
                         <input
@@ -304,12 +304,12 @@ export default function ContactSection() {
                           value={formData.name}
                           onChange={handleInputChange}
                           placeholder="Your Full Name"
-                          className={`w-full px-4 py-3.5 rounded-xl bg-[#FCF9F5] border text-[#24191A] text-sm focus:outline-none transition-colors ${
+                          className={`w-full px-4 py-3.5 rounded-xl bg-[#FCF9F5] border text-[#24191A] text-xs sm:text-sm font-sans font-normal focus:outline-none transition-colors ${
                             formErrors.name ? "border-red-500" : "border-[#5B0F18]/15 focus:border-[#5B0F18]"
                           }`}
                         />
                         {formErrors.name && (
-                          <span className="text-[11px] font-mono text-red-600 mt-1.5 flex items-center gap-1">
+                          <span className="text-[11px] font-sans text-red-600 mt-1.5 flex items-center gap-1">
                             <AlertCircle className="w-3 h-3 shrink-0" />
                             {formErrors.name}
                           </span>
@@ -317,7 +317,7 @@ export default function ContactSection() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-mono text-[#24191A] mb-2 font-bold uppercase tracking-wider">
+                        <label className="block text-xs sm:text-sm font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
                           COMPANY / BRAND
                         </label>
                         <input
@@ -326,7 +326,7 @@ export default function ContactSection() {
                           value={formData.company}
                           onChange={handleInputChange}
                           placeholder="Organization Name"
-                          className="w-full px-4 py-3.5 rounded-xl bg-[#FCF9F5] border border-[#5B0F18]/15 text-[#24191A] text-sm focus:border-[#5B0F18] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3.5 rounded-xl bg-[#FCF9F5] border border-[#5B0F18]/15 text-[#24191A] text-xs sm:text-sm font-sans font-normal focus:border-[#5B0F18] focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -334,7 +334,7 @@ export default function ContactSection() {
                     {/* Email & Phone */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-xs font-mono text-[#24191A] mb-2 font-bold uppercase tracking-wider">
+                        <label className="block text-xs sm:text-sm font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
                           EMAIL ADDRESS *
                         </label>
                         <input
@@ -343,12 +343,12 @@ export default function ContactSection() {
                           value={formData.email}
                           onChange={handleInputChange}
                           placeholder="info@company.com"
-                          className={`w-full px-4 py-3.5 rounded-xl bg-[#FCF9F5] border text-[#24191A] text-sm focus:outline-none transition-colors ${
+                          className={`w-full px-4 py-3.5 rounded-xl bg-[#FCF9F5] border text-[#24191A] text-xs sm:text-sm font-sans font-normal focus:outline-none transition-colors ${
                             formErrors.email ? "border-red-500" : "border-[#5B0F18]/15 focus:border-[#5B0F18]"
                           }`}
                         />
                         {formErrors.email && (
-                          <span className="text-[11px] font-mono text-red-600 mt-1.5 flex items-center gap-1">
+                          <span className="text-[11px] font-sans text-red-600 mt-1.5 flex items-center gap-1">
                             <AlertCircle className="w-3 h-3 shrink-0" />
                             {formErrors.email}
                           </span>
@@ -356,7 +356,7 @@ export default function ContactSection() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-mono text-[#24191A] mb-2 font-bold uppercase tracking-wider">
+                        <label className="block text-xs sm:text-sm font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
                           PHONE / WHATSAPP *
                         </label>
                         <input
@@ -365,12 +365,12 @@ export default function ContactSection() {
                           value={formData.phone}
                           onChange={handleInputChange}
                           placeholder="+971 50 128 2100"
-                          className={`w-full px-4 py-3.5 rounded-xl bg-[#FCF9F5] border text-[#24191A] text-sm focus:outline-none transition-colors ${
+                          className={`w-full px-4 py-3.5 rounded-xl bg-[#FCF9F5] border text-[#24191A] text-xs sm:text-sm font-sans font-normal focus:outline-none transition-colors ${
                             formErrors.phone ? "border-red-500" : "border-[#5B0F18]/15 focus:border-[#5B0F18]"
                           }`}
                         />
                         {formErrors.phone && (
-                          <span className="text-[11px] font-mono text-red-600 mt-1.5 flex items-center gap-1">
+                          <span className="text-[11px] font-sans text-red-600 mt-1.5 flex items-center gap-1">
                             <AlertCircle className="w-3 h-3 shrink-0" />
                             {formErrors.phone}
                           </span>
@@ -380,14 +380,14 @@ export default function ContactSection() {
 
                     {/* 5. SERVICE DROPDOWN */}
                     <div>
-                      <label className="block text-xs font-mono text-[#24191A] mb-2 font-bold uppercase tracking-wider">
+                      <label className="block text-xs sm:text-sm font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
                         PRIMARY SERVICE INTEREST
                       </label>
                       <select
                         name="serviceInterested"
                         value={formData.serviceInterested}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3.5 rounded-xl bg-[#FCF9F5] border border-[#5B0F18]/15 text-[#24191A] text-sm focus:border-[#5B0F18] focus:outline-none transition-colors"
+                        className="w-full px-4 py-3.5 rounded-xl bg-[#FCF9F5] border border-[#5B0F18]/15 text-[#24191A] text-xs sm:text-sm font-sans font-normal focus:border-[#5B0F18] focus:outline-none transition-colors"
                       >
                         {SERVICE_OPTIONS.map((opt) => (
                           <option key={opt} value={opt} className="bg-white text-[#24191A]">
@@ -399,7 +399,7 @@ export default function ContactSection() {
 
                     {/* Project Brief */}
                     <div>
-                      <label className="block text-xs font-mono text-[#24191A] mb-2 font-bold uppercase tracking-wider">
+                      <label className="block text-xs sm:text-sm font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
                         PROJECT BRIEF / OBJECTIVES *
                       </label>
                       <textarea
@@ -408,12 +408,12 @@ export default function ContactSection() {
                         value={formData.message}
                         onChange={handleInputChange}
                         placeholder="Describe your brand goals, target scope, or growth objectives..."
-                        className={`w-full px-4 py-3.5 rounded-xl bg-[#FCF9F5] border text-[#24191A] text-sm focus:outline-none transition-colors ${
+                        className={`w-full px-4 py-3.5 rounded-xl bg-[#FCF9F5] border text-[#24191A] text-xs sm:text-sm font-sans font-normal focus:outline-none transition-colors ${
                           formErrors.message ? "border-red-500" : "border-[#5B0F18]/15 focus:border-[#5B0F18]"
                         }`}
                       />
                       {formErrors.message && (
-                        <span className="text-[11px] font-mono text-red-600 mt-1.5 flex items-center gap-1">
+                        <span className="text-[11px] font-sans text-red-600 mt-1.5 flex items-center gap-1">
                           <AlertCircle className="w-3 h-3 shrink-0" />
                           {formErrors.message}
                         </span>
@@ -424,7 +424,7 @@ export default function ContactSection() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-4 rounded-xl bg-[#5B0F18] text-[#F8F1E7] font-mono font-bold text-sm tracking-wider shadow-wine flex items-center justify-center gap-2 hover:bg-[#430B12] disabled:opacity-70 transition-all cursor-pointer"
+                      className="w-full py-4 rounded-xl bg-[#5B0F18] text-[#F8F1E7] font-sans font-semibold text-xs sm:text-sm tracking-wider shadow-wine flex items-center justify-center gap-2 hover:bg-[#430B12] disabled:opacity-70 transition-all cursor-pointer"
                     >
                       {isSubmitting ? (
                         <span>SENDING...</span>

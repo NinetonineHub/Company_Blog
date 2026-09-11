@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionReveal from "./SectionReveal";
 import { PORTFOLIO_PROJECTS, PORTFOLIO_CATEGORIES, PortfolioProject } from "@/data/portfolio";
-import { ExternalLink, Tag } from "lucide-react";
+import { Tag, ArrowUpRight } from "lucide-react";
 
 export default function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>("ALL");
@@ -26,18 +27,18 @@ export default function PortfolioSection() {
         <SectionReveal className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[2px] bg-[#5B0F18]" />
-            <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase font-bold">
+            <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase font-medium">
               // CLIENT PORTFOLIO & CASE STUDIES
             </span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-[#24191A] tracking-tight leading-tight">
+            <h2 className="text-[34px] sm:text-[42px] lg:text-[52px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.15]">
               SELECTED UAE <br />
               <span className="text-[#5B0F18]">
                 CLIENT ENGAGEMENTS.
               </span>
             </h2>
-            <p className="text-[#6F6261] max-w-md text-sm sm:text-base leading-relaxed font-sans">
+            <p className="text-[#6F6261] max-w-md text-[16px] sm:text-[18px] lg:text-[19px] font-sans font-normal leading-relaxed">
               Explore our real client engagements across tax advisory, construction, dining, and travel in the UAE.
             </p>
           </div>
@@ -52,8 +53,8 @@ export default function PortfolioSection() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`relative px-4 py-2 rounded-xl text-xs font-mono tracking-wider transition-all duration-300 ${
-                    isActive ? "text-[#F8F1E7] font-bold" : "text-[#24191A] hover:text-[#5B0F18]"
+                  className={`relative px-4 py-2 rounded-xl text-[12px] sm:text-[13px] lg:text-[14px] font-sans font-medium tracking-wider transition-all duration-300 ${
+                    isActive ? "text-[#F8F1E7] font-semibold" : "text-[#24191A] hover:text-[#5B0F18]"
                   }`}
                 >
                   <span className="relative z-10">{cat}</span>
@@ -83,12 +84,12 @@ export default function PortfolioSection() {
                 transition={{ duration: 0.4 }}
                 className="group relative rounded-3xl bg-white border border-[#5B0F18]/12 overflow-hidden flex flex-col justify-between hover:border-[#5B0F18]/35 transition-all duration-500 hover:shadow-soft-card hover:-translate-y-1"
               >
-                {/* 1. TOP FULL-COVER IMAGE CONTAINER (Edge-to-Edge, object-fit: cover, subtle scale 1.04 hover zoom) */}
+                {/* 1. TOP FULL-COVER IMAGE CONTAINER */}
                 <div className="relative h-64 sm:h-72 w-full bg-[#FCF9F5] border-b border-[#5B0F18]/10 overflow-hidden select-none">
                   
                   {/* Category Pill Tag Overlay */}
                   <div className="absolute top-4 left-4 z-20">
-                    <span className="px-3 py-1 rounded-full bg-white/90 border border-[#5B0F18]/15 text-[10px] font-mono text-[#5B0F18] font-bold tracking-widest backdrop-blur-md shadow-xs">
+                    <span className="px-3 py-1 rounded-full bg-white/90 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium tracking-widest backdrop-blur-md shadow-xs uppercase">
                       {project.number} // {project.category}
                     </span>
                   </div>
@@ -105,17 +106,17 @@ export default function PortfolioSection() {
                 <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
                   <div>
                     {/* Industry */}
-                    <span className="text-[11px] font-mono text-[#6F6261] uppercase tracking-wider font-bold block mb-1">
+                    <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#6F6261] uppercase tracking-wider font-medium block mb-1">
                       {project.industry}
                     </span>
 
                     {/* Title */}
-                    <h3 className="text-2xl font-display font-extrabold text-[#24191A] group-hover:text-[#5B0F18] transition-colors leading-tight mb-3">
+                    <h3 className="text-[26px] sm:text-[30px] lg:text-[36px] font-display font-medium text-[#24191A] group-hover:text-[#5B0F18] transition-colors leading-tight mb-3">
                       {project.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs text-[#6F6261] leading-relaxed font-sans mb-5">
+                    <p className="text-[15px] sm:text-[16px] font-sans font-normal text-[#6F6261] leading-relaxed mb-5">
                       {project.description}
                     </p>
 
@@ -124,7 +125,7 @@ export default function PortfolioSection() {
                       {project.workTags.map((tag, idx) => (
                         <span
                           key={idx}
-                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#FCF9F5] border border-[#5B0F18]/12 text-[10px] font-mono text-[#24191A] font-medium"
+                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#FCF9F5] border border-[#5B0F18]/12 text-[10px] sm:text-[11px] font-sans text-[#24191A] font-medium"
                         >
                           <Tag className="w-2.5 h-2.5 text-[#5B0F18]" />
                           {tag}
@@ -133,27 +134,15 @@ export default function PortfolioSection() {
                     </div>
                   </div>
 
-                  {/* Card Footer: Website Link or Client Status */}
-                  <div className="pt-4 border-t border-[#5B0F18]/12 flex items-center justify-between">
-                    {project.websiteUrl ? (
-                      <a
-                        href={project.websiteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#5B0F18] text-[#F8F1E7] font-mono text-xs font-bold hover:bg-[#430B12] transition-colors shadow-xs"
-                      >
-                        <span>VISIT WEBSITE</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    ) : (
-                      <span className="text-[10px] font-mono text-[#5B0F18] bg-[#F8F1E7] px-3 py-1.5 rounded-lg border border-[#5B0F18]/12 font-bold uppercase">
-                        CLIENT CASE STUDY
-                      </span>
-                    )}
-
-                    <span className="text-[10px] font-mono text-[#6F6261]">
-                      UAE
-                    </span>
+                  {/* Package-Name Wine Button */}
+                  <div className="pt-4 border-t border-[#5B0F18]/12 flex items-center justify-end">
+                    <Link
+                      href="/services#packages"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#5B0F18] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold hover:bg-[#430B12] transition-all shadow-xs tracking-wider"
+                    >
+                      <span>{project.packageLabel}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
                 </div>
 

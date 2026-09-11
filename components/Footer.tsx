@@ -29,10 +29,10 @@ export default function Footer() {
                 className="h-12 w-auto object-contain brightness-0 invert"
               />
             </Link>
-            <p className="text-xs font-mono text-[#F8F1E7]/90 tracking-[0.2em] uppercase font-bold pt-1">
+            <p className="text-[12px] sm:text-[13px] lg:text-[14px] font-sans text-[#F8F1E7]/90 tracking-widest uppercase font-medium pt-1">
               {COMPANY_INFO.tagline}
             </p>
-            <p className="text-xs text-[#F8F1E7]/80 leading-relaxed max-w-sm font-sans">
+            <p className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#F8F1E7]/80 leading-relaxed max-w-sm font-sans font-normal">
               A UAE-based digital growth agency combining strategy, creative media, performance marketing, SEO, and web technology.
             </p>
 
@@ -78,10 +78,10 @@ export default function Footer() {
 
           {/* Quick Navigation Links */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono text-[#F8F1E7] tracking-widest uppercase mb-4 font-bold">
+            <h4 className="text-[12px] sm:text-[13px] lg:text-[14px] font-sans text-[#F8F1E7] tracking-widest uppercase mb-4 font-medium">
               // NAVIGATION
             </h4>
-            <ul className="space-y-2.5 text-xs font-mono">
+            <ul className="space-y-2.5 text-[12px] sm:text-[13px] lg:text-[14px] font-sans font-normal">
               <li>
                 <Link href="/" className="text-[#F8F1E7]/80 hover:text-white transition-colors">
                   HOME
@@ -117,20 +117,20 @@ export default function Footer() {
 
           {/* Location & Contact Summary */}
           <div className="md:col-span-4 space-y-3">
-            <h4 className="text-xs font-mono text-[#F8F1E7] tracking-widest uppercase mb-4 font-bold">
+            <h4 className="text-[12px] sm:text-[13px] lg:text-[14px] font-sans text-[#F8F1E7] tracking-widest uppercase mb-4 font-medium">
               // UAE OPERATIONAL HQ
             </h4>
-            <p className="text-xs text-[#F8F1E7]/85 font-mono leading-relaxed">
+            <p className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#F8F1E7]/85 font-sans leading-relaxed font-normal">
               {COMPANY_INFO.address}
             </p>
-            <p className="text-xs text-[#F8F1E7]/80 font-mono pt-1">
-              TEL: <span className="text-white font-bold">{COMPANY_INFO.phone}</span>
+            <p className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#F8F1E7]/80 font-sans pt-1 font-normal">
+              TEL: <span className="text-white font-medium">{COMPANY_INFO.phone}</span>
             </p>
-            <p className="text-xs text-[#F8F1E7]/80 font-mono">
-              MAIL: <span className="text-white font-bold">{COMPANY_INFO.email}</span>
+            <p className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#F8F1E7]/80 font-sans font-normal">
+              MAIL: <span className="text-white font-medium">{COMPANY_INFO.email}</span>
             </p>
             <div className="pt-4">
-              <span className="inline-flex items-center gap-2 text-[10px] font-mono px-3.5 py-1.5 rounded-full bg-[#F8F1E7]/10 border border-[#F8F1E7]/20 text-[#F8F1E7] font-semibold">
+              <span className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] lg:text-[12px] font-sans px-3.5 py-1.5 rounded-full bg-[#F8F1E7]/10 border border-[#F8F1E7]/20 text-[#F8F1E7] font-medium">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
                 ACCEPTING NEW UAE CLIENT BRANDS
               </span>
@@ -140,14 +140,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom copyright & back to top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#F8F1E7]/70">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] sm:text-[13px] lg:text-[14px] font-sans font-normal text-[#F8F1E7]/70">
           <span>
             © {new Date().getFullYear()} {COMPANY_INFO.name}. ALL RIGHTS RESERVED.
           </span>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-[#F8F1E7] hover:text-white transition-colors"
+            className="flex items-center gap-2 text-[#F8F1E7] hover:text-white transition-colors font-sans font-medium text-[12px] sm:text-[13px] lg:text-[14px]"
           >
             <span>BACK TO TOP</span>
             <div className="w-8 h-8 rounded-full bg-[#F8F1E7]/10 border border-[#F8F1E7]/25 flex items-center justify-center text-[#F8F1E7]">

@@ -168,7 +168,7 @@ const ADDITIONAL_SERVICES = [
 
 export default function GrowthPackagesSection() {
   return (
-    <section className="relative py-24 sm:py-28 bg-[#F8F1E7] border-t border-[#5B0F18]/12 overflow-hidden select-none">
+    <section id="packages" className="relative py-24 sm:py-28 bg-[#F8F1E7] border-t border-[#5B0F18]/12 overflow-hidden select-none">
       {/* Background Ambient Wine Glow Blur Effect */}
       <div className="absolute right-1/3 top-1/4 w-[600px] h-[600px] bg-[#5B0F18]/4 rounded-full blur-[180px] pointer-events-none" />
       <div className="absolute left-1/4 bottom-1/4 w-[500px] h-[500px] bg-[#5B0F18]/3 rounded-full blur-[160px] pointer-events-none" />
@@ -178,18 +178,18 @@ export default function GrowthPackagesSection() {
         <SectionReveal className="mb-16 text-center max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="w-8 h-[2px] bg-[#5B0F18]" />
-            <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase font-bold">
+            <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase font-medium">
               // GROWTH PACKAGES
             </span>
             <span className="w-8 h-[2px] bg-[#5B0F18]" />
           </div>
 
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-[#24191A] tracking-tight leading-[1.08] mb-6">
+          <h2 className="text-[34px] sm:text-[42px] lg:text-[52px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.08] mb-6">
             PACKAGES BUILT <br />
             <span className="text-[#5B0F18]">TO SCALE.</span>
           </h2>
 
-          <p className="text-[#6F6261] text-base sm:text-lg max-w-2xl mx-auto font-sans leading-relaxed font-medium">
+          <p className="text-[#6F6261] text-[16px] sm:text-[18px] lg:text-[19px] max-w-2xl mx-auto font-sans font-normal leading-relaxed">
             Choose the level of digital growth support that fits your business. Every package combines strategy, creative execution, performance marketing, and ongoing digital support.
           </p>
         </SectionReveal>
@@ -203,12 +203,12 @@ export default function GrowthPackagesSection() {
                   <div>
                     {/* Header Label & Recommended Accent */}
                     <div className="flex items-center justify-between mb-3 gap-2 flex-wrap">
-                      <span className="text-[11px] font-mono tracking-widest text-[#5B0F18] font-bold uppercase">
+                      <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] font-medium uppercase">
                         {pkg.label}
                       </span>
 
                       {pkg.isRecommended && (
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5B0F18] text-[#F8F1E7] text-[10px] font-mono font-bold tracking-wider uppercase shadow-sm">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5B0F18] text-[#F8F1E7] text-[10px] sm:text-[11px] lg:text-[12px] font-sans font-semibold tracking-wider uppercase shadow-sm">
                           <Sparkles className="w-3 h-3 text-[#F8F1E7]" />
                           RECOMMENDED FOR GROWING BRANDS
                         </span>
@@ -216,7 +216,7 @@ export default function GrowthPackagesSection() {
                     </div>
 
                     {/* Card Title */}
-                    <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-[#24191A] mb-6 pb-3 border-b border-[#5B0F18]/15 tracking-tight">
+                    <h3 className="text-[25px] sm:text-[30px] lg:text-[34px] font-display font-semibold text-[#24191A] mb-6 pb-3 border-b border-[#5B0F18]/15 tracking-tight">
                       {pkg.title}
                     </h3>
 
@@ -224,16 +224,16 @@ export default function GrowthPackagesSection() {
                     <div className="space-y-3.5 mb-8">
                       {pkg.features.map((feat, fIdx) => (
                         <div key={fIdx} className="feature-item">
-                          <span className="text-[10px] font-mono tracking-wider text-[#5B0F18] uppercase font-bold block mb-0.5">
+                          <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-wider text-[#5B0F18] uppercase font-medium block mb-0.5">
                             {feat.title}
                           </span>
 
-                          <p className="text-xs sm:text-sm font-sans font-semibold text-[#24191A] leading-snug">
+                          <p className="text-[13px] sm:text-[14px] lg:text-[15px] font-sans font-normal text-[#24191A] leading-snug">
                             {feat.value}
                           </p>
 
                           {feat.subtext && (
-                            <span className="block text-[10px] font-sans text-[#6F6261] mt-0.5 italic">
+                            <span className="block text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#6F6261] mt-0.5 italic">
                               ({feat.subtext})
                             </span>
                           )}
@@ -246,7 +246,7 @@ export default function GrowthPackagesSection() {
                   <div className="pt-5 border-t border-[#5B0F18]/12">
                     <Link
                       href="/contact"
-                      className="group/btn w-full py-3.5 px-6 rounded-xl bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-mono text-xs font-bold tracking-wider transition-all duration-300 shadow-wine flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
+                      className="group/btn w-full py-3.5 px-6 rounded-xl bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider transition-all duration-300 shadow-wine flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
                     >
                       <span>GET A QUOTE</span>
                       <ArrowUpRight className="w-4 h-4 text-[#F8F1E7] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
@@ -264,17 +264,17 @@ export default function GrowthPackagesSection() {
             <div className="wine-glow-card-inner p-7 sm:p-9">
               <div className="flex flex-col md:flex-row md:items-center justify-between pb-5 mb-6 border-b border-[#5B0F18]/12 gap-4">
                 <div>
-                  <span className="text-xs font-mono tracking-widest text-[#5B0F18] font-bold uppercase block mb-1">
+                  <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] font-medium uppercase block mb-1">
                     04 // STANDALONE SOLUTIONS
                   </span>
-                  <h3 className="text-2xl sm:text-4xl font-display font-extrabold text-[#24191A]">
+                  <h3 className="text-[25px] sm:text-[30px] lg:text-[34px] font-display font-semibold text-[#24191A]">
                     ADDITIONAL SERVICES
                   </h3>
                 </div>
 
                 <Link
                   href="/contact"
-                  className="group/btn inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-mono text-xs font-bold tracking-wider transition-all shadow-wine w-max transform hover:-translate-y-0.5 shrink-0"
+                  className="group/btn inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider transition-all shadow-wine w-max transform hover:-translate-y-0.5 shrink-0"
                 >
                   <span>GET A QUOTE</span>
                   <ArrowUpRight className="w-4 h-4 text-[#F8F1E7] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
@@ -295,10 +295,10 @@ export default function GrowthPackagesSection() {
                       </div>
 
                       <div>
-                        <h4 className="text-sm font-display font-bold text-[#24191A] mb-1 leading-snug">
+                        <h4 className="text-[24px] font-display font-semibold text-[#24191A] mb-1 leading-snug">
                           {serv.title}
                         </h4>
-                        <p className="text-xs font-sans text-[#6F6261] leading-relaxed">
+                        <p className="text-[13px] sm:text-[14px] lg:text-[15px] font-sans font-normal text-[#6F6261] leading-relaxed">
                           {serv.description}
                         </p>
                       </div>
@@ -317,17 +317,17 @@ export default function GrowthPackagesSection() {
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#5B0F18]/5 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10">
-              <span className="text-xs font-mono tracking-[0.2em] text-[#5B0F18] uppercase font-bold block mb-3">
+              <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase font-medium block mb-3">
                 NOT SURE WHICH PACKAGE FITS?
               </span>
 
-              <h3 className="text-2xl sm:text-4xl font-display font-extrabold text-[#24191A] mb-6">
+              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-semibold text-[#24191A] mb-6">
                 Let&apos;s build the right growth system for your business.
               </h3>
 
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-3 px-9 py-4 rounded-xl bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-mono text-xs font-bold tracking-wider shadow-wine transition-all transform hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-3 px-9 py-4 rounded-xl bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider shadow-wine transition-all transform hover:-translate-y-0.5"
               >
                 <span>LET&apos;S TALK GROWTH</span>
                 <ArrowUpRight className="w-4 h-4 text-[#F8F1E7] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

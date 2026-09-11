@@ -29,13 +29,13 @@ export default function AboutPage() {
                 {/* Eyebrow */}
                 <div className="inline-flex items-center gap-3 mb-4 justify-center lg:justify-start">
                   <span className="w-6 h-[2px] bg-[#5B0F18]" />
-                  <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase font-bold">
+                  <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase font-medium">
                     // ABOUT NINE TO NINE HUB
                   </span>
                 </div>
 
                 {/* Main Heading */}
-                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-[#24191A] tracking-tight leading-[1.08] mb-6">
+                <h1 className="text-[42px] sm:text-[62px] lg:text-[80px] xl:text-[84px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.08] mb-6">
                   ARCHITECTS OF <br />
                   <span className="text-[#5B0F18]">
                     DIGITAL TRANSFORMATION.
@@ -43,7 +43,7 @@ export default function AboutPage() {
                 </h1>
 
                 {/* Supporting Description */}
-                <p className="text-[#6F6261] text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-sans leading-relaxed mb-8 font-medium">
+                <p className="text-[#6F6261] text-[16px] sm:text-[18px] lg:text-[19px] max-w-xl mx-auto lg:mx-0 font-sans leading-relaxed mb-8 font-normal">
                   Nine to Nine Hub is a UAE-based digital agency focused on data-driven growth, creative execution and high-performance technology.
                 </p>
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
                 <div className="flex items-center justify-center lg:justify-start">
                   <a
                     href="#about-content"
-                    className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#5B0F18] text-[#F8F1E7] font-mono text-xs font-bold tracking-wider hover:bg-[#430B12] shadow-wine transition-all"
+                    className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#5B0F18] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider hover:bg-[#430B12] shadow-wine transition-all"
                   >
                     <span>EXPLORE AGENCY VISION</span>
                     <ArrowDown className="w-4 h-4 text-[#F8F1E7]" />

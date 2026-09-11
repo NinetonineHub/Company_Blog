@@ -22,7 +22,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-flex items-center gap-2.5 px-4.5 py-1.5 rounded-full bg-white border border-[#5B0F18]/18 text-[#5B0F18] font-mono text-xs font-bold tracking-widest uppercase shadow-xs mb-6"
+          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#5B0F18]/18 text-[#5B0F18] font-sans text-[10px] sm:text-[11px] lg:text-[12px] font-medium tracking-widest uppercase shadow-xs mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-[#5B0F18] animate-pulse" />
           <span>// UAE-BASED DIGITAL GROWTH AGENCY</span>
@@ -36,7 +36,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl sm:text-7xl lg:text-9xl font-display font-extrabold text-[#24191A] tracking-tighter leading-[0.9] text-center uppercase relative z-10"
+            className="text-[42px] sm:text-[62px] lg:text-[80px] xl:text-[84px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.08] text-center uppercase relative z-10"
           >
             WE ENGINEER <br />
             <span className="text-[#5B0F18]">DIGITAL GROWTH.</span>
@@ -62,7 +62,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="text-base sm:text-lg text-[#6F6261] font-sans leading-relaxed mb-8 text-center"
+            className="text-[16px] sm:text-[18px] lg:text-[19px] text-[#6F6261] font-sans font-normal leading-relaxed mb-8 text-center"
           >
             UAE-based digital growth solutions built around strategy, creativity, technology and measurable results.
           </motion.p>
@@ -76,7 +76,7 @@ export default function Hero() {
           >
             <Link
               href="/contact"
-              className="group relative inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-mono text-xs font-bold tracking-wider shadow-wine transition-all transform hover:-translate-y-0.5"
+              className="group relative inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider shadow-wine transition-all transform hover:-translate-y-0.5"
             >
               <span>START A PROJECT</span>
               <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -84,7 +84,7 @@ export default function Hero() {
 
             <Link
               href="/services"
-              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-white border border-[#5B0F18]/30 text-[#5B0F18] hover:bg-[#5B0F18] hover:text-[#F8F1E7] font-mono text-xs font-semibold tracking-wider transition-all shadow-xs"
+              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-white border border-[#5B0F18]/30 text-[#5B0F18] hover:bg-[#5B0F18] hover:text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider transition-all shadow-xs"
             >
               <span>EXPLORE SERVICES</span>
             </Link>
@@ -96,7 +96,7 @@ export default function Hero() {
 
       {/* SOFT INTENTIONAL VISUAL TRANSITION ELEMENT */}
       <div className="w-full flex items-center justify-center pt-6 border-t border-[#5B0F18]/12 bg-[#FCF9F5]">
-        <div className="flex items-center gap-3 text-[11px] font-mono text-[#6F6261] tracking-widest uppercase font-semibold">
+        <div className="flex items-center gap-3 text-[10px] sm:text-[11px] lg:text-[12px] font-sans font-medium text-[#6F6261] tracking-widest uppercase">
           <span className="w-6 h-[1px] bg-[#5B0F18]" />
           <span>NINE TO NINE HUB // UAE</span>
           <span className="w-6 h-[1px] bg-[#5B0F18]" />

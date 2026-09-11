@@ -6,18 +6,19 @@ import SectionReveal from "./SectionReveal";
 // Sales Executives Team Data
 const SALES_EXECUTIVES = [
   { id: "arasu-sales", name: "ARASU", role: "SALES EXECUTIVE" },
-  { id: "abdul-sales", name: "ABDUL", role: "SALES EXECUTIVE" },
+  { id: "athul-sales", name: "ATHUL", role: "SALES EXECUTIVE" },
   { id: "mithun-sales", name: "MITHUN", role: "SALES EXECUTIVE" },
 ];
 
-// Execution Team Data (6 Sibling Members)
-const EXECUTION_TEAM = [
-  { id: "manoshree", name: "MANOSHREE", role: "DIGITAL MARKETING EXECUTIVE" },
+// Unified Team Data (All execution and telecalling members together in ONE team structure)
+const TEAM_MEMBERS = [
+  { id: "manosree", name: "MANOSREE", role: "DIGITAL MARKETING EXECUTIVE" },
   { id: "varshii", name: "VARSHII", role: "WEBPAGE DESIGNER" },
   { id: "yadhu", name: "YADHU", role: "SEO SPECIALIST" },
   { id: "kaviyaras", name: "KAVIYARAS", role: "VIDEO EDITOR" },
   { id: "somya", name: "SOMYA", role: "SENIOR VIDEO EDITOR" },
   { id: "ganesh-pranesh", name: "GANESH,", name2: "PRANESH", role: "WEB DEVELOPMENT" },
+  { id: "vignesh-thenmozhi", name: "VIGNESH,", name2: "THENMOZHI", role: "TELECALLING" },
 ];
 
 export default function OrgChartSection() {
@@ -33,18 +34,18 @@ export default function OrgChartSection() {
         <SectionReveal className="mb-16 text-center max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="w-8 h-[2px] bg-[#5B0F18]" />
-            <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase font-bold">
+            <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase font-medium">
               // OUR ORGANIZATION
             </span>
             <span className="w-8 h-[2px] bg-[#5B0F18]" />
           </div>
 
-          <h2 className="text-4xl sm:text-6xl font-display font-extrabold text-[#24191A] tracking-tight leading-tight mb-4">
+          <h2 className="text-[34px] sm:text-[42px] lg:text-[52px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.15] mb-4">
             THE TEAM BEHIND <br />
             <span className="text-[#5B0F18]">THE HUB.</span>
           </h2>
 
-          <p className="text-[#6F6261] text-base sm:text-lg font-sans max-w-xl mx-auto font-medium">
+          <p className="text-[#6F6261] text-[16px] sm:text-[18px] lg:text-[19px] font-sans font-normal max-w-xl mx-auto">
             A clear leadership and execution structure built for efficient, high-quality digital growth.
           </p>
         </SectionReveal>
@@ -58,20 +59,20 @@ export default function OrgChartSection() {
               {/* INSET RUNNING GRADIENT LINE FRAME */}
               <div className="card-inset-light-lead">
                 <div className="inset-surface p-7 sm:p-9 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.25rem-1.8px)]">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] font-mono text-[#5B0F18] font-bold uppercase tracking-widest mb-4">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-4">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#5B0F18]" />
                     // PRINCIPAL LEADERSHIP
                   </div>
 
-                  <h3 className="text-3xl sm:text-4xl font-display font-extrabold text-[#24191A] mb-2 tracking-tight">
+                  <h3 className="text-[26px] sm:text-[30px] lg:text-[36px] font-display font-medium text-[#24191A] mb-2 tracking-tight">
                     RIAS
                   </h3>
 
-                  <p className="text-xs font-mono text-[#5B0F18] font-bold uppercase tracking-widest mb-4">
+                  <p className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-4">
                     PRINCIPAL SHAREHOLDER &amp; CHIEF DECISION MAKER
                   </p>
 
-                  <p className="text-xs sm:text-sm text-[#6F6261] font-sans leading-relaxed font-medium max-w-xl mx-auto">
+                  <p className="text-[15px] sm:text-[16px] lg:text-[17px] text-[#6F6261] font-sans leading-relaxed font-normal max-w-xl mx-auto">
                     Rias is the primary decision maker and principal financial backbone of ninetoninehub. Beyond providing visionary financial backing, he shapes the company’s long-term business vision, operational strategy, and future expansion plans. His strategic leadership and decisive direction ensure sustained growth, digital innovation, and long-term success for our clients across the GCC.
                   </p>
                 </div>
@@ -79,99 +80,119 @@ export default function OrgChartSection() {
             </div>
           </SectionReveal>
 
-          {/* STATIC CONNECTOR 1 -> 2 */}
+          {/* STATIC CONNECTOR 1 -> LEVEL 2 (RIAS TO BRANCH BAR) */}
           <div className="flex flex-col items-center my-1.5">
-            <div className="w-[2px] h-9 bg-[#5B0F18]" />
-            <div className="w-2 h-2 rotate-45 border-r-2 border-b-2 border-[#5B0F18] -mt-1.5" />
+            <div className="w-[2px] h-7 bg-[#5B0F18]" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[#5B0F18] border-2 border-[#F8F1E7]" />
           </div>
 
-          {/* LEVEL 2 — KHISHORE */}
-          <SectionReveal className="w-full max-w-2xl" delay={0.08}>
-            <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2.5">
-              {/* INSET RUNNING GRADIENT LINE FRAME */}
-              <div className="card-inset-light-lead">
-                <div className="inset-surface p-7 sm:p-9 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.25rem-1.8px)]">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] font-mono text-[#5B0F18] font-bold uppercase tracking-widest mb-4">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#5B0F18]" />
-                    // EXECUTIVE DIRECTION
-                  </div>
+          {/* LEVEL 2 — NANDHAKHISHORE + SALES EXECUTIVES (SAME HORIZONTAL LINE) */}
+          <div className="w-full max-w-5xl relative">
+            {/* Split Branching Horizontal Bar under RIAS */}
+            <div className="relative w-full pt-4 mb-2">
+              <div className="hidden md:block absolute top-0 left-[25%] right-[25%] h-[2px] bg-[#5B0F18]" />
+              <div className="hidden md:block absolute top-[-4px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#5B0F18] border-2 border-[#F8F1E7] z-10" />
 
-                  <h3 className="text-3xl sm:text-4xl font-display font-extrabold text-[#24191A] mb-2 tracking-tight">
-                    KHISHORE
-                  </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                
+                {/* LEFT SIBLING: NANDHAKHISHORE */}
+                <div className="flex flex-col items-center w-full">
+                  <div className="hidden md:block w-[2px] h-4 bg-[#5B0F18] -mt-4 mb-1" />
+                  <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
 
-                  <p className="text-xs font-mono text-[#5B0F18] font-bold uppercase tracking-widest mb-4">
-                    FOUNDER &amp; OPERATIONS DIRECTOR
-                  </p>
+                  <SectionReveal className="w-full h-full" delay={0.08}>
+                    <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2.5 h-full">
+                      <div className="card-inset-light-lead h-full">
+                        <div className="inset-surface p-6 sm:p-7 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.25rem-1.8px)] h-full flex flex-col items-center justify-center">
+                          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-2.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#5B0F18]" />
+                            // EXECUTIVE DIRECTION
+                          </div>
 
-                  <p className="text-xs sm:text-sm text-[#6F6261] font-sans leading-relaxed font-medium max-w-xl mx-auto">
-                    As the Founder and Operations Director of ninetoninehub, Khishore is the main driving force behind our daily business operations. He works directly with our clients to understand their needs and build strong partnerships. Leading our execution teams, he ensures every project is delivered with high quality and speed. His hands-on leadership keeps our company focused on real growth and business success across the UAE and the GCC.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SectionReveal>
+                          <h3 className="text-[26px] sm:text-[30px] lg:text-[36px] font-display font-medium text-[#24191A] mb-1 tracking-tight">
+                            NANDHAKHISHORE
+                          </h3>
 
-          {/* STATIC CONNECTOR 2 -> 3 */}
-          <div className="flex flex-col items-center my-1.5">
-            <div className="w-[2px] h-9 bg-[#5B0F18]" />
-            <div className="w-2 h-2 rotate-45 border-r-2 border-b-2 border-[#5B0F18] -mt-1.5" />
-          </div>
+                          <p className="text-[11px] sm:text-[12px] lg:text-[13px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-3">
+                            FOUNDER &amp; OPERATIONS DIRECTOR
+                          </p>
 
-          {/* LEVEL 3 — SALES EXECUTIVES (Group Box: Arasu, Abdul, Mithun) */}
-          <SectionReveal className="w-full max-w-xl" delay={0.12}>
-            <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2.5">
-              <div className="card-inset-light-lead">
-                <div className="inset-surface p-6 sm:p-7 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.25rem-1.8px)]">
-                  <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] font-mono text-[#5B0F18] font-bold uppercase tracking-widest mb-4">
-                    // SALES EXECUTIVES
-                  </div>
-
-                  <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-[#24191A] mb-4 tracking-tight">
-                    SALES EXECUTIVES
-                  </h3>
-
-                  {/* 3 Grouped Members */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
-                    {SALES_EXECUTIVES.map((member) => (
-                      <div
-                        key={member.id}
-                        className="relative rounded-xl bg-[#F8F1E7]/80 border border-[#5B0F18]/12 p-3 text-center transition-all duration-300 hover:border-[#5B0F18]/30"
-                      >
-                        <h4 className="text-sm font-display font-extrabold text-[#24191A]">
-                          {member.name}
-                        </h4>
-                        <p className="text-[9px] font-mono text-[#5B0F18] font-bold uppercase tracking-wider mt-0.5">
-                          {member.role}
-                        </p>
+                          <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#6F6261] font-sans leading-relaxed font-normal max-w-xl mx-auto">
+                            As the Founder and Operations Director of ninetoninehub, Nandhakhishore leads daily operations, client relationships, and execution teams. His hands-on leadership ensures high-quality delivery, strong partnerships, and business growth across Dubai and the GCC.
+                          </p>
+                        </div>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  </SectionReveal>
                 </div>
-              </div>
-            </div>
-          </SectionReveal>
 
-          {/* STATIC CONNECTOR 3 -> 4 */}
-          <div className="flex flex-col items-center my-1.5">
+                {/* RIGHT SIBLING: SALES EXECUTIVES GROUP */}
+                <div className="flex flex-col items-center w-full">
+                  <div className="hidden md:block w-[2px] h-4 bg-[#5B0F18] -mt-4 mb-1" />
+                  <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
+
+                  <SectionReveal className="w-full h-full" delay={0.12}>
+                    <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2.5 h-full">
+                      <div className="card-inset-light-lead h-full">
+                        <div className="inset-surface p-6 sm:p-7 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.25rem-1.8px)] h-full flex flex-col items-center justify-center">
+                          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-2.5">
+                            // SALES EXECUTIVES
+                          </div>
+
+                          <h3 className="text-[26px] sm:text-[30px] lg:text-[36px] font-display font-medium text-[#24191A] mb-3 tracking-tight">
+                            SALES EXECUTIVES
+                          </h3>
+
+                          {/* 3 Grouped Members (ARASU, ATHUL, MITHUN) — Centered & Balanced on Same Row */}
+                          <div className="grid grid-cols-3 gap-2.5 sm:gap-3 w-full">
+                            {SALES_EXECUTIVES.map((member) => (
+                              <div
+                                key={member.id}
+                                className="relative rounded-2xl bg-[#F8F1E7]/90 border border-[#5B0F18]/15 p-3.5 sm:p-4 text-center transition-all duration-300 hover:border-[#5B0F18]/40 hover:shadow-xs flex flex-col justify-center items-center min-h-[90px] sm:min-h-[105px]"
+                              >
+                                <h4 className="text-[16px] sm:text-[18px] lg:text-[21px] font-display font-medium text-[#24191A] leading-tight">
+                                  {member.name}
+                                </h4>
+                                <p className="text-[8.5px] sm:text-[9px] lg:text-[9.5px] font-sans text-[#5B0F18] font-medium uppercase tracking-wider mt-1 leading-snug">
+                                  {member.role}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </SectionReveal>
+                </div>
+
+              </div>
+
+              {/* Joining Horizontal Bar below Level 2 connecting to Zainab */}
+              <div className="hidden md:block absolute bottom-0 left-[25%] right-[25%] h-[2px] bg-[#5B0F18] translate-y-2" />
+              <div className="hidden md:block absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#5B0F18] border-2 border-[#F8F1E7] z-10 translate-y-2" />
+            </div>
+          </div>
+
+          {/* STATIC CONNECTOR LEVEL 2 -> ZAINAB */}
+          <div className="flex flex-col items-center mt-4 mb-1.5">
             <div className="w-[2px] h-9 bg-[#5B0F18]" />
             <div className="w-2 h-2 rotate-45 border-r-2 border-b-2 border-[#5B0F18] -mt-1.5" />
           </div>
 
-          {/* LEVEL 4 — ZAINAB */}
+          {/* LEVEL 3 — ZAINAB */}
           <SectionReveal className="w-full max-w-md" delay={0.16}>
             <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2">
               <div className="card-inset-light-med">
                 <div className="inset-surface p-5 sm:p-6 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.15rem-1.5px)]">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[9px] font-mono text-[#5B0F18] font-bold uppercase tracking-widest mb-2">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-2">
                     // ADMINISTRATION
                   </div>
 
-                  <h3 className="text-2xl font-display font-extrabold text-[#24191A] mb-1">
+                  <h3 className="text-[24px] sm:text-[28px] lg:text-[34px] font-display font-medium text-[#24191A] mb-1">
                     ZAINAB
                   </h3>
 
-                  <p className="text-xs font-mono text-[#5B0F18] font-bold uppercase tracking-widest">
+                  <p className="text-[11px] sm:text-[12px] lg:text-[13px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest">
                     ADMIN
                   </p>
                 </div>
@@ -179,233 +200,72 @@ export default function OrgChartSection() {
             </div>
           </SectionReveal>
 
-          {/* STATIC CONNECTOR 4 -> 5 (VERTICAL DROP FROM ZAINAB TO HORIZONTAL BRANCH BAR) */}
+          {/* STATIC CONNECTOR ZAINAB -> TEAM NODE */}
           <div className="flex flex-col items-center my-1.5">
             <div className="w-[2px] h-9 bg-[#5B0F18]" />
             <div className="w-2 h-2 rotate-45 border-r-2 border-b-2 border-[#5B0F18] -mt-1.5" />
           </div>
 
-          {/* LEVEL 5 — PARALLEL SIBLING TEAM GROUPS: EXECUTION TEAM & TELECALLING */}
-          
-          {/* DESKTOP LAYOUT (lg screens and up) */}
-          <div className="hidden lg:block w-full mt-1.5">
+          {/* LEVEL 4 — TEAM (UNIFIED TEAM STRUCTURE FOR ALL MEMBERS) */}
+          <div className="w-full max-w-6xl flex flex-col items-center">
             
-            {/* Split Branching Horizontal Bar under Zainab */}
-            <div className="relative w-full pt-4">
-              {/* Horizontal line extending between Execution Team center (37.5%) and Telecalling center (87.5%) */}
-              <div className="absolute top-0 left-[37.5%] right-[12.5%] h-[2px] bg-[#5B0F18]" />
-              {/* Central junction dot directly under Zainab's connector line */}
-              <div className="absolute top-[-4px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#5B0F18] border-2 border-[#F8F1E7] z-10" />
-
-              <div className="grid grid-cols-12 gap-6 items-start">
-                
-                {/* 1. EXECUTION TEAM GROUP (Spans 9 columns, center at 37.5%) */}
-                <div className="col-span-9 flex flex-col items-center">
-                  {/* Drop line from horizontal bar */}
-                  <div className="w-[2px] h-5 bg-[#5B0F18] -mt-4 mb-1" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
-
-                  {/* EXECUTION TEAM HEADER NODE */}
-                  <SectionReveal className="w-full max-w-xs mb-3" delay={0.20}>
-                    <div className="relative rounded-xl bg-[#5B0F18] border border-[#5B0F18] shadow-wine p-1 text-center">
-                      <div className="card-inset-light-node">
-                        <div className="relative z-10 py-2.5 px-5 bg-[#5B0F18] rounded-[calc(0.65rem-1.5px)]">
-                          <span className="text-xs font-mono tracking-[0.25em] font-extrabold uppercase block text-[#F8F1E7]">
-                            EXECUTION TEAM
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </SectionReveal>
-
-                  {/* 6 Execution Team Sibling Members */}
-                  <div className="w-full relative pt-4">
-                    <div className="absolute top-0 left-[8.33%] right-[8.33%] h-[2px] bg-[#5B0F18]" />
-                    <div className="absolute top-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#5B0F18]" />
-
-                    <div className="grid grid-cols-6 gap-2.5 relative z-10">
-                      {EXECUTION_TEAM.map((member, idx) => (
-                        <SectionReveal key={member.id} delay={0.22 + idx * 0.03}>
-                          <div className="relative flex flex-col items-center">
-                            <div className="w-[2px] h-4 bg-[#5B0F18] -mt-4 mb-1" />
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
-
-                            <div className="relative w-full rounded-2xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-sm p-1.5">
-                              <div className="card-inset-light-team">
-                                <div className="inset-surface p-3 text-center flex flex-col justify-center min-h-[110px] relative overflow-hidden bg-arch-grid rounded-[calc(1rem-1.5px)]">
-                                  <h4 className="text-xs font-display font-extrabold text-[#24191A] leading-snug">
-                                    {member.name}
-                                  </h4>
-                                  {member.name2 && (
-                                    <h4 className="text-xs font-display font-extrabold text-[#24191A] leading-snug">
-                                      {member.name2}
-                                    </h4>
-                                  )}
-                                  {!member.name2 && <div className="mb-0.5" />}
-                                  <p className="text-[9px] font-mono text-[#5B0F18] font-bold uppercase tracking-wider leading-relaxed">
-                                    {member.role}
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </SectionReveal>
-                      ))}
-                    </div>
+            {/* SINGLE TEAM HEADER NODE */}
+            <SectionReveal className="w-full max-w-xs mb-4 text-center" delay={0.20}>
+              <div className="relative rounded-xl bg-[#5B0F18] border border-[#5B0F18] shadow-wine p-1 text-center">
+                <div className="card-inset-light-node">
+                  <div className="relative z-10 py-2.5 px-6 bg-[#5B0F18] rounded-[calc(0.65rem-1.5px)]">
+                    <span className="text-[15px] sm:text-[17px] lg:text-[19px] font-display tracking-wider font-semibold uppercase block text-[#F8F1E7]">
+                      TEAM
+                    </span>
                   </div>
                 </div>
+              </div>
+            </SectionReveal>
 
-                {/* 2. TELECALLING GROUP (Spans 3 columns, center at 87.5%) — SIBLING AT SAME LEVEL */}
-                <div className="col-span-3 flex flex-col items-center">
-                  {/* Drop line from horizontal bar */}
-                  <div className="w-[2px] h-5 bg-[#5B0F18] -mt-4 mb-1" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
+            {/* Drop Line into horizontal branch bar connecting all 7 members */}
+            <div className="relative w-full pt-4">
+              <div className="hidden lg:block absolute top-0 left-[7.14%] right-[7.14%] h-[2px] bg-[#5B0F18]" />
+              <div className="hidden lg:block absolute top-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#5B0F18]" />
 
-                  {/* TELECALLING HEADER NODE */}
-                  <SectionReveal className="w-full max-w-xs mb-3" delay={0.24}>
-                    <div className="relative rounded-xl bg-[#5B0F18] border border-[#5B0F18] shadow-wine p-1 text-center">
-                      <div className="card-inset-light-node">
-                        <div className="relative z-10 py-2.5 px-5 bg-[#5B0F18] rounded-[calc(0.65rem-1.5px)]">
-                          <span className="text-xs font-mono tracking-[0.25em] font-extrabold uppercase block text-[#F8F1E7]">
-                            TELECALLING
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </SectionReveal>
-
-                  {/* Single Telecalling Group Card (Vignesh + Thenmozhi together) */}
-                  <div className="w-full relative pt-4">
-                    <SectionReveal delay={0.26}>
-                      <div className="relative flex flex-col items-center w-full">
-                        <div className="w-[2px] h-4 bg-[#5B0F18] -mt-4 mb-1" />
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
+              {/* 7 Team Members Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 relative z-10">
+                {TEAM_MEMBERS.map((member, idx) => {
+                  const isPaired = Boolean(member.name2);
+                  return (
+                    <SectionReveal key={member.id} delay={0.22 + idx * 0.03}>
+                      <div className="relative flex flex-col items-center">
+                        <div className="hidden lg:block w-[2px] h-4 bg-[#5B0F18] -mt-4 mb-1" />
+                        <div className="hidden lg:block w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
 
                         <div className="relative w-full rounded-2xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-sm p-1.5">
                           <div className="card-inset-light-team">
-                            <div className="inset-surface p-3.5 text-center flex flex-col justify-center min-h-[110px] relative overflow-hidden bg-arch-grid rounded-[calc(1rem-1.5px)]">
-                              <h4 className="text-xs font-display font-extrabold text-[#24191A] leading-snug">
-                                VIGNESH, 
+                            <div className="inset-surface p-3 text-center flex flex-col justify-center min-h-[110px] relative overflow-hidden bg-arch-grid rounded-[calc(1rem-1.5px)]">
+                              <h4
+                                className={`${
+                                  isPaired
+                                    ? "text-[14px] sm:text-[15.5px] lg:text-[17.5px]"
+                                    : "text-[15px] sm:text-[17px] lg:text-[19px]"
+                                } font-display font-medium text-[#24191A] leading-snug break-words`}
+                              >
+                                {member.name}
                               </h4>
-                              <h4 className="text-xs font-display font-extrabold text-[#24191A] mb-1 leading-snug">
-                                THENMOZHI
-                              </h4>
-                              <p className="text-[9px] font-mono text-[#5B0F18] font-bold uppercase tracking-wider leading-relaxed">
-                                TELECALLING
+                              {member.name2 && (
+                                <h4 className="text-[14px] sm:text-[15.5px] lg:text-[17.5px] font-display font-medium text-[#24191A] leading-snug break-words">
+                                  {member.name2}
+                                </h4>
+                              )}
+                              {!member.name2 && <div className="mb-0.5" />}
+                              <p className="text-[8.5px] sm:text-[9px] lg:text-[9.5px] font-sans text-[#5B0F18] font-medium uppercase tracking-wider leading-relaxed">
+                                {member.role}
                               </p>
                             </div>
                           </div>
                         </div>
                       </div>
                     </SectionReveal>
-                  </div>
-                </div>
-
+                  );
+                })}
               </div>
-            </div>
-          </div>
-
-          {/* RESPONSIVE MOBILE & TABLET LAYOUT (< lg screens) */}
-          <div className="lg:hidden w-full max-w-2xl mt-1.5">
-            
-            {/* Split Branching Horizontal Bar under Zainab */}
-            <div className="relative w-full pt-4 mb-6">
-              <div className="absolute top-0 left-[25%] right-[25%] h-[2px] bg-[#5B0F18]" />
-              <div className="absolute top-[-4px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#5B0F18] border-2 border-[#F8F1E7] z-10" />
-
-              <div className="grid grid-cols-2 gap-4 items-start">
-                
-                {/* 1. EXECUTION TEAM HEADER NODE */}
-                <div className="flex flex-col items-center">
-                  <div className="w-[2px] h-4 bg-[#5B0F18] -mt-4 mb-1" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
-
-                  <SectionReveal className="w-full mb-2" delay={0.20}>
-                    <div className="relative rounded-xl bg-[#5B0F18] border border-[#5B0F18] shadow-wine p-1 text-center">
-                      <div className="card-inset-light-node">
-                        <div className="relative z-10 py-2 px-2.5 bg-[#5B0F18] rounded-[calc(0.65rem-1.5px)]">
-                          <span className="text-[10px] sm:text-xs font-mono tracking-[0.15em] font-extrabold uppercase block text-[#F8F1E7]">
-                            EXECUTION TEAM
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </SectionReveal>
-                </div>
-
-                {/* 2. TELECALLING HEADER NODE */}
-                <div className="flex flex-col items-center">
-                  <div className="w-[2px] h-4 bg-[#5B0F18] -mt-4 mb-1" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
-
-                  <SectionReveal className="w-full mb-2" delay={0.24}>
-                    <div className="relative rounded-xl bg-[#5B0F18] border border-[#5B0F18] shadow-wine p-1 text-center">
-                      <div className="card-inset-light-node">
-                        <div className="relative z-10 py-2 px-2.5 bg-[#5B0F18] rounded-[calc(0.65rem-1.5px)]">
-                          <span className="text-[10px] sm:text-xs font-mono tracking-[0.15em] font-extrabold uppercase block text-[#F8F1E7]">
-                            TELECALLING
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </SectionReveal>
-                </div>
-
-              </div>
-            </div>
-
-            {/* Content Cards for Execution Team and Telecalling */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-              
-              {/* Execution Team Members: 6 Siblings */}
-              <div className="md:col-span-8 flex flex-col items-center w-full">
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
-                  {EXECUTION_TEAM.map((member, idx) => (
-                    <SectionReveal key={`m-${member.id}`} delay={0.22 + idx * 0.03} className="relative">
-                      <div className="relative w-full rounded-2xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-sm p-1.5">
-                        <div className="card-inset-light-team">
-                          <div className="inset-surface p-3 text-center flex flex-col justify-center min-h-[100px] relative overflow-hidden bg-arch-grid rounded-[calc(1rem-1.5px)]">
-                            <h4 className="text-xs font-display font-extrabold text-[#24191A] leading-snug">
-                              {member.name}
-                            </h4>
-                            {member.name2 && (
-                              <h4 className="text-xs font-display font-extrabold text-[#24191A] leading-snug">
-                                {member.name2}
-                              </h4>
-                            )}
-                            {!member.name2 && <div className="mb-0.5" />}
-                            <p className="text-[9px] font-mono text-[#5B0F18] font-bold uppercase tracking-wider leading-relaxed">
-                              {member.role}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </SectionReveal>
-                  ))}
-                </div>
-              </div>
-
-              {/* Telecalling Single Card */}
-              <div className="md:col-span-4 flex flex-col items-center w-full">
-                <SectionReveal delay={0.26} className="w-full">
-                  <div className="relative w-full rounded-2xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-sm p-1.5">
-                    <div className="card-inset-light-team">
-                      <div className="inset-surface p-4 text-center flex flex-col justify-center min-h-[100px] relative overflow-hidden bg-arch-grid rounded-[calc(1rem-1.5px)]">
-                        <h4 className="text-xs sm:text-sm font-display font-extrabold text-[#24191A] leading-snug">
-                          VIGNESH, 
-                        </h4>
-                        <h4 className="text-xs sm:text-sm font-display font-extrabold text-[#24191A] mb-1 leading-snug">
-                          THENMOZHI
-                        </h4>
-                        <p className="text-[9px] sm:text-[10px] font-mono text-[#5B0F18] font-bold uppercase tracking-wider leading-relaxed">
-                          TELECALLING
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </SectionReveal>
-              </div>
-
             </div>
 
           </div>

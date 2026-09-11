@@ -43,8 +43,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-outfit)", "Inter", "sans-serif"],
-        display: ["var(--font-outfit)", "Geist", "sans-serif"],
+        sans: ["var(--font-inter)", "Inter", "system-ui", "-apple-system", "sans-serif"],
+        display: ["var(--font-playfair)", "Playfair Display", "Georgia", "serif"],
+        serif: ["var(--font-playfair)", "Playfair Display", "Georgia", "serif"],
+        mono: ["var(--font-inter)", "Inter", "monospace"],
       },
       backgroundImage: {
         "hero-glow": "radial-gradient(ellipse at 50% 40%, rgba(91, 15, 24, 0.06) 0%, rgba(248, 241, 231, 0) 70%)",

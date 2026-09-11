@@ -30,13 +30,13 @@ export default function PortfolioPage() {
                 {/* Eyebrow */}
                 <div className="inline-flex items-center gap-3 mb-4 justify-center lg:justify-start">
                   <span className="w-6 h-[2px] bg-[#5B0F18]" />
-                  <span className="text-xs font-mono tracking-[0.25em] text-[#5B0F18] uppercase font-bold">
+                  <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase font-medium">
                     // CASE STUDIES & WORK
                   </span>
                 </div>
 
                 {/* Main Heading */}
-                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-[#24191A] tracking-tight leading-[1.08] mb-6">
+                <h1 className="text-[42px] sm:text-[62px] lg:text-[80px] xl:text-[84px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.08] mb-6">
                   PROOF OF EXCELLENCE <br />
                   <span className="text-[#5B0F18]">
                     ACROSS SECTORS.
@@ -44,7 +44,7 @@ export default function PortfolioPage() {
                 </h1>
 
                 {/* Supporting Description */}
-                <p className="text-[#6F6261] text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-sans leading-relaxed mb-8 font-medium">
+                <p className="text-[#6F6261] text-[16px] sm:text-[18px] lg:text-[19px] max-w-xl mx-auto lg:mx-0 font-sans leading-relaxed mb-8 font-normal">
                   Explore our strategic work across the UAE&apos;s luxury hospitality, interior design, corporate real estate, and specialized enterprise markets.
                 </p>
 
@@ -52,7 +52,7 @@ export default function PortfolioPage() {
                 <div className="flex items-center justify-center lg:justify-start">
                   <a
                     href="#portfolio-grid"
-                    className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#5B0F18] text-[#F8F1E7] font-mono text-xs font-bold tracking-wider hover:bg-[#430B12] shadow-wine transition-all"
+                    className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#5B0F18] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider hover:bg-[#430B12] shadow-wine transition-all"
                   >
                     <span>EXPLORE CASE STUDIES</span>
                     <ArrowDown className="w-4 h-4 text-[#F8F1E7]" />
@@ -80,15 +80,15 @@ export default function PortfolioPage() {
       {/* Page Bottom CTA */}
       <section className="py-20 bg-white border-t border-[#5B0F18]/12 text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-display font-extrabold text-[#24191A] mb-4">
+          <h2 className="text-[34px] sm:text-[42px] font-display font-semibold text-[#24191A] mb-4">
             HAVE A PROJECT THAT DEMANDS EXCELLENCE?
           </h2>
-          <p className="text-sm text-[#6F6261] mb-8 font-sans">
+          <p className="text-[15px] sm:text-[16px] lg:text-[17px] text-[#6F6261] mb-8 font-sans font-normal">
             Explore how Nine to Nine Hub can transform your brand&apos;s digital presence.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#5B0F18] text-[#F8F1E7] font-mono text-sm font-bold tracking-wider shadow-wine hover:bg-[#430B12] transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#5B0F18] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider shadow-wine hover:bg-[#430B12] transition-all"
           >
             <span>START A CASE STUDY DIALOGUE</span>
             <ArrowUpRight className="w-4 h-4" />

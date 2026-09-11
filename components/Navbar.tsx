@@ -70,8 +70,8 @@ export default function Navbar() {
                 <Link
                   key={item.path}
                   href={item.path}
-                  className={`relative px-4 py-1.5 text-xs tracking-widest font-mono uppercase transition-colors ${
-                    isActive ? "text-[#5B0F18] font-bold" : "text-[#24191A] hover:text-[#5B0F18]"
+                  className={`relative px-4 py-1.5 text-[12px] sm:text-[13px] lg:text-[14px] tracking-wide font-sans uppercase transition-colors ${
+                    isActive ? "text-[#5B0F18] font-semibold" : "text-[#24191A] font-medium hover:text-[#5B0F18]"
                   }`}
                 >
                   {item.name}
@@ -91,7 +91,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] text-xs font-mono font-bold tracking-wider shadow-[0_4px_14px_rgba(91,15,24,0.25)] transition-all duration-300 transform hover:-translate-y-0.5"
+              className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] text-[12px] sm:text-[13px] lg:text-[14px] font-sans font-semibold tracking-wider shadow-[0_4px_14px_rgba(91,15,24,0.25)] transition-all duration-300 transform hover:-translate-y-0.5"
             >
               <span>START A PROJECT</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -122,7 +122,7 @@ export default function Navbar() {
             <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
 
             <div className="flex flex-col gap-6 z-10">
-              <span className="text-xs font-mono tracking-widest text-[#5B0F18] uppercase font-bold">
+              <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase font-medium">
                 // NAVIGATION MENU
               </span>
               <div className="flex flex-col gap-4">
@@ -138,12 +138,12 @@ export default function Navbar() {
                       <Link
                         href={item.path}
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`text-3xl font-display font-extrabold tracking-tight flex items-center justify-between py-2 border-b border-[#5B0F18]/12 ${
+                        className={`text-[24px] sm:text-[28px] lg:text-[30px] font-display font-semibold tracking-tight flex items-center justify-between py-2 border-b border-[#5B0F18]/12 ${
                           isActive ? "text-[#5B0F18]" : "text-[#24191A] hover:text-[#5B0F18]"
                         }`}
                       >
                         <span>{item.name}</span>
-                        <span className="text-xs font-mono text-[#6F6261]">0{idx + 1}</span>
+                        <span className="text-[12px] sm:text-[13px] lg:text-[14px] font-sans text-[#6F6261]">0{idx + 1}</span>
                       </Link>
                     </motion.div>
                   );
@@ -155,12 +155,12 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-4 rounded-full bg-[#5B0F18] text-[#F8F1E7] text-center font-mono font-bold text-sm tracking-wider shadow-wine flex items-center justify-center gap-2"
+                className="w-full py-4 rounded-full bg-[#5B0F18] text-[#F8F1E7] text-center font-sans font-semibold text-[12px] sm:text-[13px] lg:text-[14px] tracking-wider shadow-wine flex items-center justify-center gap-2"
               >
                 <span>START A PROJECT</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
-              <div className="flex justify-between text-xs text-[#6F6261] font-mono pt-2">
+              <div className="flex justify-between text-[12px] sm:text-[13px] lg:text-[14px] text-[#6F6261] font-sans pt-2">
                 <span>UAE</span>
                 <span>{COMPANY_INFO.phone}</span>
               </div>

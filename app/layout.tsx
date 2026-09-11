@@ -1,10 +1,25 @@
 import type { Metadata } from "next";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Background3D from "@/components/Background3D";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Nine to Nine Hub | The Hub of Digital Growth",
@@ -52,8 +67,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="font-sans">
-      <body className="bg-[#F8F1E7] text-[#24191A] selection:bg-[#5B0F18] selection:text-[#F8F1E7] relative min-h-screen flex flex-col font-sans">
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+      <body className={`${playfair.variable} ${inter.variable} bg-[#F8F1E7] text-[#24191A] selection:bg-[#5B0F18] selection:text-[#F8F1E7] relative min-h-screen flex flex-col font-sans`}>
         <ScrollProgress />
         <CustomCursor />
         <Background3D />
