@@ -2,7 +2,11 @@
 
 const nextConfig = {
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
+  },
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion', '@react-three/drei'],
   },
 
   reactStrictMode: true,

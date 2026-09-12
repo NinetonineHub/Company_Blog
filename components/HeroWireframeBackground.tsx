@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 
 export default function HeroWireframeBackground() {
@@ -18,6 +16,7 @@ export default function HeroWireframeBackground() {
           backgroundImage: `url('/images/wireframe-hands.jpg')`,
           filter: "invert(1) sepia(1) hue-rotate(310deg) saturate(4) brightness(0.82)",
           backgroundPosition: "center center",
+          transform: "translateZ(0)",
         }}
       />
 

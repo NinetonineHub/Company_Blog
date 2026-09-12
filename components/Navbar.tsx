@@ -56,8 +56,10 @@ export default function Navbar() {
           {/* Logo Asset 9-9logo.png */}
           <Link href="/" className="group flex items-center gap-3 z-50">
             <img
-              src="/images/websites/9-9logo.png"
+              src="/images/websites/9-9logo.webp"
               alt="Nine to Nine Hub Logo"
+              width="140"
+              height="44"
               className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </Link>

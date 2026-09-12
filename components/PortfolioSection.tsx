@@ -98,6 +98,8 @@ export default function PortfolioSection() {
                   <img
                     src={project.image}
                     alt={project.altText}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                   />
                 </div>

@@ -295,6 +295,8 @@ export default function ServicesSection() {
                               <img
                                 src={logo.logoUrl}
                                 alt={`${logo.name} Logo`}
+                                loading="lazy"
+                                decoding="async"
                                 className="max-h-full max-w-full object-contain"
                               />
                             )}

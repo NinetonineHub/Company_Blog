@@ -154,6 +154,7 @@
     transparent 100%
   );
   animation: borderLightTravel 6s linear infinite;
+  will-change: transform;
   pointer-events: none;
   z-index: 1;
 }

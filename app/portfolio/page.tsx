@@ -1,10 +1,14 @@
-import React from "react";
+import dynamic from "next/dynamic";
 import PortfolioSection from "@/components/PortfolioSection";
 import SectionReveal from "@/components/SectionReveal";
 import HeroWireframeBackground from "@/components/HeroWireframeBackground";
-import PortfolioHero3DCanvas from "@/components/PortfolioHero3DCanvas";
 import Link from "next/link";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
+
+const PortfolioHero3DCanvas = dynamic(() => import("@/components/PortfolioHero3DCanvas"), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-transparent" />,
+});
 
 export const metadata = {
   title: "Portfolio & Case Studies | Nine to Nine Hub UAE",

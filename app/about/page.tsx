@@ -1,9 +1,13 @@
-import React from "react";
+import dynamic from "next/dynamic";
 import AboutSection from "@/components/AboutSection";
 import SectionReveal from "@/components/SectionReveal";
-import AboutHero3DCanvas from "@/components/AboutHero3DCanvas";
 import HeroWireframeBackground from "@/components/HeroWireframeBackground";
 import { ArrowDown } from "lucide-react";
+
+const AboutHero3DCanvas = dynamic(() => import("@/components/AboutHero3DCanvas"), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-transparent" />,
+});
 
 export const metadata = {
   title: "About Us | Nine to Nine Hub UAE",

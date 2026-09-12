@@ -24,8 +24,11 @@ export default function Footer() {
           <div className="md:col-span-5 space-y-4">
             <Link href="/" className="inline-block">
               <img
-                src="/images/websites/9-9logo.png"
+                src="/images/websites/9-9logo.webp"
                 alt="Nine to Nine Hub Logo"
+                loading="lazy"
+                width="140"
+                height="48"
                 className="h-12 w-auto object-contain brightness-0 invert"
               />
             </Link>

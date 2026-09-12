@@ -9,19 +9,19 @@ import { COMPANY_INFO } from "@/data/company";
 
 const CLIENT_LOGOS = [
   // Top Tier: Go Bus Tourism, Taza Meat Shop, Noor Altrhal
-  { id: "gobus", name: "Go Bus Tourism", logo: "/images/portfolio/logo (9).png", animClass: "animate-float-1", offset: "lg:-translate-y-3" },
-  { id: "tazameat", name: "Taza Meat Shop", logo: "/images/portfolio/logo (7).png", animClass: "animate-float-2", offset: "lg:translate-y-4" },
-  { id: "noor", name: "Noor Altrhal", logo: "/images/portfolio/logo (6).png", animClass: "animate-float-3", offset: "lg:-translate-y-2" },
+  { id: "gobus", name: "Go Bus Tourism", logo: "/images/portfolio/logo (9).webp", animClass: "animate-float-1", offset: "lg:-translate-y-3" },
+  { id: "tazameat", name: "Taza Meat Shop", logo: "/images/portfolio/logo (7).webp", animClass: "animate-float-2", offset: "lg:translate-y-4" },
+  { id: "noor", name: "Noor Altrhal", logo: "/images/portfolio/logo (6).webp", animClass: "animate-float-3", offset: "lg:-translate-y-2" },
   
   // Middle Tier: Taza Biryani, Curry Xpress (flanking Center Card)
-  { id: "tazabiryani", name: "Taza Biryani", logo: "/images/portfolio/logo (5).png", animClass: "animate-float-2", offset: "lg:translate-y-3" },
-  { id: "curryxpress", name: "Curry Xpress", logo: "/images/portfolio/logo (3).png", animClass: "animate-float-1", offset: "lg:-translate-y-4" },
+  { id: "tazabiryani", name: "Taza Biryani", logo: "/images/portfolio/logo (5).webp", animClass: "animate-float-2", offset: "lg:translate-y-3" },
+  { id: "curryxpress", name: "Curry Xpress", logo: "/images/portfolio/logo (3).webp", animClass: "animate-float-1", offset: "lg:-translate-y-4" },
   
   // Bottom Tier: BlueMoon, Beyond Numbers, Kanz Al Arab, Vasanta Bhavan
-  { id: "bluemoon", name: "BlueMoon", logo: "/images/portfolio/logo (2).png", animClass: "animate-float-3", offset: "lg:translate-y-2" },
-  { id: "beyond", name: "Beyond Numbers", logo: "/images/portfolio/logo (1).png", animClass: "animate-float-1", offset: "lg:-translate-y-2" },
-  { id: "kanz", name: "Kanz Al Arab", logo: "/images/portfolio/logo (4).png", animClass: "animate-float-2", offset: "lg:translate-y-4" },
-  { id: "vasanta", name: "Vasanta Bhavan", logo: "/images/portfolio/logo (8).png", animClass: "animate-float-3", offset: "lg:-translate-y-3" },
+  { id: "bluemoon", name: "BlueMoon", logo: "/images/portfolio/logo (2).webp", animClass: "animate-float-3", offset: "lg:translate-y-2" },
+  { id: "beyond", name: "Beyond Numbers", logo: "/images/portfolio/logo (1).webp", animClass: "animate-float-1", offset: "lg:-translate-y-2" },
+  { id: "kanz", name: "Kanz Al Arab", logo: "/images/portfolio/logo (4).webp", animClass: "animate-float-2", offset: "lg:translate-y-4" },
+  { id: "vasanta", name: "Vasanta Bhavan", logo: "/images/portfolio/logo (8).webp", animClass: "animate-float-3", offset: "lg:-translate-y-3" },
 ];
 
 export default function HomePage() {

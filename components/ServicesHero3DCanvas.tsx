@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Float, RoundedBox } from "@react-three/drei";
 import * as THREE from "three";
@@ -174,6 +174,24 @@ function MagicCubeCluster({ mousePos }: { mousePos: React.MutableRefObject<{ x: 
     masterGroupRef.current.rotation.z += (targetRotZ - masterGroupRef.current.rotation.z) * 0.05;
   });
 
+  useEffect(() => {
+    return () => {
+      if (masterGroupRef.current) {
+        masterGroupRef.current.traverse((child) => {
+          if ((child as THREE.Mesh).isMesh) {
+            const mesh = child as THREE.Mesh;
+            mesh.geometry?.dispose();
+            if (Array.isArray(mesh.material)) {
+              mesh.material.forEach((m) => m.dispose());
+            } else if (mesh.material) {
+              mesh.material.dispose();
+            }
+          }
+        });
+      }
+    };
+  }, []);
+
   return (
     <group ref={masterGroupRef} position={[0, 0, 0]} scale={1.85}>
       {CUBES_DATA.map((cube, idx) => (
@@ -267,6 +285,23 @@ function ResponsiveCameraFitter() {
 
 export default function ServicesHero3DCanvas({ className = "" }: ServicesHero3DCanvasProps) {
   const mousePos = useRef({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -281,13 +316,22 @@ export default function ServicesHero3DCanvas({ className = "" }: ServicesHero3DC
 
   return (
     <div
+      ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={`relative w-full h-full bg-transparent flex items-center justify-center cursor-grab active:cursor-grabbing pointer-events-auto select-none ${className}`}
     >
       <Canvas
         camera={{ position: [0, 0, 8.5], fov: 40 }}
-        gl={{ antialias: true, alpha: true }}
+        dpr={[1, 1.5]}
+        frameloop={isVisible ? "always" : "never"}
+        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        onCreated={({ gl }) => {
+          const handleContextLost = (event: Event) => {
+            event.preventDefault();
+          };
+          gl.domElement.addEventListener("webglcontextlost", handleContextLost, false);
+        }}
         className="w-full h-full relative z-10"
       >
         <ResponsiveCameraFitter />

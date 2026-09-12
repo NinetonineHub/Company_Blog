@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import SectionReveal from "./SectionReveal";
 import { TEAM_MEMBERS } from "@/data/team";

@@ -9,10 +9,11 @@ export default function Background3D() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
     let animationFrameId: number;
+    let isRunning = true;
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
@@ -22,10 +23,18 @@ export default function Background3D() {
       height = canvas.height = window.innerHeight;
     };
 
-    window.addEventListener("resize", handleResize);
+    const handleVisibilityChange = () => {
+      isRunning = !document.hidden;
+      if (isRunning) {
+        render();
+      }
+    };
 
-    // Particle system configuration
-    const particleCount = Math.min(Math.floor(width / 20), 60);
+    window.addEventListener("resize", handleResize, { passive: true });
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // Optimized light particle system
+    const particleCount = 24;
     const particles: Array<{
       x: number;
       y: number;
@@ -40,10 +49,10 @@ export default function Background3D() {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        size: Math.random() * 1.8 + 0.5,
-        speedX: (Math.random() - 0.5) * 0.3,
-        speedY: (Math.random() - 0.5) * 0.3,
-        alpha: Math.random() * 0.5 + 0.1,
+        size: Math.random() * 1.5 + 0.8,
+        speedX: (Math.random() - 0.5) * 0.25,
+        speedY: (Math.random() - 0.5) * 0.25,
+        alpha: Math.random() * 0.4 + 0.1,
         pulseSpeed: Math.random() * 0.02 + 0.005,
       });
     }
@@ -51,29 +60,11 @@ export default function Background3D() {
     let frame = 0;
 
     const render = () => {
+      if (!isRunning) return;
       frame++;
       ctx.clearRect(0, 0, width, height);
 
-      // Subtle atmospheric grid
-      ctx.strokeStyle = "rgba(91, 15, 24, 0.03)";
-      ctx.lineWidth = 1;
-      const gridSize = 80;
-
-      for (let x = 0; x < width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
-        ctx.stroke();
-      }
-
-      for (let y = 0; y < height; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(width, y);
-        ctx.stroke();
-      }
-
-      // Draw and update ambient floating digital particles
+      // Fast, lightweight particle draw without shadowBlur
       particles.forEach((p) => {
         p.x += p.speedX;
         p.y += p.speedY;
@@ -84,15 +75,12 @@ export default function Background3D() {
         if (p.y > height) p.y = 0;
 
         p.alpha += Math.sin(frame * p.pulseSpeed) * 0.003;
-        const currentAlpha = Math.max(0.04, Math.min(0.4, p.alpha));
+        const currentAlpha = Math.max(0.05, Math.min(0.35, p.alpha));
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(91, 15, 24, ${currentAlpha})`;
-        ctx.shadowBlur = p.size * 4;
-        ctx.shadowColor = "rgba(91, 15, 24, 0.4)";
         ctx.fill();
-        ctx.shadowBlur = 0; // Reset shadow for efficiency
       });
 
       animationFrameId = requestAnimationFrame(render);
@@ -101,7 +89,9 @@ export default function Background3D() {
     render();
 
     return () => {
+      isRunning = false;
       window.removeEventListener("resize", handleResize);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -109,7 +99,7 @@ export default function Background3D() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-[0] opacity-70"
+      className="fixed inset-0 pointer-events-none z-[0] opacity-60 bg-tech-grid"
     />
   );
 }

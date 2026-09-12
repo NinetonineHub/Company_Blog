@@ -1,11 +1,15 @@
-import React from "react";
+import dynamic from "next/dynamic";
 import ServicesSection from "@/components/ServicesSection";
 import GrowthPackagesSection from "@/components/GrowthPackagesSection";
 import SectionReveal from "@/components/SectionReveal";
 import HeroWireframeBackground from "@/components/HeroWireframeBackground";
-import ServicesHero3DCanvas from "@/components/ServicesHero3DCanvas";
 import Link from "next/link";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
+
+const ServicesHero3DCanvas = dynamic(() => import("@/components/ServicesHero3DCanvas"), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-transparent" />,
+});
 
 export const metadata = {
   title: "Services & Growth Packages | Nine to Nine Hub UAE",

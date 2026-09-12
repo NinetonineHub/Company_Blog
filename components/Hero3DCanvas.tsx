@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, MeshDistortMaterial, Environment } from "@react-three/drei";
+import { Float, MeshDistortMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
 interface Hero3DCanvasProps {
@@ -44,6 +44,24 @@ function DigitalGrowthCore({ mousePos }: { mousePos: React.MutableRefObject<{ x:
       temp.push({ x, y, z, scale, isCream });
     }
     return temp;
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (mainGroupRef.current) {
+        mainGroupRef.current.traverse((child) => {
+          if ((child as THREE.Mesh).isMesh) {
+            const mesh = child as THREE.Mesh;
+            mesh.geometry?.dispose();
+            if (Array.isArray(mesh.material)) {
+              mesh.material.forEach((m) => m.dispose());
+            } else if (mesh.material) {
+              mesh.material.dispose();
+            }
+          }
+        });
+      }
+    };
   }, []);
 
   useFrame((state, delta) => {
@@ -216,6 +234,23 @@ function DigitalGrowthCore({ mousePos }: { mousePos: React.MutableRefObject<{ x:
 
 export default function Hero3DCanvas({ className = "" }: Hero3DCanvasProps) {
   const mousePos = useRef({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -230,6 +265,7 @@ export default function Hero3DCanvas({ className = "" }: Hero3DCanvasProps) {
 
   return (
     <div
+      ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={`relative w-full bg-transparent flex items-center justify-center cursor-grab active:cursor-grabbing pointer-events-auto ${className}`}
@@ -237,13 +273,22 @@ export default function Hero3DCanvas({ className = "" }: Hero3DCanvasProps) {
       {/* 3D WebGL Canvas — Medium Composition Camera Framing */}
       <Canvas
         camera={{ position: [0, 0, 10.5], fov: 42 }}
-        gl={{ antialias: true, alpha: true }}
+        dpr={[1, 1.5]}
+        frameloop={isVisible ? "always" : "never"}
+        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        onCreated={({ gl }) => {
+          const handleContextLost = (event: Event) => {
+            event.preventDefault();
+          };
+          gl.domElement.addEventListener("webglcontextlost", handleContextLost, false);
+        }}
         className="w-full h-full relative z-10"
       >
         {/* Studio Lighting Setup */}
-        <ambientLight intensity={0.8} />
-        <directionalLight position={[12, 12, 8]} intensity={1.7} color="#FFFFFF" />
-        <directionalLight position={[-12, -10, -6]} intensity={0.65} color="#5B0F18" />
+        <ambientLight intensity={0.85} />
+        <directionalLight position={[12, 12, 8]} intensity={1.8} color="#FFFFFF" />
+        <directionalLight position={[-12, -10, -6]} intensity={0.75} color="#5B0F18" />
+        <directionalLight position={[0, 10, -5]} intensity={0.9} color="#F8F1E7" />
         <pointLight position={[0, 0, 5]} intensity={1.5} color="#F8F1E7" />
         <pointLight position={[4, -3, -2]} intensity={1.2} color="#5B0F18" />
 
@@ -251,9 +296,6 @@ export default function Hero3DCanvas({ className = "" }: Hero3DCanvasProps) {
         <Float speed={1.6} rotationIntensity={0.2} floatIntensity={0.35}>
           <DigitalGrowthCore mousePos={mousePos} />
         </Float>
-
-        {/* Realistic Studio Reflection */}
-        <Environment preset="city" />
       </Canvas>
     </div>
   );

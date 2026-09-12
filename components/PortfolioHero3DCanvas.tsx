@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Float, useTexture } from "@react-three/drei";
 import * as THREE from "three";
@@ -20,7 +20,7 @@ function ImageBasedDigitalEarth({ mousePos }: { mousePos: React.MutableRefObject
   const assemblyFactor = useRef(0);
 
   // Load Saved Transparent Earth Image Asset
-  const earthTexture = useTexture("/images/websites/earth.png");
+  const earthTexture = useTexture("/images/websites/earth.webp");
 
   // Nine to Nine Hub Brand Colors
   const creamColor = useMemo(() => new THREE.Color("#F8F1E7"), []);
@@ -139,6 +139,24 @@ function ImageBasedDigitalEarth({ mousePos }: { mousePos: React.MutableRefObject
     }
   });
 
+  useEffect(() => {
+    return () => {
+      if (masterGroupRef.current) {
+        masterGroupRef.current.traverse((child) => {
+          if ((child as THREE.Mesh).isMesh) {
+            const mesh = child as THREE.Mesh;
+            mesh.geometry?.dispose();
+            if (Array.isArray(mesh.material)) {
+              mesh.material.forEach((m) => m.dispose());
+            } else if (mesh.material) {
+              mesh.material.dispose();
+            }
+          }
+        });
+      }
+    };
+  }, []);
+
   return (
     <group ref={masterGroupRef}>
 
@@ -220,6 +238,23 @@ function ResponsiveCameraFitter() {
 
 export default function PortfolioHero3DCanvas({ className = "" }: PortfolioHero3DCanvasProps) {
   const mousePos = useRef({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -234,13 +269,22 @@ export default function PortfolioHero3DCanvas({ className = "" }: PortfolioHero3
 
   return (
     <div
+      ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={`relative w-full h-full bg-transparent flex items-center justify-center cursor-grab active:cursor-grabbing pointer-events-auto select-none ${className}`}
     >
       <Canvas
         camera={{ position: [0, 0, 8.5], fov: 40 }}
-        gl={{ antialias: true, alpha: true }}
+        dpr={[1, 1.5]}
+        frameloop={isVisible ? "always" : "never"}
+        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        onCreated={({ gl }) => {
+          const handleContextLost = (event: Event) => {
+            event.preventDefault();
+          };
+          gl.domElement.addEventListener("webglcontextlost", handleContextLost, false);
+        }}
         className="w-full h-full relative z-10"
       >
         <ResponsiveCameraFitter />

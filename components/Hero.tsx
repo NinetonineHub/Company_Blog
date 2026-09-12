@@ -2,9 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import Hero3DCanvas from "./Hero3DCanvas";
+
+const Hero3DCanvas = dynamic(() => import("./Hero3DCanvas"), {
+  ssr: false,
+  loading: () => <div className="h-[420px] sm:h-[540px] lg:h-[640px] max-w-5xl mx-auto px-4 bg-transparent" />,
+});
 
 export default function Hero() {
   return (
