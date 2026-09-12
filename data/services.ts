@@ -42,8 +42,7 @@ export const SERVICES_DATA: Service[] = [
       { name: "Kanz Al Arab", scope: ["Social Media Management", "Posters & Carousels"] },
       { name: "Noor Altrhal", scope: ["Social Media Management", "Posters & Carousels"] },
       { name: "Beyond Numbers", scope: ["Social Media Management", "Posters & Carousels"] },
-      { name: "BlueMoon", scope: ["Social Media Management", "Posters & Carousels"] },
-      { name: "Vasanta Bhavan", scope: ["Posters & Carousels"] }
+      { name: "BlueMoon", scope: ["Social Media Management", "Posters & Carousels"] }
     ]
   },
   {
@@ -108,11 +107,6 @@ export const SERVICES_DATA: Service[] = [
         name: "Curry Xpress",
         scope: ["Video Production"],
         driveUrl: "https://drive.google.com/drive/folders/168S8_ZVf7VbReVCWfb-rANMUCGACJFYv?usp=drive_link"
-      },
-      {
-        name: "Vasanta Bhavan",
-        scope: ["Video Production"],
-        driveUrl: "https://drive.google.com/drive/folders/1EM13L49ObyuIk8cBHlwwAtTHufQnn2kB?usp=drive_link"
       },
       {
         name: "Noor Altrhal",

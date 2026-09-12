@@ -13,7 +13,7 @@ const SALES_EXECUTIVES = [
 // Unified Team Data (All execution and telecalling members together in ONE team structure)
 const TEAM_MEMBERS = [
   { id: "manosree", name: "MANOSREE", role: "DIGITAL MARKETING EXECUTIVE" },
-  { id: "varshii", name: "VARSHII", role: "WEBPAGE DESIGNER" },
+  { id: "varshini", name: "VARSHINI", role: "WEBPAGE DESIGNER" },
   { id: "yadhu", name: "YADHU", role: "SEO SPECIALIST" },
   { id: "kaviyaras", name: "KAVIYARAS", role: "VIDEO EDITOR" },
   { id: "somya", name: "SOMYA", role: "SENIOR VIDEO EDITOR" },
@@ -53,7 +53,7 @@ export default function OrgChartSection() {
         {/* ORGANIZATIONAL FLOWCHART CONTAINER */}
         <div className="flex flex-col items-center">
           
-          {/* LEVEL 1 — RIAS (Clean Static Outer Glass Card + INSET Running Line) */}
+          {/* LEVEL 1 — RIAS (Top Leadership Node) */}
           <SectionReveal className="w-full max-w-2xl">
             <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2.5">
               {/* INSET RUNNING GRADIENT LINE FRAME */}
@@ -80,45 +80,73 @@ export default function OrgChartSection() {
             </div>
           </SectionReveal>
 
-          {/* STATIC CONNECTOR 1 -> LEVEL 2 (RIAS TO BRANCH BAR) */}
+          {/* CONNECTOR 1 -> LEVEL 2 (RIAS TO KHISHORE) */}
           <div className="flex flex-col items-center my-1.5">
             <div className="w-[2px] h-7 bg-[#5B0F18]" />
             <div className="w-2.5 h-2.5 rounded-full bg-[#5B0F18] border-2 border-[#F8F1E7]" />
           </div>
 
-          {/* LEVEL 2 — NANDHAKHISHORE + SALES EXECUTIVES (SAME HORIZONTAL LINE) */}
+          {/* LEVEL 2 — KHISHORE (Directly below RIAS) */}
+          <SectionReveal className="w-full max-w-2xl" delay={0.06}>
+            <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2.5">
+              <div className="card-inset-light-lead">
+                <div className="inset-surface p-7 sm:p-9 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.25rem-1.8px)]">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-4">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#5B0F18]" />
+                    // EXECUTIVE DIRECTION
+                  </div>
+
+                  <h3 className="text-[26px] sm:text-[30px] lg:text-[36px] font-display font-medium text-[#24191A] mb-2 tracking-tight">
+                    KHISHORE
+                  </h3>
+
+                  <p className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-4">
+                    OPERATIONS DIRECTOR
+                  </p>
+
+                  <p className="text-[15px] sm:text-[16px] lg:text-[17px] text-[#6F6261] font-sans leading-relaxed font-normal max-w-xl mx-auto">
+                    As the Operations Director of ninetoninehub, Khishore leads daily operations, client relationships, and execution teams. His hands-on leadership ensures high-quality delivery, strong partnerships, and business growth across Dubai and the GCC.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SectionReveal>
+
+          {/* CONNECTOR 2 -> LEVEL 3 (KHISHORE TO ZAINAB + SALES EXECUTIVES) */}
+          <div className="flex flex-col items-center my-1.5">
+            <div className="w-[2px] h-7 bg-[#5B0F18]" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[#5B0F18] border-2 border-[#F8F1E7]" />
+          </div>
+
+          {/* LEVEL 3 — ZAINAB + SALES EXECUTIVES (SAME HORIZONTAL LEVEL) */}
           <div className="w-full max-w-5xl relative">
-            {/* Split Branching Horizontal Bar under RIAS */}
+            {/* Split Branching Horizontal Bar under KHISHORE */}
             <div className="relative w-full pt-4 mb-2">
               <div className="hidden md:block absolute top-0 left-[25%] right-[25%] h-[2px] bg-[#5B0F18]" />
               <div className="hidden md:block absolute top-[-4px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#5B0F18] border-2 border-[#F8F1E7] z-10" />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch w-full">
                 
-                {/* LEFT SIBLING: NANDHAKHISHORE */}
-                <div className="flex flex-col items-center w-full">
+                {/* LEFT SIBLING: ZAINAB */}
+                <div className="flex flex-col items-center w-full h-full">
                   <div className="hidden md:block w-[2px] h-4 bg-[#5B0F18] -mt-4 mb-1" />
                   <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
 
-                  <SectionReveal className="w-full h-full" delay={0.08}>
-                    <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2.5 h-full">
-                      <div className="card-inset-light-lead h-full">
-                        <div className="inset-surface p-6 sm:p-7 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.25rem-1.8px)] h-full flex flex-col items-center justify-center">
-                          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-2.5">
+                  <SectionReveal className="w-full h-full" delay={0.10}>
+                    <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2.5 h-full flex flex-col">
+                      <div className="card-inset-light-med h-full flex flex-col flex-1">
+                        <div className="inset-surface p-6 sm:p-7 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.25rem-1.8px)] h-full flex flex-col items-center justify-center flex-1">
+                          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-3">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#5B0F18]" />
-                            // EXECUTIVE DIRECTION
+                            // ADMINISTRATION
                           </div>
 
-                          <h3 className="text-[26px] sm:text-[30px] lg:text-[36px] font-display font-medium text-[#24191A] mb-1 tracking-tight">
-                            NANDHAKHISHORE
+                          <h3 className="text-[26px] sm:text-[30px] lg:text-[36px] font-display font-medium text-[#24191A] mb-1.5 tracking-tight">
+                            ZAINAB
                           </h3>
 
-                          <p className="text-[11px] sm:text-[12px] lg:text-[13px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-3">
-                            FOUNDER &amp; OPERATIONS DIRECTOR
-                          </p>
-
-                          <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#6F6261] font-sans leading-relaxed font-normal max-w-xl mx-auto">
-                            As the Founder and Operations Director of ninetoninehub, Nandhakhishore leads daily operations, client relationships, and execution teams. His hands-on leadership ensures high-quality delivery, strong partnerships, and business growth across Dubai and the GCC.
+                          <p className="text-[11px] sm:text-[12px] lg:text-[13px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest">
+                            ADMIN
                           </p>
                         </div>
                       </div>
@@ -127,35 +155,32 @@ export default function OrgChartSection() {
                 </div>
 
                 {/* RIGHT SIBLING: SALES EXECUTIVES GROUP */}
-                <div className="flex flex-col items-center w-full">
+                <div className="flex flex-col items-center w-full h-full">
                   <div className="hidden md:block w-[2px] h-4 bg-[#5B0F18] -mt-4 mb-1" />
                   <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
 
-                  <SectionReveal className="w-full h-full" delay={0.12}>
-                    <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2.5 h-full">
-                      <div className="card-inset-light-lead h-full">
-                        <div className="inset-surface p-6 sm:p-7 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.25rem-1.8px)] h-full flex flex-col items-center justify-center">
-                          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-2.5">
+                  <SectionReveal className="w-full h-full" delay={0.14}>
+                    <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2.5 h-full flex flex-col">
+                      <div className="card-inset-light-lead h-full flex flex-col flex-1">
+                        <div className="inset-surface p-6 sm:p-7 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.25rem-1.8px)] h-full flex flex-col items-center justify-center flex-1">
+                          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-3">
                             // SALES EXECUTIVES
                           </div>
 
-                          <h3 className="text-[26px] sm:text-[30px] lg:text-[36px] font-display font-medium text-[#24191A] mb-3 tracking-tight">
+                          <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-medium text-[#24191A] mb-3.5 tracking-tight">
                             SALES EXECUTIVES
                           </h3>
 
-                          {/* 3 Grouped Members (ARASU, ATHUL, MITHUN) — Centered & Balanced on Same Row */}
+                          {/* 3 Grouped Members (ARASU, ATHUL, MITHUN) — Names Only */}
                           <div className="grid grid-cols-3 gap-2.5 sm:gap-3 w-full">
                             {SALES_EXECUTIVES.map((member) => (
                               <div
                                 key={member.id}
-                                className="relative rounded-2xl bg-[#F8F1E7]/90 border border-[#5B0F18]/15 p-3.5 sm:p-4 text-center transition-all duration-300 hover:border-[#5B0F18]/40 hover:shadow-xs flex flex-col justify-center items-center min-h-[90px] sm:min-h-[105px]"
+                                className="relative rounded-xl sm:rounded-2xl bg-[#F8F1E7]/90 border border-[#5B0F18]/15 py-3 px-2 sm:py-3.5 text-center transition-all duration-300 hover:border-[#5B0F18]/40 hover:shadow-xs flex items-center justify-center min-h-[58px] sm:min-h-[66px]"
                               >
-                                <h4 className="text-[16px] sm:text-[18px] lg:text-[21px] font-display font-medium text-[#24191A] leading-tight">
+                                <h4 className="text-[18px] sm:text-[21px] lg:text-[23px] font-display font-medium text-[#24191A] leading-tight">
                                   {member.name}
                                 </h4>
-                                <p className="text-[8.5px] sm:text-[9px] lg:text-[9.5px] font-sans text-[#5B0F18] font-medium uppercase tracking-wider mt-1 leading-snug">
-                                  {member.role}
-                                </p>
                               </div>
                             ))}
                           </div>
@@ -167,41 +192,14 @@ export default function OrgChartSection() {
 
               </div>
 
-              {/* Joining Horizontal Bar below Level 2 connecting to Zainab */}
+              {/* Joining Horizontal Bar below Level 3 connecting ZAINAB + SALES EXECUTIVES down to TEAM */}
               <div className="hidden md:block absolute bottom-0 left-[25%] right-[25%] h-[2px] bg-[#5B0F18] translate-y-2" />
               <div className="hidden md:block absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#5B0F18] border-2 border-[#F8F1E7] z-10 translate-y-2" />
             </div>
           </div>
 
-          {/* STATIC CONNECTOR LEVEL 2 -> ZAINAB */}
+          {/* CONNECTOR LEVEL 3 -> LEVEL 4 (ZAINAB + SALES EXECUTIVES TO TEAM) */}
           <div className="flex flex-col items-center mt-4 mb-1.5">
-            <div className="w-[2px] h-9 bg-[#5B0F18]" />
-            <div className="w-2 h-2 rotate-45 border-r-2 border-b-2 border-[#5B0F18] -mt-1.5" />
-          </div>
-
-          {/* LEVEL 3 — ZAINAB */}
-          <SectionReveal className="w-full max-w-md" delay={0.16}>
-            <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2">
-              <div className="card-inset-light-med">
-                <div className="inset-surface p-5 sm:p-6 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.15rem-1.5px)]">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-2">
-                    // ADMINISTRATION
-                  </div>
-
-                  <h3 className="text-[24px] sm:text-[28px] lg:text-[34px] font-display font-medium text-[#24191A] mb-1">
-                    ZAINAB
-                  </h3>
-
-                  <p className="text-[11px] sm:text-[12px] lg:text-[13px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest">
-                    ADMIN
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SectionReveal>
-
-          {/* STATIC CONNECTOR ZAINAB -> TEAM NODE */}
-          <div className="flex flex-col items-center my-1.5">
             <div className="w-[2px] h-9 bg-[#5B0F18]" />
             <div className="w-2 h-2 rotate-45 border-r-2 border-b-2 border-[#5B0F18] -mt-1.5" />
           </div>
@@ -210,7 +208,7 @@ export default function OrgChartSection() {
           <div className="w-full max-w-6xl flex flex-col items-center">
             
             {/* SINGLE TEAM HEADER NODE */}
-            <SectionReveal className="w-full max-w-xs mb-4 text-center" delay={0.20}>
+            <SectionReveal className="w-full max-w-xs mb-4 text-center" delay={0.18}>
               <div className="relative rounded-xl bg-[#5B0F18] border border-[#5B0F18] shadow-wine p-1 text-center">
                 <div className="card-inset-light-node">
                   <div className="relative z-10 py-2.5 px-6 bg-[#5B0F18] rounded-[calc(0.65rem-1.5px)]">
@@ -232,7 +230,7 @@ export default function OrgChartSection() {
                 {TEAM_MEMBERS.map((member, idx) => {
                   const isPaired = Boolean(member.name2);
                   return (
-                    <SectionReveal key={member.id} delay={0.22 + idx * 0.03}>
+                    <SectionReveal key={member.id} delay={0.20 + idx * 0.03}>
                       <div className="relative flex flex-col items-center">
                         <div className="hidden lg:block w-[2px] h-4 bg-[#5B0F18] -mt-4 mb-1" />
                         <div className="hidden lg:block w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
@@ -276,4 +274,5 @@ export default function OrgChartSection() {
     </section>
   );
 }
+
 

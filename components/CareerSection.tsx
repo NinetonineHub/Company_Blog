@@ -22,6 +22,7 @@ export default function CareerSection() {
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Active roles based on selected location filter toggle
   const activeRoles = activeLocation === "India" ? INDIA_ROLES : UAE_ROLES;
@@ -64,6 +65,9 @@ export default function CareerSection() {
     if (formErrors[name]) {
       setFormErrors((prev) => ({ ...prev, [name]: "" }));
     }
+    if (submitError) {
+      setSubmitError(null);
+    }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -78,6 +82,9 @@ export default function CareerSection() {
       setResumeFile(file);
       if (formErrors.resume) {
         setFormErrors((prev) => ({ ...prev, resume: "" }));
+      }
+      if (submitError) {
+        setSubmitError(null);
       }
     }
   };
@@ -111,15 +118,48 @@ export default function CareerSection() {
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "career",
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          location: formLocation,
+          position: formPosition,
+          resume: resumeFile ? resumeFile.name : "Attached File",
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setIsSubmitted(true);
+      } else {
+        setSubmitError(
+          result.error ||
+            "Something went wrong while submitting your application. Please try again or contact info@ninetoninehub.com directly."
+        );
+      }
+    } catch (err) {
+      setSubmitError(
+        "Something went wrong while submitting your application. Please try again or contact info@ninetoninehub.com directly."
+      );
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1200);
+    }
   };
 
   return (
@@ -290,6 +330,14 @@ export default function CareerSection() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   
+                  {/* Error Banner if submission fails */}
+                  {submitError && (
+                    <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-sans flex items-start gap-3">
+                      <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                      <span>{submitError}</span>
+                    </div>
+                  )}
+
                   {/* Full Name & Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
