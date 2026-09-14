@@ -34,6 +34,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on pathname change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
   // Prevent scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -41,20 +46,23 @@ export default function Navbar() {
     } else {
       document.body.style.overflow = "unset";
     }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [mobileMenuOpen]);
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 w-full max-w-[100vw] z-50 transition-all duration-500 ${
           scrolled
             ? "py-3 bg-[#F8F1E7]/90 backdrop-blur-xl border-b border-[#5B0F18]/12 shadow-[0_4px_20px_rgba(91,15,24,0.06)]"
             : "py-5 bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo Asset 9-9logo.png */}
-          <Link href="/" className="group flex items-center gap-3 z-50">
+          <Link href="/" className="group flex items-center gap-3 z-50 shrink-0">
             <img
               src="/images/websites/9-9logo.webp"
               alt="Nine to Nine Hub Logo"
@@ -90,7 +98,7 @@ export default function Navbar() {
           </nav>
 
           {/* CTA & Mobile Menu Button */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
             <Link
               href="/contact"
               className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] text-[12px] sm:text-[13px] lg:text-[14px] font-sans font-semibold tracking-wider shadow-[0_4px_14px_rgba(91,15,24,0.25)] transition-all duration-300 transform hover:-translate-y-0.5"
@@ -101,10 +109,11 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle navigation menu"
-              className="md:hidden w-10 h-10 rounded-full bg-[#FCF9F5] border border-[#5B0F18]/15 flex items-center justify-center text-[#24191A] z-50 hover:border-[#5B0F18] transition-colors"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+              className="md:hidden shrink-0 w-11 h-11 rounded-full bg-[#FCF9F5] border border-[#5B0F18]/25 shadow-sm flex items-center justify-center text-[#5B0F18] z-50 hover:bg-[#5B0F18] hover:text-[#F8F1E7] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#5B0F18]/30"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-[#5B0F18]" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -118,7 +127,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-40 bg-[#F8F1E7]/98 backdrop-blur-2xl md:hidden flex flex-col justify-between p-8 pt-28"
+            className="fixed inset-0 z-40 bg-[#F8F1E7]/98 backdrop-blur-2xl md:hidden flex flex-col justify-between p-8 pt-28 overflow-y-auto"
           >
             {/* Background grid */}
             <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />

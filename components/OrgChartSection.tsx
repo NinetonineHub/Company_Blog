@@ -3,14 +3,15 @@
 import React from "react";
 import SectionReveal from "./SectionReveal";
 
-// Sales Executives Team Data
+// Sales Executives Team Data (2x2 Grid — 4 Members, Names Only)
 const SALES_EXECUTIVES = [
-  { id: "arasu-sales", name: "ARASU", role: "SALES EXECUTIVE" },
-  { id: "athul-sales", name: "ATHUL", role: "SALES EXECUTIVE" },
-  { id: "mithun-sales", name: "MITHUN", role: "SALES EXECUTIVE" },
+  { id: "farzan-sales", name: "FARZAN" },
+  { id: "arasu-sales", name: "ARASU" },
+  { id: "athul-sales", name: "ATHUL" },
+  { id: "mithun-sales", name: "MITHUN" },
 ];
 
-// Unified Team Data (All execution and telecalling members together in ONE team structure)
+// All 9 Team Members in 1 Single Horizontal Row
 const TEAM_MEMBERS = [
   { id: "manosree", name: "MANOSREE", role: "DIGITAL MARKETING EXECUTIVE" },
   { id: "varshini", name: "VARSHINI", role: "WEBPAGE DESIGNER" },
@@ -19,6 +20,8 @@ const TEAM_MEMBERS = [
   { id: "somya", name: "SOMYA", role: "SENIOR VIDEO EDITOR" },
   { id: "ganesh-pranesh", name: "GANESH,", name2: "PRANESH", role: "WEB DEVELOPMENT" },
   { id: "vignesh-thenmozhi", name: "VIGNESH,", name2: "THENMOZHI", role: "TELECALLING" },
+  { id: "shiyama", name: "SHIYAMA", role: "GRAPHIC DESIGNER" },
+  { id: "kamaraj", name: "KAMARAJ", role: "TESTING" },
 ];
 
 export default function OrgChartSection() {
@@ -162,23 +165,23 @@ export default function OrgChartSection() {
                   <SectionReveal className="w-full h-full" delay={0.14}>
                     <div className="relative rounded-3xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-soft-card p-2 sm:p-2.5 h-full flex flex-col">
                       <div className="card-inset-light-lead h-full flex flex-col flex-1">
-                        <div className="inset-surface p-6 sm:p-7 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.25rem-1.8px)] h-full flex flex-col items-center justify-center flex-1">
+                        <div className="inset-surface p-5 sm:p-6 text-center relative overflow-hidden bg-arch-grid rounded-[calc(1.25rem-1.8px)] h-full flex flex-col items-center justify-center flex-1">
                           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#5B0F18]/8 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium uppercase tracking-widest mb-3">
                             // SALES EXECUTIVES
                           </div>
 
-                          <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-medium text-[#24191A] mb-3.5 tracking-tight">
+                          <h3 className="text-[22px] sm:text-[25px] lg:text-[28px] font-display font-medium text-[#24191A] mb-3 tracking-tight">
                             SALES EXECUTIVES
                           </h3>
 
-                          {/* 3 Grouped Members (ARASU, ATHUL, MITHUN) — Names Only */}
-                          <div className="grid grid-cols-3 gap-2.5 sm:gap-3 w-full">
+                          {/* 4 Grouped Members (FARZAN, ARASU, ATHUL, MITHUN) in 2 x 2 Grid — Compact & Elegant */}
+                          <div className="grid grid-cols-2 gap-2.5 sm:gap-3 w-full">
                             {SALES_EXECUTIVES.map((member) => (
                               <div
                                 key={member.id}
-                                className="relative rounded-xl sm:rounded-2xl bg-[#F8F1E7]/90 border border-[#5B0F18]/15 py-3 px-2 sm:py-3.5 text-center transition-all duration-300 hover:border-[#5B0F18]/40 hover:shadow-xs flex items-center justify-center min-h-[58px] sm:min-h-[66px]"
+                                className="relative rounded-xl sm:rounded-2xl bg-[#F8F1E7]/90 border border-[#5B0F18]/15 py-2 px-2 sm:py-2.5 text-center transition-all duration-300 hover:border-[#5B0F18]/40 hover:shadow-xs flex items-center justify-center min-h-[42px] sm:min-h-[46px]"
                               >
-                                <h4 className="text-[18px] sm:text-[21px] lg:text-[23px] font-display font-medium text-[#24191A] leading-tight">
+                                <h4 className="text-[14px] sm:text-[16px] lg:text-[17px] font-display font-medium text-[#24191A] leading-tight">
                                   {member.name}
                                 </h4>
                               </div>
@@ -204,11 +207,11 @@ export default function OrgChartSection() {
             <div className="w-2 h-2 rotate-45 border-r-2 border-b-2 border-[#5B0F18] -mt-1.5" />
           </div>
 
-          {/* LEVEL 4 — TEAM (UNIFIED TEAM STRUCTURE FOR ALL MEMBERS) */}
-          <div className="w-full max-w-6xl flex flex-col items-center">
+          {/* LEVEL 4 — TEAM (ALL 9 MEMBERS IN 1 SINGLE HORIZONTAL LINE) */}
+          <div className="w-full max-w-[1400px] flex flex-col items-center">
             
             {/* SINGLE TEAM HEADER NODE */}
-            <SectionReveal className="w-full max-w-xs mb-4 text-center" delay={0.18}>
+            <SectionReveal className="w-full max-w-xs mb-3 text-center" delay={0.18}>
               <div className="relative rounded-xl bg-[#5B0F18] border border-[#5B0F18] shadow-wine p-1 text-center">
                 <div className="card-inset-light-node">
                   <div className="relative z-10 py-2.5 px-6 bg-[#5B0F18] rounded-[calc(0.65rem-1.5px)]">
@@ -220,40 +223,44 @@ export default function OrgChartSection() {
               </div>
             </SectionReveal>
 
-            {/* Drop Line into horizontal branch bar connecting all 7 members */}
+            {/* Drop Line into single horizontal branch line connecting all 9 members */}
             <div className="relative w-full pt-4">
-              <div className="hidden lg:block absolute top-0 left-[7.14%] right-[7.14%] h-[2px] bg-[#5B0F18]" />
+              {/* Single Horizontal Connector Line below TEAM spanning across all 9 columns (center of 9 columns: 5.56% to 94.44%) */}
+              <div className="hidden lg:block absolute top-0 left-[5.56%] right-[5.56%] h-[2px] bg-[#5B0F18]" />
               <div className="hidden lg:block absolute top-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#5B0F18]" />
 
-              {/* 7 Team Members Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 relative z-10">
+              {/* 9 Team Members Row — Single Horizontal Line with identical top/bottom alignment */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2 sm:gap-2.5 relative z-10 w-full items-stretch">
                 {TEAM_MEMBERS.map((member, idx) => {
                   const isPaired = Boolean(member.name2);
                   return (
-                    <SectionReveal key={member.id} delay={0.20 + idx * 0.03}>
-                      <div className="relative flex flex-col items-center">
+                    <SectionReveal key={member.id} delay={0.20 + idx * 0.03} className="h-full flex flex-col">
+                      <div className="relative flex flex-col items-center w-full h-full">
+                        {/* Short vertical connector dropping from the horizontal line directly into card */}
                         <div className="hidden lg:block w-[2px] h-4 bg-[#5B0F18] -mt-4 mb-1" />
-                        <div className="hidden lg:block w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1.5" />
+                        <div className="hidden lg:block w-1.5 h-1.5 rounded-full bg-[#5B0F18] mb-1" />
 
-                        <div className="relative w-full rounded-2xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-sm p-1.5">
-                          <div className="card-inset-light-team">
-                            <div className="inset-surface p-3 text-center flex flex-col justify-center min-h-[110px] relative overflow-hidden bg-arch-grid rounded-[calc(1rem-1.5px)]">
+                        <div className="relative w-full rounded-2xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-sm p-1 sm:p-1.5 h-full flex flex-col">
+                          <div className="card-inset-light-team h-full flex flex-col flex-1">
+                            <div className="inset-surface p-2 sm:p-2.5 text-center flex flex-col justify-center min-h-[110px] sm:min-h-[118px] relative overflow-hidden bg-arch-grid rounded-[calc(1rem-1.5px)] h-full flex-1">
                               <h4
                                 className={`${
-                                  isPaired
-                                    ? "text-[14px] sm:text-[15.5px] lg:text-[17.5px]"
-                                    : "text-[15px] sm:text-[17px] lg:text-[19px]"
+                                  member.name === "MANOSHREE"
+                                    ? "text-[12.5px] sm:text-[13.5px] lg:text-[14.5px] tracking-tight"
+                                    : isPaired
+                                    ? "text-[12px] sm:text-[13px] lg:text-[14px]"
+                                    : "text-[13px] sm:text-[14.5px] lg:text-[15.5px]"
                                 } font-display font-medium text-[#24191A] leading-snug break-words`}
                               >
                                 {member.name}
                               </h4>
                               {member.name2 && (
-                                <h4 className="text-[14px] sm:text-[15.5px] lg:text-[17.5px] font-display font-medium text-[#24191A] leading-snug break-words">
+                                <h4 className="text-[12px] sm:text-[13px] lg:text-[14px] font-display font-medium text-[#24191A] leading-snug break-words">
                                   {member.name2}
                                 </h4>
                               )}
                               {!member.name2 && <div className="mb-0.5" />}
-                              <p className="text-[8.5px] sm:text-[9px] lg:text-[9.5px] font-sans text-[#5B0F18] font-medium uppercase tracking-wider leading-relaxed">
+                              <p className="text-[7.5px] sm:text-[8px] lg:text-[8.5px] font-sans text-[#5B0F18] font-medium uppercase tracking-wider leading-relaxed mt-0.5">
                                 {member.role}
                               </p>
                             </div>
@@ -274,5 +281,3 @@ export default function OrgChartSection() {
     </section>
   );
 }
-
-

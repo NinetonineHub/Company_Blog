@@ -17,14 +17,14 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="pt-24 min-h-screen bg-[#F8F1E7]">
+    <div className="pt-24 min-h-screen bg-[#F8F1E7] overflow-x-hidden w-full">
       {/* 1. ABOUT HERO SECTION WITH 3D WIREFRAME ROCKET */}
       <section className="relative py-20 sm:py-28 lg:py-32 bg-[#F8F1E7] overflow-hidden border-b border-[#5B0F18]/12 select-none">
         
         {/* Wireframe Ambient Background Artwork */}
         <HeroWireframeBackground />
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Column: Hero Typography & CTA (Col 1 to 7) */}
@@ -39,7 +39,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Main Heading */}
-                <h1 className="text-[42px] sm:text-[62px] lg:text-[80px] xl:text-[84px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.08] mb-6">
+                <h1 className="text-[28px] sm:text-[52px] md:text-[68px] lg:text-[80px] xl:text-[84px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.08] mb-6 break-words">
                   ARCHITECTS OF <br />
                   <span className="text-[#5B0F18]">
                     DIGITAL TRANSFORMATION.

@@ -4,9 +4,9 @@ export const COMPANY_INFO = {
   tagline: "THE HUB OF DIGITAL GROWTH",
   headquarters: "Residence - 1072, Block-B, Best Benefit Business Center, Abu Baker Al Siddique St. UAE",
   address: "Residence - 1072, Block-B, Best Benefit Business Center, Abu Baker Al Siddique St. UAE",
-  email: "info@ninetoninehub.com",
   phone: "+971 50 128 2100",
   whatsapp: "+971501282100",
+  whatsappLink: "https://wa.me/971501282100",
   mapUrl: "https://maps.app.goo.gl/p4Ao3gL9KcJm4sEJA",
   mapCoordinates: {
     lat: 25.275608286390266,

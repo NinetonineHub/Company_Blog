@@ -150,12 +150,12 @@ export default function CareerSection() {
       } else {
         setSubmitError(
           result.error ||
-            "Something went wrong while submitting your application. Please try again or contact info@ninetoninehub.com directly."
+            "Something went wrong while submitting your application. Please try again or contact our team directly."
         );
       }
     } catch (err) {
       setSubmitError(
-        "Something went wrong while submitting your application. Please try again or contact info@ninetoninehub.com directly."
+        "Something went wrong while submitting your application. Please try again or contact our team directly."
       );
     } finally {
       setIsSubmitting(false);

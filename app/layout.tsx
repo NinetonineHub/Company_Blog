@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Background3D from "@/components/Background3D";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -68,14 +69,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className={`${playfair.variable} ${inter.variable} bg-[#F8F1E7] text-[#24191A] selection:bg-[#5B0F18] selection:text-[#F8F1E7] relative min-h-screen flex flex-col font-sans`}>
+      <body className={`${playfair.variable} ${inter.variable} bg-[#F8F1E7] text-[#24191A] selection:bg-[#5B0F18] selection:text-[#F8F1E7] relative min-h-screen flex flex-col font-sans overflow-x-hidden w-full max-w-[100vw]`}>
         <ScrollProgress />
         <CustomCursor />
         <Background3D />
         
         <Navbar />
-        <main className="flex-grow relative z-10">{children}</main>
+        <main className="flex-grow relative z-10 w-full overflow-x-hidden">{children}</main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

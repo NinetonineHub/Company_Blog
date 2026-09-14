@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { COMPANY_INFO } from "@/data/company";
 import { ArrowUp, Instagram, Linkedin, Facebook, Youtube } from "lucide-react";
+import ObfuscatedEmail from "./ObfuscatedEmail";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -130,7 +131,7 @@ export default function Footer() {
               TEL: <span className="text-white font-medium">{COMPANY_INFO.phone}</span>
             </p>
             <p className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#F8F1E7]/80 font-sans font-normal">
-              MAIL: <span className="text-white font-medium">{COMPANY_INFO.email}</span>
+              MAIL: <ObfuscatedEmail className="text-white font-medium hover:underline transition-colors" />
             </p>
             <div className="pt-4">
               <span className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] lg:text-[12px] font-sans px-3.5 py-1.5 rounded-full bg-[#F8F1E7]/10 border border-[#F8F1E7]/20 text-[#F8F1E7] font-medium">

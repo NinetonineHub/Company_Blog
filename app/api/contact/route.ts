@@ -188,7 +188,7 @@ ${senderMessage}`;
       return NextResponse.json(
         {
           error:
-            "SMTP password is missing or unconfigured on the server. Please enter the Hostinger info@ninetoninehub.com password in .env.local.",
+            "SMTP password is missing or unconfigured on the server. Please check .env.local configuration.",
         },
         { status: 500 }
       );
@@ -229,7 +229,7 @@ ${senderMessage}`;
     return NextResponse.json(
       {
         error:
-          "Something went wrong while sending your enquiry via email. Please check server credentials or contact info@ninetoninehub.com directly.",
+          "Something went wrong while sending your enquiry. Please check server configuration or try again.",
       },
       { status: 500 }
     );

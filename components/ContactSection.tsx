@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import SectionReveal from "./SectionReveal";
+import ObfuscatedEmail from "./ObfuscatedEmail";
 import { COMPANY_INFO } from "@/data/company";
 import {
   MapPin,
@@ -96,12 +97,12 @@ export default function ContactSection() {
       } else {
         setSubmitError(
           result.error ||
-            "Something went wrong while sending your enquiry. Please try again or contact us directly at info@ninetoninehub.com"
+            "Something went wrong while sending your enquiry. Please try again or contact our support team."
         );
       }
     } catch (err) {
       setSubmitError(
-        "Something went wrong while sending your enquiry. Please try again or contact us directly at info@ninetoninehub.com"
+        "Something went wrong while sending your enquiry. Please try again or contact our support team."
       );
     } finally {
       setIsSubmitting(false);
@@ -187,12 +188,7 @@ export default function ContactSection() {
                       <span className="text-xs font-sans text-[#6F6261] uppercase tracking-wider block mb-1 font-medium">
                         EMAIL
                       </span>
-                      <a
-                        href="mailto:info@ninetoninehub.com"
-                        className="text-[#24191A] hover:text-[#5B0F18] transition-colors font-sans text-xs sm:text-sm font-medium block"
-                      >
-                        info@ninetoninehub.com
-                      </a>
+                      <ObfuscatedEmail className="text-[#24191A] hover:text-[#5B0F18] transition-colors font-sans text-xs sm:text-sm font-medium block" />
                     </div>
                   </div>
 
