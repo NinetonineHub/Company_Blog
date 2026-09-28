@@ -366,6 +366,23 @@ export default function ServicesSection() {
                             </span>
                           ))}
                         </div>
+                        {c.subScope && c.subScope.length > 0 && (
+                          <div className="mt-1 pl-2 border-l-2 border-[#5B0F18]/30 space-y-1">
+                            <span className="text-[10px] font-sans text-[#6F6261] uppercase tracking-wider block font-medium">
+                              Platforms / Channels:
+                            </span>
+                            <div className="flex flex-wrap gap-1">
+                              {c.subScope.map((sub, subIdx) => (
+                                <span
+                                  key={subIdx}
+                                  className="text-[10px] font-sans text-[#24191A] bg-white border border-[#5B0F18]/12 px-2 py-0.5 rounded font-medium"
+                                >
+                                  • {sub}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>

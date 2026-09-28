@@ -1,12 +1,14 @@
+export type CategoryType = "CORPORATE" | "CONSTRUCTION" | "RESTAURANTS" | "FOOD & RETAIL" | "TRAVEL";
+
 export interface PortfolioProject {
   id: string;
   number: string;
   title: string;
   industry: string;
-  category: "CORPORATE" | "CONSTRUCTION" | "RESTAURANTS" | "FOOD & RETAIL" | "TRAVEL";
+  category: CategoryType | CategoryType[];
   image: string;
   workTags: string[];
-  packageLabel: string;
+  packageLabel?: string;
   websiteUrl?: string;
   description: string;
   altText: string;
@@ -127,4 +129,48 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     description: "Search engine optimization and digital visibility strategy for UAE tourism.",
     altText: "Go Bus Tourism logo",
   },
+  {
+    id: "vasanta-bhavan",
+    number: "09",
+    title: "Vasanta Bhavan",
+    industry: "Restaurants",
+    category: "RESTAURANTS",
+    image: "/images/portfolio/vasan.png",
+    workTags: ["Video Production", "Editing & Shooting"],
+    description: "High-impact dining video production, shooting, and content editing.",
+    altText: "Vasanta Bhavan logo",
+  },
+  {
+    id: "doc-view",
+    number: "10",
+    title: "Doc View",
+    industry: "Corporate Services",
+    category: "CORPORATE",
+    image: "/images/portfolio/doc.png",
+    workTags: ["Video Production", "Performance Marketing", "Lead Generation"],
+    description: "Corporate business setup, video production, performance marketing, and lead funnels.",
+    altText: "Doc View logo",
+  },
+  {
+    id: "tiger-yacht",
+    number: "11",
+    title: "Tiger Yacht",
+    industry: "Travel & Tourism",
+    category: "TRAVEL",
+    image: "/images/portfolio/tiger.png",
+    workTags: ["Content Creation", "Instagram Automation", "SEO", "Multi-Platform Management"],
+    description: "Luxury yacht charter digital marketing, Instagram automation, SEO, and video promotion.",
+    altText: "Tiger Yacht logo",
+  },
+  {
+    id: "yacht-slots",
+    number: "12",
+    title: "Yacht Slots",
+    industry: "Travel & Tourism",
+    category: "TRAVEL",
+    image: "/images/portfolio/slots.png",
+    workTags: [],
+    description: "Corporate charter bookings and luxury marine experiences.",
+    altText: "Yacht Slots logo",
+  }
 ];

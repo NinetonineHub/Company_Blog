@@ -13,7 +13,11 @@ export default function PortfolioSection() {
   const filteredProjects =
     selectedCategory === "ALL"
       ? PORTFOLIO_PROJECTS
-      : PORTFOLIO_PROJECTS.filter((p) => p.category === selectedCategory);
+      : PORTFOLIO_PROJECTS.filter((p) =>
+          Array.isArray(p.category)
+            ? p.category.includes(selectedCategory as any)
+            : p.category === selectedCategory
+        );
 
   return (
     <section className="relative py-28 bg-[#FCF9F5] border-t border-[#5B0F18]/12 overflow-hidden">
@@ -90,7 +94,7 @@ export default function PortfolioSection() {
                   {/* Category Pill Tag Overlay */}
                   <div className="absolute top-4 left-4 z-20">
                     <span className="px-3 py-1 rounded-full bg-white/90 border border-[#5B0F18]/15 text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium tracking-widest backdrop-blur-md shadow-xs uppercase">
-                      {project.number} // {project.category}
+                      {project.number} // {Array.isArray(project.category) ? project.category.join(" & ") : project.category}
                     </span>
                   </div>
 
@@ -113,7 +117,7 @@ export default function PortfolioSection() {
                     </span>
 
                     {/* Title */}
-                    <h3 className="text-[26px] sm:text-[30px] lg:text-[36px] font-display font-medium text-[#24191A] group-hover:text-[#5B0F18] transition-colors leading-tight mb-3">
+                    <h3 className="text-[26px] sm:text-[30px] lg:text-[36px] font-display font-semibold text-[#24191A] group-hover:text-[#5B0F18] transition-colors leading-tight mb-3">
                       {project.title}
                     </h3>
 
@@ -136,16 +140,18 @@ export default function PortfolioSection() {
                     </div>
                   </div>
 
-                  {/* Package-Name Wine Button */}
-                  <div className="pt-4 border-t border-[#5B0F18]/12 flex items-center justify-end">
-                    <Link
-                      href="/services#packages"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#5B0F18] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold hover:bg-[#430B12] transition-all shadow-xs tracking-wider"
-                    >
-                      <span>{project.packageLabel}</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
+                  {/* Package-Name Wine Button (Only rendered if packageLabel is defined) */}
+                  {project.packageLabel && (
+                    <div className="pt-4 border-t border-[#5B0F18]/12 flex items-center justify-end">
+                      <Link
+                        href="/services#packages"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#5B0F18] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold hover:bg-[#430B12] transition-all shadow-xs tracking-wider"
+                      >
+                        <span>{project.packageLabel}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  )}
                 </div>
 
               </motion.div>

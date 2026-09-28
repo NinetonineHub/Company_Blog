@@ -11,22 +11,30 @@ const TOP_ROW_LOGOS = [
   { id: "gobus", name: "Go Bus Tourism", logo: "/images/portfolio/logo (1).webp", animClass: "animate-float-1", offset: "lg:-translate-y-2" },
   { id: "noor", name: "Noor Altrhal", logo: "/images/portfolio/logo (3).webp", animClass: "animate-float-3", offset: "lg:translate-y-1" },
   { id: "tazameat", name: "Taza Meat Shop", logo: "/images/portfolio/logo (2).webp", animClass: "animate-float-2", offset: "lg:-translate-y-2" },
+  { id: "tiger", name: "Tiger Yach", logo: "/images/portfolio/tiger.png", animClass: "animate-float-1", offset: "lg:translate-y-1" },
 ];
 
-const MIDDLE_LEFT_LOGO = { id: "tazabiryani", name: "Taza Biryani & Grills", logo: "/images/portfolio/logo (4).webp", animClass: "animate-float-2", offset: "lg:translate-y-2" };
+const MIDDLE_LEFT_LOGOS = [
+  { id: "tazabiryani", name: "Taza Biryani & Grills", logo: "/images/portfolio/logo (4).webp", animClass: "animate-float-2", offset: "lg:translate-y-2" },
+  { id: "doc", name: "Doc View", logo: "/images/portfolio/doc.png", animClass: "animate-float-3", offset: "lg:-translate-y-1" },
+];
 
-const MIDDLE_RIGHT_LOGO = { id: "curryxpress", name: "Curry Xpress", logo: "/images/portfolio/logo (5).webp", animClass: "animate-float-1", offset: "lg:-translate-y-2" };
+const MIDDLE_RIGHT_LOGOS = [
+  { id: "curryxpress", name: "Curry Xpress", logo: "/images/portfolio/logo (5).webp", animClass: "animate-float-1", offset: "lg:-translate-y-2" },
+  { id: "vasan", name: "Vasanta Bhavan", logo: "/images/portfolio/vasan.png", animClass: "animate-float-2", offset: "lg:translate-y-1" },
+];
 
 const BOTTOM_ROW_LOGOS = [
-  { id: "bluemoon", name: "BlueMoon", logo: "/images/portfolio/logo (6).webp", animClass: "animate-float-3", offset: "lg:translate-y-1" },
+  { id: "bluemoon", name: "BlueMoon", logo: "/images/portfolio/blue.png", animClass: "animate-float-3", offset: "lg:translate-y-1" },
   { id: "kanz", name: "Kanz Al Arab", logo: "/images/portfolio/logo (8).webp", animClass: "animate-float-2", offset: "lg:-translate-y-2" },
   { id: "beyond", name: "Beyond Numbers", logo: "/images/portfolio/logo (7).webp", animClass: "animate-float-1", offset: "lg:translate-y-1" },
+  { id: "yachtslots", name: "Yacht Slots", logo: "/images/portfolio/slots.png", animClass: "animate-float-2", offset: "lg:-translate-y-2" },
 ];
 
 const ALL_CLIENT_LOGOS = [
   ...TOP_ROW_LOGOS,
-  MIDDLE_LEFT_LOGO,
-  MIDDLE_RIGHT_LOGO,
+  ...MIDDLE_LEFT_LOGOS,
+  ...MIDDLE_RIGHT_LOGOS,
   ...BOTTOM_ROW_LOGOS,
 ];
 
@@ -51,10 +59,10 @@ export default function HomePage() {
           </h2>
         </div>
 
-        {/* Desktop Orbital Floating Layout (lg+) — 3x3 Symmetrical Matrix */}
+        {/* Desktop Orbital Floating Layout (lg+) — Balanced Symmetrical Matrix */}
         <div className="hidden lg:block max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
-          {/* Top Row (3 Logos: Go Bus Tourism, Noor Altrhal, Taza Meat Shop) */}
-          <div className="flex items-center justify-center gap-12 xl:gap-16 mb-12">
+          {/* Top Row (4 Logos: Go Bus Tourism, Noor Altrhal, Taza Meat Shop, Tiger Yach) */}
+          <div className="flex items-center justify-center gap-8 xl:gap-12 mb-10">
             {TOP_ROW_LOGOS.map((client) => (
               <div key={client.id} className={`${client.animClass} ${client.offset}`}>
                 <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
@@ -69,22 +77,26 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Middle Row (Taza Biryani — CENTER FOCAL CARD — Curry Xpress) */}
-          <div className="flex items-center justify-center gap-12 xl:gap-16 mb-12">
-            {/* Middle Left: Taza Biryani */}
-            <div className={`${MIDDLE_LEFT_LOGO.animClass} ${MIDDLE_LEFT_LOGO.offset}`}>
-              <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
-                <img
-                  src={MIDDLE_LEFT_LOGO.logo}
-                  alt={`${MIDDLE_LEFT_LOGO.name} logo`}
-                  className="h-16 sm:h-20 lg:h-24 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain rounded-[18px]"
-                  loading="lazy"
-                />
-              </div>
+          {/* Middle Row (2 Logos Left — CENTER FOCAL CARD — 2 Logos Right) */}
+          <div className="flex items-center justify-center gap-8 xl:gap-12 mb-10">
+            {/* Middle Left: Taza Biryani & Doc View */}
+            <div className="flex items-center gap-8 xl:gap-12">
+              {MIDDLE_LEFT_LOGOS.map((client) => (
+                <div key={client.id} className={`${client.animClass} ${client.offset}`}>
+                  <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
+                    <img
+                      src={client.logo}
+                      alt={`${client.name} logo`}
+                      className="h-16 sm:h-20 lg:h-24 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain rounded-[18px]"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Center Statement Focal Card */}
-            <div className="relative px-12 xl:px-16 py-8 rounded-3xl bg-white/80 backdrop-blur-md border border-[#5B0F18]/20 shadow-soft-card text-center min-w-[320px] transform hover:scale-[1.02] transition-transform duration-300">
+            <div className="relative px-10 xl:px-14 py-8 rounded-3xl bg-white/80 backdrop-blur-md border border-[#5B0F18]/20 shadow-soft-card text-center min-w-[280px] xl:min-w-[320px] transform hover:scale-[1.02] transition-transform duration-300">
               <div className="w-10 h-1 bg-[#5B0F18] mx-auto mb-3 rounded-full" />
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-semibold text-[#24191A] tracking-tight leading-tight">
                 REAL BRANDS. <br />
@@ -95,21 +107,25 @@ export default function HomePage() {
               </span>
             </div>
 
-            {/* Middle Right: Curry Xpress */}
-            <div className={`${MIDDLE_RIGHT_LOGO.animClass} ${MIDDLE_RIGHT_LOGO.offset}`}>
-              <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
-                <img
-                  src={MIDDLE_RIGHT_LOGO.logo}
-                  alt={`${MIDDLE_RIGHT_LOGO.name} logo`}
-                  className="h-16 sm:h-20 lg:h-24 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain rounded-[18px]"
-                  loading="lazy"
-                />
-              </div>
+            {/* Middle Right: Curry Xpress & Vasanta Bhavan */}
+            <div className="flex items-center gap-8 xl:gap-12">
+              {MIDDLE_RIGHT_LOGOS.map((client) => (
+                <div key={client.id} className={`${client.animClass} ${client.offset}`}>
+                  <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
+                    <img
+                      src={client.logo}
+                      alt={`${client.name} logo`}
+                      className="h-16 sm:h-20 lg:h-24 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain rounded-[18px]"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Bottom Row (3 Logos: BlueMoon, Kanz Al Arab, Beyond Numbers) */}
-          <div className="flex items-center justify-center gap-12 xl:gap-16">
+          <div className="flex items-center justify-center gap-8 xl:gap-12">
             {BOTTOM_ROW_LOGOS.map((client) => (
               <div key={client.id} className={`${client.animClass} ${client.offset}`}>
                 <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
@@ -125,7 +141,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Mobile & Tablet Composition (< lg) — Clean 2x4 / 4x2 Symmetric Grid */}
+        {/* Mobile & Tablet Composition (< lg) — Clean Symmetric Flex Grid */}
         <div className="lg:hidden max-w-5xl mx-auto px-6 sm:px-8 relative z-10 space-y-10">
           {/* Mobile Center Statement */}
           <div className="relative px-8 py-6 rounded-3xl bg-white/80 backdrop-blur-md border border-[#5B0F18]/20 shadow-soft-card text-center max-w-sm mx-auto">
@@ -139,11 +155,11 @@ export default function HomePage() {
             </span>
           </div>
 
-          {/* Mobile Grid of all 8 logos */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+          {/* Mobile Grid of all 11 logos */}
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 max-w-2xl mx-auto">
             {ALL_CLIENT_LOGOS.map((client) => (
-              <div key={`m-${client.id}`} className={`${client.animClass}`}>
-                <div className="group relative p-1 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center h-24 sm:h-28">
+              <div key={`m-${client.id}`} className={`${client.animClass} w-[calc(50%-8px)] sm:w-[calc(25%-18px)] flex justify-center`}>
+                <div className="group relative p-1 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center w-full h-24 sm:h-28">
                   <img
                     src={client.logo}
                     alt={`${client.name} logo`}

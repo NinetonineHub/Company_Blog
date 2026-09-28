@@ -1,6 +1,7 @@
 export interface ClientWork {
   name: string;
   scope: string[];
+  subScope?: string[];
   websiteUrl?: string;
   logoUrl?: string;
   driveUrl?: string;
@@ -42,7 +43,12 @@ export const SERVICES_DATA: Service[] = [
       { name: "Kanz Al Arab", scope: ["Social Media Management", "Posters & Carousels"] },
       { name: "Noor Altrhal", scope: ["Social Media Management", "Posters & Carousels"] },
       { name: "Beyond Numbers", scope: ["Social Media Management", "Posters & Carousels"] },
-      { name: "BlueMoon", scope: ["Social Media Management", "Posters & Carousels"] }
+      { name: "BlueMoon", scope: ["Social Media Management", "Posters & Carousels"] },
+      {
+        name: "Tiger Yacht",
+        scope: ["Content Creation", "Instagram Automation", "Multi-Platform Management"],
+        subScope: ["Google My Business (GMB)", "TikTok", "YouTube"]
+      }
     ]
   },
   {
@@ -60,7 +66,8 @@ export const SERVICES_DATA: Service[] = [
       "Keyword Mapping & On-Page Enhancement"
     ],
     clients: [
-      { name: "Go Bus Tourism", scope: ["Search Engine Optimization"] }
+      { name: "Go Bus Tourism", scope: ["Search Engine Optimization"] },
+      { name: "Tiger Yacht", scope: ["Search Engine Optimization"] }
     ]
   },
   {
@@ -76,6 +83,9 @@ export const SERVICES_DATA: Service[] = [
       "Local Map Pack Optimization",
       "Review Management Strategy",
       "Geotagged Content & NAP Synchronization"
+    ],
+    clients: [
+      { name: "Tiger Yacht", scope: ["Google My Business (GMB)"] }
     ]
   },
   {
@@ -112,6 +122,18 @@ export const SERVICES_DATA: Service[] = [
         name: "Noor Altrhal",
         scope: ["Video Production"],
         driveUrl: "https://drive.google.com/drive/folders/10C_KX7A2_i71Ab3vuXIOInb3Ji6f1Iu-?usp=drive_link"
+      },
+      {
+        name: "Tiger Yacht",
+        scope: ["Video Production"]
+      },
+      {
+        name: "Doc View",
+        scope: ["Video Production"]
+      },
+      {
+        name: "Vasanta Bhavan",
+        scope: ["Video Production, Editing and Shooting"]
       }
     ]
   },
@@ -211,6 +233,9 @@ export const SERVICES_DATA: Service[] = [
       "Audience Segmentation & Targeting",
       "Ad Creative A/B Testing",
       "Continuous Campaign ROAS Optimization"
+    ],
+    clients: [
+      { name: "Doc View", scope: ["Performance Marketing"] }
     ]
   },
   {
@@ -226,6 +251,9 @@ export const SERVICES_DATA: Service[] = [
       "Lead Capture Mechanics & Landing Pages",
       "Conversion Rate Optimization (CRO)",
       "Qualified Business Lead Intake Systems"
+    ],
+    clients: [
+      { name: "Doc View", scope: ["Lead Generation"] }
     ]
   }
 ];
