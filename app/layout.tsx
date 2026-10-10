@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -72,6 +73,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-0PLKVFVW9L"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0PLKVFVW9L');
+          `}
+        </Script>
+      </head>
       <body className={`${playfair.variable} ${inter.variable} bg-[#F8F1E7] text-[#24191A] selection:bg-[#5B0F18] selection:text-[#F8F1E7] relative min-h-screen flex flex-col font-sans overflow-x-hidden w-full max-w-[100vw]`}>
         <ScrollProgress />
         <CustomCursor />
