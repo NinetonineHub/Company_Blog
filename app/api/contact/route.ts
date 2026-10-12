@@ -1,6 +1,17 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+export async function GET() {
+  return NextResponse.json(
+    {
+      status: "online",
+      service: "Nine to Nine Hub Inquiry API",
+      allowedMethods: ["POST"],
+    },
+    { status: 200 }
+  );
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();

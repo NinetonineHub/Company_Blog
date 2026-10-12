@@ -82,9 +82,9 @@ export default function Footer() {
 
           {/* Quick Navigation Links */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="text-[12px] sm:text-[13px] lg:text-[14px] font-sans text-[#F8F1E7] tracking-widest uppercase mb-4 font-medium">
+            <p className="text-[12px] sm:text-[13px] lg:text-[14px] font-sans text-[#F8F1E7] tracking-widest uppercase mb-4 font-medium">
               // NAVIGATION
-            </h4>
+            </p>
             <ul className="space-y-2.5 text-[12px] sm:text-[13px] lg:text-[14px] font-sans font-normal">
               <li>
                 <Link href="/" className="text-[#F8F1E7]/80 hover:text-white transition-colors">
@@ -121,9 +121,9 @@ export default function Footer() {
 
           {/* Location & Contact Summary */}
           <div className="md:col-span-4 space-y-3">
-            <h4 className="text-[12px] sm:text-[13px] lg:text-[14px] font-sans text-[#F8F1E7] tracking-widest uppercase mb-4 font-medium">
+            <p className="text-[12px] sm:text-[13px] lg:text-[14px] font-sans text-[#F8F1E7] tracking-widest uppercase mb-4 font-medium">
               // UAE OPERATIONAL HQ
-            </h4>
+            </p>
             <p className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#F8F1E7]/85 font-sans leading-relaxed font-normal">
               {COMPANY_INFO.address}
             </p>

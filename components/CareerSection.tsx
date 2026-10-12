@@ -188,9 +188,9 @@ export default function CareerSection() {
 
         {/* WHAT WE VALUE */}
         <SectionReveal className="mb-20">
-          <div className="text-[11px] sm:text-[12px] font-sans text-[#5B0F18] uppercase tracking-widest mb-8 text-center font-semibold">
+          <h2 className="text-[11px] sm:text-[12px] font-sans text-[#5B0F18] uppercase tracking-widest mb-8 text-center font-semibold">
             // WHAT WE VALUE
-          </div>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {COMPANY_VALUES.map((val, idx) => (
               <div
@@ -214,9 +214,9 @@ export default function CareerSection() {
         {/* JOB OPPORTUNITY SECTION WITH LOCATION FILTER TOGGLE */}
         <div className="mb-24">
           <SectionReveal className="mb-10 text-center">
-            <span className="text-[11px] sm:text-[12px] font-sans tracking-[0.2em] text-[#5B0F18] uppercase block mb-3 font-semibold">
+            <h2 className="text-[11px] sm:text-[12px] font-sans tracking-[0.2em] text-[#5B0F18] uppercase block mb-3 font-semibold">
               // CAREER OPPORTUNITIES
-            </span>
+            </h2>
             
             {/* LOCATION SELECTOR / TOGGLE: [ INDIA ] [ UAE ] */}
             <div className="flex items-center justify-center gap-3 p-2 rounded-2xl bg-white border border-[#5B0F18]/15 w-max mx-auto mb-6 shadow-sm">

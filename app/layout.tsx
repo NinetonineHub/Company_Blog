@@ -24,9 +24,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ninetoninehub.com"),
   title: "Nine to Nine Hub | The Hub of Digital Growth",
   description:
-    "Nine to Nine Hub is a UAE-based digital agency delivering data-driven marketing, creative content, branding, SEO and high-performance web development solutions.",
+    "Nine to Nine Hub is a UAE digital agency delivering data-driven marketing, creative content, branding, SEO and high-performance web development solutions.",
+  alternates: {
+    canonical: "https://ninetoninehub.com/",
+  },
   keywords: [
     "UAE Digital Agency",
     "Digital Marketing UAE",
@@ -50,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nine to Nine Hub | The Hub of Digital Growth",
     description:
-      "UAE-based digital agency delivering data-driven marketing, creative content, branding, SEO and high-performance web development solutions.",
+      "UAE digital agency delivering data-driven marketing, creative content, branding, SEO and high-performance web development solutions.",
   },
   robots: {
     index: true,

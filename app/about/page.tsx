@@ -12,7 +12,10 @@ const AboutHero3DCanvas = dynamic(() => import("@/components/AboutHero3DCanvas")
 export const metadata = {
   title: "About Us | Nine to Nine Hub UAE",
   description:
-    "Discover Nine to Nine Hub — UAE's visionary digital growth agency bridging strategy, performance marketing, video production, and software development.",
+    "Discover Nine to Nine Hub — UAE digital growth agency bridging strategy, performance marketing, video production, and modern web development.",
+  alternates: {
+    canonical: "https://ninetoninehub.com/about",
+  },
 };
 
 export default function AboutPage() {
@@ -48,7 +51,7 @@ export default function AboutPage() {
 
                 {/* Supporting Description */}
                 <p className="text-[#6F6261] text-[16px] sm:text-[18px] lg:text-[19px] max-w-xl mx-auto lg:mx-0 font-sans leading-relaxed mb-8 font-normal">
-                  Nine to Nine Hub is a UAE-based digital agency focused on data-driven growth, creative execution and high-performance technology.
+                  Nine to Nine Hub is a UAE-based digital growth agency bridging strategy, performance marketing, video production, and modern web development. Operating from Dubai, our multidisciplinary team architects integrated digital systems that help regional businesses expand market reach and convert engagement into measurable revenue.
                 </p>
 
                 {/* CTA Button */}

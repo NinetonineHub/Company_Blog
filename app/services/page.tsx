@@ -14,7 +14,10 @@ const ServicesHero3DCanvas = dynamic(() => import("@/components/ServicesHero3DCa
 export const metadata = {
   title: "Services & Growth Packages | Nine to Nine Hub UAE",
   description:
-    "Explore Nine to Nine Hub's 8 digital growth services and premium growth packages built to scale businesses in the UAE and the GCC.",
+    "Explore Nine to Nine Hub's digital growth services and packages, from SEO and social media to video production and web development in the UAE and GCC.",
+  alternates: {
+    canonical: "https://ninetoninehub.com/services",
+  },
 };
 
 export default function ServicesPage() {
@@ -50,7 +53,7 @@ export default function ServicesPage() {
 
                 {/* Supporting Description */}
                 <p className="text-[#6F6261] text-[16px] sm:text-[18px] max-w-xl mx-auto lg:mx-0 font-sans leading-relaxed mb-8 font-normal">
-                  Explore our core digital growth capabilities and premium growth packages built specifically for businesses operating in the UAE and the GCC.
+                  Explore our core digital growth capabilities and tiered growth packages built specifically for businesses operating in the UAE and the GCC. From performance SEO and cinematic video production to custom web applications and full-funnel advertising, each solution is designed for measurable ROI.
                 </p>
 
                 {/* CTA Button */}

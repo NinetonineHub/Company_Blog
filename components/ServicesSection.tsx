@@ -157,10 +157,10 @@ export default function ServicesSection() {
 
               {/* DELIVERABLES SECTION */}
               <div className="mb-8">
-                <h3 className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans font-medium text-[#5B0F18] uppercase tracking-widest mb-4 flex items-center gap-2">
+                <div className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans font-medium text-[#5B0F18] uppercase tracking-widest mb-4 flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-[#5B0F18]" />
                   WHAT WE DELIVER
-                </h3>
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {selectedService.deliverables.map((del, i) => (
                     <div
@@ -177,10 +177,10 @@ export default function ServicesSection() {
               {/* SPECIAL LAYOUT FOR VIDEO PRODUCTION */}
               {selectedService.id === "video-promotion" && selectedService.clients && (
                 <div className="mb-8 pt-6 border-t border-[#5B0F18]/12">
-                  <h3 className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans font-medium text-[#5B0F18] uppercase tracking-widest mb-5 flex items-center gap-2">
+                  <div className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans font-medium text-[#5B0F18] uppercase tracking-widest mb-5 flex items-center gap-2">
                     <Video className="w-4 h-4 text-[#5B0F18]" />
                     CLIENT ASSOCIATIONS & VIDEO PROJECTS
-                  </h3>
+                  </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {selectedService.clients.map((client, i) => (
@@ -192,9 +192,9 @@ export default function ServicesSection() {
                           <span className="text-[10px] sm:text-[11px] font-sans text-[#5B0F18] uppercase tracking-wider block mb-1 font-medium">
                             VIDEO PRODUCTION
                           </span>
-                          <h4 className="text-[24px] sm:text-[28px] font-display font-semibold text-[#24191A]">
+                          <h3 className="text-[24px] sm:text-[28px] font-display font-semibold text-[#24191A]">
                             {client.name}
-                          </h4>
+                          </h3>
                         </div>
 
                         {client.driveUrl && (
@@ -219,10 +219,10 @@ export default function ServicesSection() {
               {/* SPECIAL LAYOUT FOR WEBSITE CREATION */}
               {selectedService.id === "website-creation" && selectedService.websitesCompleted && (
                 <div className="mb-8 pt-6 border-t border-[#5B0F18]/12">
-                  <h3 className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans font-medium text-[#5B0F18] uppercase tracking-widest mb-5 flex items-center gap-2">
+                  <div className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans font-medium text-[#5B0F18] uppercase tracking-widest mb-5 flex items-center gap-2">
                     <Globe className="w-4 h-4 text-[#5B0F18]" />
                     WEBSITE PROJECTS & CLIENT ASSOCIATIONS
-                  </h3>
+                  </div>
 
                   <div className="space-y-4">
                     {selectedService.websitesCompleted.map((site, i) => (
@@ -235,9 +235,9 @@ export default function ServicesSection() {
                             <span className="text-[10px] sm:text-[11px] font-sans text-[#5B0F18] uppercase tracking-wider block mb-1 font-medium">
                               WEBSITE CREATION
                             </span>
-                            <h4 className="text-[24px] sm:text-[28px] font-display font-semibold text-[#24191A]">
+                            <h3 className="text-[24px] sm:text-[28px] font-display font-semibold text-[#24191A]">
                               {site.name}
-                            </h4>
+                            </h3>
                           </div>
 
                           {site.websiteUrl && (
@@ -277,10 +277,10 @@ export default function ServicesSection() {
               {/* SPECIAL LAYOUT FOR LOGO & VISUAL DESIGN */}
               {selectedService.id === "logo-visual-design" && (
                 <div className="mb-8 pt-6 border-t border-[#5B0F18]/12">
-                  <h3 className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans font-medium text-[#5B0F18] uppercase tracking-widest mb-5 flex items-center gap-2">
+                  <div className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans font-medium text-[#5B0F18] uppercase tracking-widest mb-5 flex items-center gap-2">
                     <Layers className="w-4 h-4 text-[#5B0F18]" />
                     LOGO DESIGN & BRANDING ASSOCIATIONS
-                  </h3>
+                  </div>
 
                   {/* Showcase Grid for Logos */}
                   {selectedService.logoShowcase && (
@@ -295,6 +295,8 @@ export default function ServicesSection() {
                               <img
                                 src={logo.logoUrl}
                                 alt={`${logo.name} Logo`}
+                                width={200}
+                                height={112}
                                 loading="lazy"
                                 decoding="async"
                                 className="max-h-full max-w-full object-contain"
@@ -302,9 +304,9 @@ export default function ServicesSection() {
                             )}
                           </div>
                           <div>
-                            <h4 className="text-[24px] font-display font-semibold text-[#24191A] mb-1">
+                            <h3 className="text-[24px] font-display font-semibold text-[#24191A] mb-1">
                               {logo.name}
-                            </h4>
+                            </h3>
                             <span className="text-[10px] sm:text-[11px] font-sans text-[#5B0F18] uppercase block font-medium">
                               {logo.scope.join(" • ")}
                             </span>
@@ -343,19 +345,19 @@ export default function ServicesSection() {
               {/* GENERAL CLIENT ASSOCIATIONS FOR OTHER SERVICES (SOCIAL MEDIA, SEO, ETC.) */}
               {selectedService.clients && selectedService.clients.length > 0 && selectedService.id !== "video-promotion" && selectedService.id !== "logo-visual-design" && (
                 <div className="mb-8 pt-6 border-t border-[#5B0F18]/12">
-                  <h3 className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans font-medium text-[#5B0F18] uppercase tracking-widest mb-5 flex items-center gap-2">
+                  <div className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans font-medium text-[#5B0F18] uppercase tracking-widest mb-5 flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-[#5B0F18]" />
                     CLIENT ASSOCIATIONS & WORK SCOPE
-                  </h3>
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {selectedService.clients.map((c, i) => (
                       <div
                         key={i}
                         className="p-4 rounded-xl bg-[#F8F1E7]/40 border border-[#5B0F18]/15 flex flex-col justify-between gap-2"
                       >
-                        <h4 className="text-[24px] font-display font-semibold text-[#24191A]">
+                        <h3 className="text-[24px] font-display font-semibold text-[#24191A]">
                           {c.name}
-                        </h4>
+                        </h3>
                         <div className="flex flex-wrap gap-1.5">
                           {c.scope.map((s, sIdx) => (
                             <span

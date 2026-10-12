@@ -260,9 +260,9 @@ export default function ContactSection() {
               <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#5B0F18]/15 shadow-soft-card">
                 
                 {/* Form Title */}
-                <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-semibold text-[#24191A] mb-8">
+                <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-semibold text-[#24191A] mb-8">
                   PROJECT INQUIRY FORM
-                </h3>
+                </h2>
 
                 {/* Success State */}
                 {isSubmitted ? (
@@ -270,9 +270,9 @@ export default function ContactSection() {
                     <div className="w-16 h-16 rounded-full bg-[#5B0F18]/10 text-[#5B0F18] mx-auto flex items-center justify-center mb-6">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
-                    <h4 className="text-2xl font-display font-semibold text-[#24191A] mb-3">
+                    <h3 className="text-2xl font-display font-semibold text-[#24191A] mb-3">
                       THANK YOU FOR REACHING OUT.
-                    </h4>
+                    </h3>
                     <p className="text-sm font-sans font-normal text-[#6F6261] leading-relaxed max-w-md mx-auto">
                       Your enquiry has been received. Our team will get back to you shortly.
                     </p>

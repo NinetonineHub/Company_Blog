@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import ServicesSection from "@/components/ServicesSection";
 import PortfolioSection from "@/components/PortfolioSection";
@@ -7,28 +8,37 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
 
+export const metadata: Metadata = {
+  title: "Nine to Nine Hub | The Hub of Digital Growth",
+  description:
+    "Nine to Nine Hub is a UAE digital agency delivering data-driven marketing, creative content, branding, SEO and high-performance web development solutions.",
+  alternates: {
+    canonical: "https://ninetoninehub.com/",
+  },
+};
+
 const TOP_ROW_LOGOS = [
   { id: "gobus", name: "Go Bus Tourism", logo: "/images/portfolio/logo (1).webp", animClass: "animate-float-1", offset: "lg:-translate-y-2" },
   { id: "noor", name: "Noor Altrhal", logo: "/images/portfolio/logo (3).webp", animClass: "animate-float-3", offset: "lg:translate-y-1" },
   { id: "tazameat", name: "Taza Meat Shop", logo: "/images/portfolio/logo (2).webp", animClass: "animate-float-2", offset: "lg:-translate-y-2" },
-  { id: "tiger", name: "Tiger Yach", logo: "/images/portfolio/tiger.png", animClass: "animate-float-1", offset: "lg:translate-y-1" },
+  { id: "tiger", name: "Tiger Yacht", logo: "/images/portfolio/tiger.webp", animClass: "animate-float-1", offset: "lg:translate-y-1" },
 ];
 
 const MIDDLE_LEFT_LOGOS = [
   { id: "tazabiryani", name: "Taza Biryani & Grills", logo: "/images/portfolio/logo (4).webp", animClass: "animate-float-2", offset: "lg:translate-y-2" },
-  { id: "doc", name: "Doc View", logo: "/images/portfolio/doc.png", animClass: "animate-float-3", offset: "lg:-translate-y-1" },
+  { id: "doc", name: "Doc View", logo: "/images/portfolio/doc.webp", animClass: "animate-float-3", offset: "lg:-translate-y-1" },
 ];
 
 const MIDDLE_RIGHT_LOGOS = [
   { id: "curryxpress", name: "Curry Xpress", logo: "/images/portfolio/logo (5).webp", animClass: "animate-float-1", offset: "lg:-translate-y-2" },
-  { id: "vasan", name: "Vasanta Bhavan", logo: "/images/portfolio/vasan.png", animClass: "animate-float-2", offset: "lg:translate-y-1" },
+  { id: "vasan", name: "Vasanta Bhavan", logo: "/images/portfolio/vasan.webp", animClass: "animate-float-2", offset: "lg:translate-y-1" },
 ];
 
 const BOTTOM_ROW_LOGOS = [
-  { id: "bluemoon", name: "BlueMoon", logo: "/images/portfolio/blue.png", animClass: "animate-float-3", offset: "lg:translate-y-1" },
+  { id: "bluemoon", name: "BlueMoon", logo: "/images/portfolio/blue.webp", animClass: "animate-float-3", offset: "lg:translate-y-1" },
   { id: "kanz", name: "Kanz Al Arab", logo: "/images/portfolio/logo (8).webp", animClass: "animate-float-2", offset: "lg:-translate-y-2" },
   { id: "beyond", name: "Beyond Numbers", logo: "/images/portfolio/logo (7).webp", animClass: "animate-float-1", offset: "lg:translate-y-1" },
-  { id: "yachtslots", name: "Yacht Slots", logo: "/images/portfolio/slots.png", animClass: "animate-float-2", offset: "lg:-translate-y-2" },
+  { id: "yachtslots", name: "Yacht Slots", logo: "/images/portfolio/slots.webp", animClass: "animate-float-2", offset: "lg:-translate-y-2" },
 ];
 
 const ALL_CLIENT_LOGOS = [
@@ -69,6 +79,9 @@ export default function HomePage() {
                   <img
                     src={client.logo}
                     alt={`${client.name} logo`}
+                    width={200}
+                    height={80}
+                    decoding="async"
                     className="h-16 sm:h-20 lg:h-24 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain rounded-[18px]"
                     loading="lazy"
                   />
@@ -87,6 +100,9 @@ export default function HomePage() {
                     <img
                       src={client.logo}
                       alt={`${client.name} logo`}
+                      width={200}
+                      height={80}
+                      decoding="async"
                       className="h-16 sm:h-20 lg:h-24 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain rounded-[18px]"
                       loading="lazy"
                     />
@@ -98,10 +114,10 @@ export default function HomePage() {
             {/* Center Statement Focal Card */}
             <div className="relative px-10 xl:px-14 py-8 rounded-3xl bg-white/80 backdrop-blur-md border border-[#5B0F18]/20 shadow-soft-card text-center min-w-[280px] xl:min-w-[320px] transform hover:scale-[1.02] transition-transform duration-300">
               <div className="w-10 h-1 bg-[#5B0F18] mx-auto mb-3 rounded-full" />
-              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-semibold text-[#24191A] tracking-tight leading-tight">
+              <p role="text" className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-semibold text-[#24191A] tracking-tight leading-tight">
                 REAL BRANDS. <br />
                 <span className="text-[#5B0F18]">REAL GROWTH.</span>
-              </h3>
+              </p>
               <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#6F6261] uppercase tracking-widest block mt-2 font-medium">
                 // UAE PORTFOLIO IMPACT
               </span>
@@ -115,6 +131,9 @@ export default function HomePage() {
                     <img
                       src={client.logo}
                       alt={`${client.name} logo`}
+                      width={200}
+                      height={80}
+                      decoding="async"
                       className="h-16 sm:h-20 lg:h-24 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain rounded-[18px]"
                       loading="lazy"
                     />
@@ -132,6 +151,9 @@ export default function HomePage() {
                   <img
                     src={client.logo}
                     alt={`${client.name} logo`}
+                    width={200}
+                    height={80}
+                    decoding="async"
                     className="h-16 sm:h-20 lg:h-24 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain rounded-[18px]"
                     loading="lazy"
                   />
@@ -146,10 +168,10 @@ export default function HomePage() {
           {/* Mobile Center Statement */}
           <div className="relative px-8 py-6 rounded-3xl bg-white/80 backdrop-blur-md border border-[#5B0F18]/20 shadow-soft-card text-center max-w-sm mx-auto">
             <div className="w-8 h-1 bg-[#5B0F18] mx-auto mb-2 rounded-full" />
-            <h3 className="text-[24px] sm:text-[28px] font-display font-semibold text-[#24191A] tracking-tight leading-tight">
+            <p role="text" className="text-[24px] sm:text-[28px] font-display font-semibold text-[#24191A] tracking-tight leading-tight">
               REAL BRANDS. <br />
               <span className="text-[#5B0F18]">REAL GROWTH.</span>
-            </h3>
+            </p>
             <span className="text-[10px] sm:text-[11px] font-sans text-[#6F6261] uppercase tracking-widest block mt-2 font-medium">
               // UAE PORTFOLIO IMPACT
             </span>
@@ -163,6 +185,9 @@ export default function HomePage() {
                   <img
                     src={client.logo}
                     alt={`${client.name} logo`}
+                    width={200}
+                    height={80}
+                    decoding="async"
                     className="h-14 sm:h-18 w-auto max-w-full object-contain rounded-[16px]"
                     loading="lazy"
                   />
@@ -190,7 +215,7 @@ export default function HomePage() {
               {COMPANY_INFO.positioning.aboutDescription}
             </p>
             <p className="text-[15px] sm:text-[16px] lg:text-[17px] text-[#6F6261] leading-relaxed font-sans font-normal">
-              Operating at the heart of UAE&apos;s digital ecosystem, Nine to Nine Hub merges data-driven marketing, cinematic video production, search dominance, and Next.js technology into scalable digital growth engines.
+              Operating at the heart of the UAE&apos;s digital economy, Nine to Nine Hub merges data-driven marketing, cinematic video production, search optimization, and Next.js technology into scalable digital growth engines.
             </p>
           </SectionReveal>
 

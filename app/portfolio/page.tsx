@@ -14,6 +14,9 @@ export const metadata = {
   title: "Portfolio & Case Studies | Nine to Nine Hub UAE",
   description:
     "Explore Nine to Nine Hub's portfolio across Hospitality, Interior Design, Corporate Real Estate, and Specialized Sectors in the UAE and the GCC.",
+  alternates: {
+    canonical: "https://ninetoninehub.com/portfolio",
+  },
 };
 
 export default function PortfolioPage() {

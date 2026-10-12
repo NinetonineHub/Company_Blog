@@ -4,7 +4,10 @@ import CareerSection from "@/components/CareerSection";
 export const metadata = {
   title: "Careers & Hiring Opportunities | Nine to Nine Hub",
   description:
-    "Explore current hiring opportunities at Nine to Nine Hub across India (Sales Executive, Digital Marketing Executive, SEO Specialist, Social Media Manager, Content Writer, Graphic Designer, Video Editor, Telecalling, Admin) and UAE (Admin, Sales Executive, Videography).",
+    "Explore career opportunities at Nine to Nine Hub in the UAE and India. Join our growing team in marketing, SEO, video editing, design, and web development.",
+  alternates: {
+    canonical: "https://ninetoninehub.com/career",
+  },
 };
 
 export default function CareerPage() {

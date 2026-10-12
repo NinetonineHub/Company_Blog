@@ -202,17 +202,17 @@ export const SERVICES_DATA: Service[] = [
     logoShowcase: [
       {
         name: "Noor Altrhal",
-        logoUrl: "/images/websites/noorlogo.jpeg",
+        logoUrl: "/images/websites/noorlogo.webp",
         scope: ["Logo Design"]
       },
       {
         name: "Kanz Al Arab",
-        logoUrl: "/images/websites/kanzalarablogo.png",
+        logoUrl: "/images/websites/kanzalarablogo.webp",
         scope: ["Logo Design"]
       },
       {
         name: "BlueMoon",
-        logoUrl: "/images/websites/bluemoon logo.jpeg",
+        logoUrl: "/images/websites/bluemoon logo.webp",
         scope: ["Logo Design"]
       }
     ],
