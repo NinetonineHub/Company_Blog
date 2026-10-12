@@ -182,7 +182,7 @@ export default function CareerSection() {
             </span>
           </h1>
           <p className="text-[#6F6261] text-[16px] sm:text-[18px] max-w-2xl mx-auto leading-relaxed font-sans font-normal">
-            Join Nine to Nine Hub and grow with a team working across digital marketing, SEO, social media, content, design, video and business development.
+            Join Nine to Nine Hub and grow with our team. We work across digital marketing, SEO, social media, design, video production, and business development.
           </p>
         </SectionReveal>
 

@@ -51,7 +51,7 @@ export default function AboutPage() {
 
                 {/* Supporting Description */}
                 <p className="text-[#6F6261] text-[16px] sm:text-[18px] lg:text-[19px] max-w-xl mx-auto lg:mx-0 font-sans leading-relaxed mb-8 font-normal">
-                  Nine to Nine Hub is a UAE-based digital growth agency bridging strategy, performance marketing, video production, and modern web development. Operating from Dubai, our multidisciplinary team architects integrated digital systems that help regional businesses expand market reach and convert engagement into measurable revenue.
+                  Nine to Nine Hub is a UAE digital growth agency bridging strategy, creative media, and modern web development. Operating from Dubai, our team builds integrated digital systems. We help regional businesses expand market reach and convert engagement into measurable revenue.
                 </p>
 
                 {/* CTA Button */}

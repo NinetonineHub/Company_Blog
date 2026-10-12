@@ -84,6 +84,37 @@ export default function ServicesSection() {
                     <p className="text-[15px] sm:text-[16px] text-[#6F6261] leading-relaxed font-sans font-normal">
                       {service.shortDescription}
                     </p>
+
+                    {/* Key Deliverables */}
+                    <div className="mt-4 pt-3.5 border-t border-[#5B0F18]/10">
+                      <span className="text-[10px] sm:text-[11px] font-sans text-[#5B0F18] uppercase tracking-wider block mb-2 font-medium">
+                        KEY DELIVERABLES:
+                      </span>
+                      <ul className="space-y-1.5 mb-3">
+                        {service.deliverables.map((item, dIdx) => (
+                          <li
+                            key={dIdx}
+                            className="flex items-start gap-2 text-[12px] sm:text-[13px] text-[#24191A] font-sans font-normal leading-snug"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#5B0F18] mt-1.5 shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Client Work Association Preview */}
+                      {service.clients && service.clients.length > 0 && (
+                        <div className="pt-2 border-t border-[#5B0F18]/8">
+                          <span className="text-[9px] sm:text-[10px] font-sans text-[#6F6261] uppercase tracking-wider block mb-1 font-medium">
+                            CLIENT ENGAGEMENTS:
+                          </span>
+                          <p className="text-[11px] sm:text-[12px] font-sans text-[#5B0F18] font-medium leading-tight">
+                            {service.clients.slice(0, 3).map((c) => c.name).join(" • ")}
+                            {service.clients.length > 3 && ` +${service.clients.length - 3} more`}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   {/* Premium Wine READ MORE CTA Button sitting naturally closer to description */}

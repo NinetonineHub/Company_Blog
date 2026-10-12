@@ -8,6 +8,7 @@ import {
   MapPin,
   Phone,
   Mail,
+  Clock,
   Send,
   CheckCircle2,
   AlertCircle,
@@ -209,6 +210,24 @@ export default function ContactSection() {
                       </a>
                     </div>
                   </div>
+
+                  {/* Business Hours */}
+                  <div className="flex items-start gap-4 pt-4 border-t border-[#5B0F18]/10">
+                    <div className="w-10 h-10 rounded-xl bg-[#FCF9F5] border border-[#5B0F18]/12 flex items-center justify-center text-[#5B0F18] shrink-0">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-sans text-[#6F6261] uppercase tracking-wider block mb-1 font-medium">
+                        BUSINESS HOURS
+                      </span>
+                      <p className="text-[#24191A] font-sans text-xs sm:text-sm font-medium leading-snug">
+                        Monday – Friday: 9:00 AM – 6:00 PM (GST)
+                      </p>
+                      <p className="text-[#6F6261] font-sans text-xs mt-0.5">
+                        Saturday – Sunday: Closed (Client emergency support active)
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </SectionReveal>
@@ -249,6 +268,62 @@ export default function ContactSection() {
                     </span>
                   </div>
                 </a>
+              </div>
+            </SectionReveal>
+
+            {/* Consultation & Discovery Process Card */}
+            <SectionReveal delay={0.15}>
+              <div className="p-8 rounded-3xl bg-white border border-[#5B0F18]/15 shadow-soft-card">
+                <span className="text-[10px] sm:text-[11px] font-sans tracking-widest text-[#5B0F18] uppercase font-semibold block mb-2">
+                  // OUR CONSULTATION PROCESS
+                </span>
+                <h2 className="text-[20px] sm:text-[24px] font-display font-semibold text-[#24191A] mb-6">
+                  What Happens Next?
+                </h2>
+
+                <div className="space-y-5">
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-xl bg-[#5B0F18]/10 text-[#5B0F18] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 font-sans">
+                      01
+                    </div>
+                    <div>
+                      <h3 className="text-xs sm:text-sm font-sans font-semibold text-[#24191A]">
+                        Review Within 24 Business Hours
+                      </h3>
+                      <p className="text-xs font-sans text-[#6F6261] leading-relaxed mt-1">
+                        Our leadership reviews your business goals, target audience, and current digital footprint.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-xl bg-[#5B0F18]/10 text-[#5B0F18] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 font-sans">
+                      02
+                    </div>
+                    <div>
+                      <h3 className="text-xs sm:text-sm font-sans font-semibold text-[#24191A]">
+                        30-Minute Discovery Session
+                      </h3>
+                      <p className="text-xs font-sans text-[#6F6261] leading-relaxed mt-1">
+                        We arrange an introductory call or meeting to clarify scope, deliverables, and targets.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-xl bg-[#5B0F18]/10 text-[#5B0F18] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 font-sans">
+                      03
+                    </div>
+                    <div>
+                      <h3 className="text-xs sm:text-sm font-sans font-semibold text-[#24191A]">
+                        Action Plan & Proposal
+                      </h3>
+                      <p className="text-xs font-sans text-[#6F6261] leading-relaxed mt-1">
+                        You receive a tailored proposal outlining transparent milestones, deliverables, and commercial terms.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </SectionReveal>
 

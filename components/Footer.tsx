@@ -28,6 +28,7 @@ export default function Footer() {
                 src="/images/websites/9-9logo.webp"
                 alt="Nine to Nine Hub Logo"
                 loading="lazy"
+                decoding="async"
                 width="140"
                 height="48"
                 className="h-12 w-auto object-contain brightness-0 invert"

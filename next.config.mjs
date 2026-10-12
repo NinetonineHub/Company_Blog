@@ -31,11 +31,13 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com data:",
       "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://stats.g.doubleclick.net https://www.googletagmanager.com",
       "frame-src 'self' https://maps.google.com https://www.google.com",
+      "frame-ancestors 'self'",
       "worker-src 'self' blob:",
       "media-src 'self' data: blob:",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
+      "upgrade-insecure-requests",
     ].join('; '),
   },
 ];

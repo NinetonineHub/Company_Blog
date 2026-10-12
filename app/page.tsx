@@ -9,9 +9,10 @@ import { ArrowUpRight } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
 
 export const metadata: Metadata = {
+  metadataBase: null,
   title: "Nine to Nine Hub | The Hub of Digital Growth",
   description:
-    "Nine to Nine Hub is a UAE digital agency delivering data-driven marketing, creative content, branding, SEO and high-performance web development solutions.",
+    "Nine to Nine Hub is a UAE digital agency delivering data-driven marketing, branding, SEO, video production, and high-performance web solutions.",
   alternates: {
     canonical: "https://ninetoninehub.com/",
   },
@@ -215,7 +216,7 @@ export default function HomePage() {
               {COMPANY_INFO.positioning.aboutDescription}
             </p>
             <p className="text-[15px] sm:text-[16px] lg:text-[17px] text-[#6F6261] leading-relaxed font-sans font-normal">
-              Operating at the heart of the UAE&apos;s digital economy, Nine to Nine Hub merges data-driven marketing, cinematic video production, search optimization, and Next.js technology into scalable digital growth engines.
+              Operating in the UAE, Nine to Nine Hub merges data-driven marketing with video production. We combine search optimization and modern web technology to build scalable digital growth engines.
             </p>
           </SectionReveal>
 

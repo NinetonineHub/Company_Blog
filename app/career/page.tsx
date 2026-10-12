@@ -4,7 +4,7 @@ import CareerSection from "@/components/CareerSection";
 export const metadata = {
   title: "Careers & Hiring Opportunities | Nine to Nine Hub",
   description:
-    "Explore career opportunities at Nine to Nine Hub in the UAE and India. Join our growing team in marketing, SEO, video editing, design, and web development.",
+    "Explore careers at Nine to Nine Hub across the UAE and India. Join our growing team in marketing, SEO, video editing, design, and web development.",
   alternates: {
     canonical: "https://ninetoninehub.com/career",
   },

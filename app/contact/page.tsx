@@ -4,7 +4,7 @@ import ContactSection from "@/components/ContactSection";
 export const metadata = {
   title: "Contact HQ | Nine to Nine Hub UAE",
   description:
-    "Connect with Nine to Nine Hub headquarters in Dubai, UAE. Submit project inquiries, request custom growth proposals, or chat with our team via WhatsApp.",
+    "Connect with Nine to Nine Hub headquarters in Dubai, UAE. Submit project inquiries, request custom growth proposals, or chat with us on WhatsApp.",
   alternates: {
     canonical: "https://ninetoninehub.com/contact",
   },

@@ -23,7 +23,7 @@ export const COMPANY_INFO = {
   positioning: {
     heroSubhead: "A UAE-based digital growth agency combining strategy, creative media, performance marketing and technology to help brands grow, connect and convert.",
     aboutHeadline: "WE BUILD THE FUTURE OF DIGITAL GROWTH.",
-    aboutDescription: "Nine to Nine Hub is a premier UAE-based digital growth agency bridging the gap between data-driven marketing strategy, high-impact creative execution, and robust technical infrastructure. We scale ambitious brands across the GCC and internationally by engineering digital ecosystems designed for measurable ROI.",
+    aboutDescription: "Nine to Nine Hub is a UAE digital growth agency. We combine data-driven marketing, creative media, and modern web development. Our team scales ambitious brands across the GCC by delivering measurable results and higher return on investment.",
   },
   pillars: [
     {
