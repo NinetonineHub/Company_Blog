@@ -17,7 +17,7 @@ const TEAM_MEMBERS = [
   { id: "varshini", name: "VARSHINI", role: "WEBPAGE DESIGNER" },
   { id: "yadhu", name: "YADHU", role: "SEO SPECIALIST" },
   { id: "kaviyaras", name: "KAVIYARAS", role: "VIDEO EDITOR" },
-  { id: "somya", name: "SOMYA", role: "SENIOR VIDEO EDITOR" },
+  { id: "savad", name: "SAVAD", role: "VIDEOGRAPHER" },
   { id: "ganesh-pranesh", name: "GANESH,", name2: "PRANESH", role: "WEB DEVELOPMENT" },
   { id: "vignesh-thenmozhi", name: "VIGNESH,", name2: "THENMOZHI", role: "TELECALLING" },
   { id: "shiyama", name: "SHIYAMA", role: "GRAPHIC DESIGNER" },
