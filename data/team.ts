@@ -51,10 +51,10 @@ export const TEAM_MEMBERS: TeamMember[] = [
     code: "TEAM-06",
   },
   {
-    id: "somya",
+    id: "savad",
     number: "07",
-    name: "Somya",
-    role: "Senior Video Editor",
+    name: "Savad",
+    role: "Videographer",
     code: "TEAM-07",
   },
   {

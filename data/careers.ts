@@ -35,7 +35,7 @@ export const DUBAI_ROLES = UAE_ROLES;
 export const TEAM_MEMBERS: TeamMember[] = [
   { id: "ganesh", name: "Ganesh", role: "Web Development" },
   { id: "kaviyaras", name: "Kaviyaras", role: "Video Editor" },
-  { id: "somya", name: "Somya", role: "Senior Video Editor" },
+  { id: "savad", name: "Savad", role: "Videographer" },
   { id: "yadhu", name: "Yadhu", role: "SEO Specialist" },
   { id: "varshni", name: "Varshni", role: "Webpage Designer" },
   { id: "mano-sree", name: "Mano Sree", role: "Digital Marketing Executive" },
