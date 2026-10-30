@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import SectionReveal from "./SectionReveal";
-import { ArrowUpRight, Sparkles, Video, Search, Globe, Palette, Zap } from "lucide-react";
+import { ArrowUpRight, Sparkles, Video, Search, Globe, Palette, Zap, Cpu } from "lucide-react";
 
 const PACKAGES = [
   {
@@ -164,6 +164,11 @@ const ADDITIONAL_SERVICES = [
     title: "LOGO & VISUAL DESIGN",
     description: "Professional vector logo design, branding assets & color identity.",
   },
+  {
+    icon: Cpu,
+    title: "BUSINESS SOFTWARE & AI AUTOMATION",
+    description: "ERP, POS, automation, forms and PDF tools, delivered with our partner Eyakkar.",
+  },
 ];
 
 export default function GrowthPackagesSection() {
@@ -281,7 +286,7 @@ export default function GrowthPackagesSection() {
                 </Link>
               </div>
 
-              {/* 5 Standalone Services Grid */}
+              {/* 6 Standalone Services Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {ADDITIONAL_SERVICES.map((serv, sIdx) => {
                   const Icon = serv.icon;

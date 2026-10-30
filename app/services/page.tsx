@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import ServicesSection from "@/components/ServicesSection";
+import PartnerSolutionsSection from "@/components/PartnerSolutionsSection";
 import GrowthPackagesSection from "@/components/GrowthPackagesSection";
 import SectionReveal from "@/components/SectionReveal";
 import HeroWireframeBackground from "@/components/HeroWireframeBackground";
@@ -84,6 +85,9 @@ export default function ServicesPage() {
       <div id="services-list">
         <ServicesSection />
       </div>
+
+      {/* Partner Solutions Section (Eyakkar Technologies) */}
+      <PartnerSolutionsSection />
 
       {/* Premium Growth Packages Section */}
       <GrowthPackagesSection />

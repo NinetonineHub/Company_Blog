@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import ServicesSection from "@/components/ServicesSection";
 import PortfolioSection from "@/components/PortfolioSection";
+import PartnershipSection from "@/components/PartnershipSection";
 import SectionReveal from "@/components/SectionReveal";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -47,6 +48,39 @@ const ALL_CLIENT_LOGOS = [
   ...MIDDLE_LEFT_LOGOS,
   ...MIDDLE_RIGHT_LOGOS,
   ...BOTTOM_ROW_LOGOS,
+];
+
+const WHY_US_ITEMS = [
+  {
+    id: "vision",
+    number: "01",
+    title: "VISION",
+    description: "We anticipate digital trends and consumer behaviors in the GCC market, crafting brand narratives that transcend market noise.",
+  },
+  {
+    id: "strategy",
+    number: "02",
+    title: "STRATEGY",
+    description: "Every campaign, campaign structure, and conversion path is built on precision analytics, market data, and targeted user journeys.",
+  },
+  {
+    id: "creativity",
+    number: "03",
+    title: "CREATIVITY",
+    description: "From short-form commercial reels to high-end digital identity design, we engineer visual assets that demand attention.",
+  },
+  {
+    id: "technology",
+    number: "04",
+    title: "TECHNOLOGY",
+    description: "Deploying high-speed web apps, custom headless architectures, and seamlessly integrated digital growth stacks.",
+  },
+  {
+    id: "eyakkar",
+    number: "05",
+    title: "EYAKKAR",
+    description: "Our partner for AI-powered ERP, POS, automation, forms and PDF tools, backed by our digital marketing services.",
+  },
 ];
 
 export default function HomePage() {
@@ -261,6 +295,9 @@ export default function HomePage() {
       {/* 4. SECTION: SELECTED UAE PROJECTS (9 Real Clients) */}
       <PortfolioSection />
 
+      {/* 4.5. SECTION: NEW PARTNERSHIP (Eyakkar Technologies) */}
+      <PartnershipSection />
+
       {/* 5. SECTION: WHY NINE TO NINE HUB */}
       <section className="relative py-28 bg-[#F8F1E7] border-t border-[#5B0F18]/12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
@@ -276,19 +313,23 @@ export default function HomePage() {
             </p>
           </SectionReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {COMPANY_INFO.pillars.slice(0, 4).map((pillar, idx) => (
-              <SectionReveal key={pillar.id} delay={idx * 0.08}>
-                <div className="p-6 rounded-2xl bg-white border border-[#5B0F18]/12 hover:border-[#5B0F18]/40 transition-all h-full flex flex-col justify-between hover:shadow-soft-card">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 xl:gap-6">
+            {WHY_US_ITEMS.map((item, idx) => (
+              <SectionReveal
+                key={item.id}
+                delay={idx * 0.08}
+                className={idx === 4 ? "sm:col-span-2 lg:col-span-1" : ""}
+              >
+                <div className="p-5 xl:p-6 rounded-2xl bg-white border border-[#5B0F18]/12 hover:border-[#5B0F18]/40 transition-all h-full flex flex-col justify-between hover:shadow-soft-card">
                   <div>
                     <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#5B0F18] font-medium block mb-3 uppercase">
-                      // 0{idx + 1}
+                      // {item.number}
                     </span>
-                    <h3 className="text-[24px] sm:text-[26px] font-display font-semibold text-[#24191A] mb-2 leading-snug">
-                      {pillar.title}
+                    <h3 className="text-[20px] sm:text-[22px] xl:text-[26px] font-display font-semibold text-[#24191A] mb-2 leading-snug">
+                      {item.title}
                     </h3>
-                    <p className="text-[15px] sm:text-[16px] text-[#6F6261] leading-relaxed font-sans font-normal">
-                      {pillar.description}
+                    <p className="text-[13px] sm:text-[14px] xl:text-[15px] text-[#6F6261] leading-relaxed font-sans font-normal">
+                      {item.description}
                     </p>
                   </div>
                 </div>
