@@ -37,9 +37,9 @@ export default function PortfolioSection() {
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <h2 className="text-[34px] sm:text-[42px] lg:text-[52px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.15]">
-              SELECTED UAE <br />
+              Our Client Work <br />
               <span className="text-[#5B0F18]">
-                CLIENT ENGAGEMENTS.
+                Across the UAE
               </span>
             </h2>
             <p className="text-[#6F6261] max-w-md text-[16px] sm:text-[18px] lg:text-[19px] font-sans font-normal leading-relaxed">
@@ -160,6 +160,17 @@ export default function PortfolioSection() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* View all case studies link */}
+        <div className="mt-14 text-center">
+          <Link
+            href="/portfolio"
+            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#5B0F18] text-[#F8F1E7] hover:bg-[#430B12] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider transition-all shadow-wine transform hover:-translate-y-0.5"
+          >
+            <span>View all case studies</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </Link>
+        </div>
 
       </div>
     </section>

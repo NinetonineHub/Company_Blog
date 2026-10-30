@@ -10,13 +10,57 @@ import { ArrowUpRight } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
 
 export const metadata: Metadata = {
-  metadataBase: null,
-  title: "Nine to Nine Hub | The Hub of Digital Growth",
+  title: "Digital Marketing Agency in Dubai, UAE | Nine to Nine Hub",
   description:
-    "Nine to Nine Hub is a UAE digital agency delivering data-driven marketing, branding, SEO, video production, and high-performance web solutions.",
+    "Digital marketing agency in Dubai offering SEO, social media, video production, web development & paid ads. Get a free proposal today.",
   alternates: {
     canonical: "https://ninetoninehub.com/",
   },
+  openGraph: {
+    title: "Digital Marketing Agency in Dubai, UAE | Nine to Nine Hub",
+    description:
+      "Digital marketing agency in Dubai offering SEO, social media, video production, web development & paid ads. Get a free proposal today.",
+    url: "https://ninetoninehub.com/",
+    siteName: "Nine to Nine Hub",
+    type: "website",
+  },
+};
+
+const professionalServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Nine to Nine Hub",
+  url: "https://ninetoninehub.com/",
+  logo: "https://ninetoninehub.com/icon.png",
+  image: "https://ninetoninehub.com/icon.png",
+  description:
+    "Digital marketing agency in Dubai offering SEO, social media, video production, web development & paid ads. Get a free proposal today.",
+  telephone: "+971 50 128 2100",
+  email: "info@ninetoninehub.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Residence - 1072, Block-B, Best Benefit Business Center, Abu Baker Al Siddique St.",
+    addressLocality: "Dubai",
+    addressRegion: "Dubai",
+    addressCountry: "AE",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "25.2697",
+    longitude: "55.3340",
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "09:00",
+    closes: "21:00",
+  },
+  sameAs: [
+    "https://www.instagram.com/ninetoninehub/",
+    "https://www.linkedin.com/company/nine-to-nine-hub/",
+    "https://www.facebook.com/ninetoninehub",
+  ],
+  priceRange: "$$",
 };
 
 const TOP_ROW_LOGOS = [
@@ -27,8 +71,8 @@ const TOP_ROW_LOGOS = [
 ];
 
 const MIDDLE_LEFT_LOGOS = [
-  { id: "tazabiryani", name: "Taza Biryani & Grills", logo: "/images/portfolio/logo (4).webp", animClass: "animate-float-2", offset: "lg:translate-y-2" },
-  { id: "doc", name: "Doc View", logo: "/images/portfolio/doc.webp", animClass: "animate-float-3", offset: "lg:-translate-y-1" },
+  { id: "tazabiryani", name: "Taza Biryani", logo: "/images/portfolio/logo (4).webp", animClass: "animate-float-2", offset: "lg:translate-y-2" },
+  { id: "doc", name: "DocView", logo: "/images/portfolio/doc.webp", animClass: "animate-float-3", offset: "lg:-translate-y-1" },
 ];
 
 const MIDDLE_RIGHT_LOGOS = [
@@ -61,7 +105,7 @@ const WHY_US_ITEMS = [
     id: "strategy",
     number: "02",
     title: "STRATEGY",
-    description: "Every campaign, campaign structure, and conversion path is built on precision analytics, market data, and targeted user journeys.",
+    description: "Every campaign and conversion path is built on analytics, market data and targeted user journeys.",
   },
   {
     id: "creativity",
@@ -86,6 +130,12 @@ const WHY_US_ITEMS = [
 export default function HomePage() {
   return (
     <>
+      {/* ProfessionalService Structured Data (JSON-LD) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceJsonLd) }}
+      />
+
       {/* 1. Interactive 3D Canvas Hero Section */}
       <Hero />
 
@@ -106,14 +156,14 @@ export default function HomePage() {
 
         {/* Desktop Orbital Floating Layout (lg+) — Balanced Symmetrical Matrix */}
         <div className="hidden lg:block max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
-          {/* Top Row (4 Logos: Go Bus Tourism, Noor Altrhal, Taza Meat Shop, Tiger Yach) */}
+          {/* Top Row (4 Logos: Go Bus Tourism, Noor Altrhal, Taza Meat Shop, Tiger Yacht) */}
           <div className="flex items-center justify-center gap-8 xl:gap-12 mb-10">
             {TOP_ROW_LOGOS.map((client) => (
               <div key={client.id} className={`${client.animClass} ${client.offset}`}>
                 <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
                   <img
                     src={client.logo}
-                    alt={`${client.name} logo`}
+                    alt={`${client.name} logo - client of Nine to Nine Hub.`}
                     width={200}
                     height={80}
                     decoding="async"
@@ -127,14 +177,14 @@ export default function HomePage() {
 
           {/* Middle Row (2 Logos Left — CENTER FOCAL CARD — 2 Logos Right) */}
           <div className="flex items-center justify-center gap-8 xl:gap-12 mb-10">
-            {/* Middle Left: Taza Biryani & Doc View */}
+            {/* Middle Left: Taza Biryani & DocView */}
             <div className="flex items-center gap-8 xl:gap-12">
               {MIDDLE_LEFT_LOGOS.map((client) => (
                 <div key={client.id} className={`${client.animClass} ${client.offset}`}>
                   <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
                     <img
                       src={client.logo}
-                      alt={`${client.name} logo`}
+                      alt={`${client.name} logo - client of Nine to Nine Hub.`}
                       width={200}
                       height={80}
                       decoding="async"
@@ -165,7 +215,7 @@ export default function HomePage() {
                   <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
                     <img
                       src={client.logo}
-                      alt={`${client.name} logo`}
+                      alt={`${client.name} logo - client of Nine to Nine Hub.`}
                       width={200}
                       height={80}
                       decoding="async"
@@ -178,14 +228,14 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Bottom Row (3 Logos: BlueMoon, Kanz Al Arab, Beyond Numbers) */}
+          {/* Bottom Row (4 Logos: BlueMoon, Kanz Al Arab, Beyond Numbers, Yacht Slots) */}
           <div className="flex items-center justify-center gap-8 xl:gap-12">
             {BOTTOM_ROW_LOGOS.map((client) => (
               <div key={client.id} className={`${client.animClass} ${client.offset}`}>
                 <div className="group relative p-1 sm:p-1.5 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center cursor-pointer">
                   <img
                     src={client.logo}
-                    alt={`${client.name} logo`}
+                    alt={`${client.name} logo - client of Nine to Nine Hub.`}
                     width={200}
                     height={80}
                     decoding="async"
@@ -212,14 +262,14 @@ export default function HomePage() {
             </span>
           </div>
 
-          {/* Mobile Grid of all 11 logos */}
+          {/* Mobile Grid of all 12 logos */}
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 max-w-2xl mx-auto">
             {ALL_CLIENT_LOGOS.map((client) => (
               <div key={`m-${client.id}`} className={`${client.animClass} w-[calc(50%-8px)] sm:w-[calc(25%-18px)] flex justify-center`}>
                 <div className="group relative p-1 rounded-[20px] border border-[#5B0F18]/35 hover:border-[#5B0F18] bg-transparent hover:shadow-[0_0_0_1px_rgba(91,15,24,0.25),0_0_25px_rgba(91,15,24,0.28),0_0_50px_rgba(91,15,24,0.12)] hover:scale-[1.05] transition-all duration-400 ease-out flex items-center justify-center w-full h-24 sm:h-28">
                   <img
                     src={client.logo}
-                    alt={`${client.name} logo`}
+                    alt={`${client.name} logo - client of Nine to Nine Hub.`}
                     width={200}
                     height={80}
                     decoding="async"
@@ -241,16 +291,16 @@ export default function HomePage() {
               // WHO WE ARE
             </span>
             <h2 className="text-[38px] sm:text-[54px] lg:text-[68px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.12] mb-8">
-              WE BUILD THE FUTURE <br />
+              About Nine to Nine Hub: <br />
               <span className="text-[#5B0F18]">
-                OF DIGITAL GROWTH.
+                We Build the Future of Digital Growth
               </span>
             </h2>
             <p className="text-[16px] sm:text-[18px] lg:text-[19px] text-[#24191A] font-normal leading-relaxed font-sans mb-6">
-              {COMPANY_INFO.positioning.aboutDescription}
+              Nine to Nine Hub is a digital marketing agency in Dubai. We combine data-driven marketing, video production, SEO and web development to help brands grow across the UAE and GCC, with measurable results and a higher return on investment.
             </p>
             <p className="text-[15px] sm:text-[16px] lg:text-[17px] text-[#6F6261] leading-relaxed font-sans font-normal">
-              Operating in the UAE, Nine to Nine Hub merges data-driven marketing with video production. We combine search optimization and modern web technology to build scalable digital growth engines.
+              Operating from Dubai, UAE, Nine to Nine Hub merges data-driven marketing with video production. We combine search optimization and modern web technology to build scalable digital growth engines.
             </p>
           </SectionReveal>
 
@@ -261,7 +311,7 @@ export default function HomePage() {
                 <span className="text-[32px] sm:text-[36px] lg:text-[40px] font-display font-medium text-[#24191A]">UAE</span>
                 <p className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#6F6261] uppercase font-medium">Operational Headquarters</p>
                 <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#6F6261] leading-relaxed pt-1 font-sans font-normal">
-                  Engineered specifically for competitive GCC and international markets.
+                  Headquartered in Dubai, serving the UAE and GCC.
                 </p>
               </div>
             </SectionReveal>
@@ -271,7 +321,7 @@ export default function HomePage() {
                 <span className="text-[32px] sm:text-[36px] lg:text-[40px] font-display font-medium text-[#5B0F18]">360°</span>
                 <p className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#6F6261] uppercase font-medium">Full-Funnel Agency Ecosystem</p>
                 <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#6F6261] leading-relaxed pt-1 font-sans font-normal">
-                  Unifying creative media reels, SEO, paid ads, and high-speed web apps.
+                  Full-funnel digital marketing, from creative to conversion.
                 </p>
               </div>
             </SectionReveal>
@@ -281,7 +331,7 @@ export default function HomePage() {
                 <span className="text-[32px] sm:text-[36px] lg:text-[40px] font-display font-medium text-[#24191A]">8</span>
                 <p className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans text-[#6F6261] uppercase font-medium">Core Service Offerings</p>
                 <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#6F6261] leading-relaxed pt-1 font-sans font-normal">
-                  Social media management, SEO, GMB, video promotion, web creation, branding, ads & leads.
+                  Core digital marketing services.
                 </p>
               </div>
             </SectionReveal>
@@ -306,7 +356,7 @@ export default function HomePage() {
               // AGENCY DIFFERENTIATORS
             </span>
             <h2 className="text-[34px] sm:text-[42px] lg:text-[52px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.15]">
-              WHY NINE TO NINE HUB?
+              Why Choose Nine to Nine Hub?
             </h2>
             <p className="text-[#6F6261] text-[15px] sm:text-[16px] lg:text-[17px] font-sans font-normal mt-4">
               We replace vanity metrics with real client revenue growth, high organic search rankings, and cinematic visual dominance.
@@ -339,21 +389,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. SECTION: LET'S BUILD WHAT'S NEXT CTA Banner */}
+      {/* 6. SECTION: FINAL CTA Banner */}
       <section className="relative py-28 bg-[#FCF9F5] border-t border-[#5B0F18]/12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 text-center">
           <SectionReveal>
             <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] uppercase block mb-3 font-medium">
               // READY TO SCALE YOUR BRAND IN THE UAE?
             </span>
-            <h2 className="text-[38px] sm:text-[54px] lg:text-[68px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.12] mb-6 max-w-4xl mx-auto">
-              LET&apos;S BUILD <br />
+            <h2 className="text-[38px] sm:text-[54px] lg:text-[68px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.12] mb-4 max-w-4xl mx-auto">
+              Ready to Grow Your Brand <br />
               <span className="text-[#5B0F18]">
-                WHAT&apos;S NEXT.
+                in Dubai?
               </span>
             </h2>
+            <p className="text-[12px] sm:text-[13px] font-sans tracking-widest text-[#5B0F18] uppercase font-semibold mb-6">
+              LET&apos;S BUILD WHAT&apos;S NEXT.
+            </p>
             <p className="text-[#6F6261] max-w-xl mx-auto text-[15px] sm:text-[16px] lg:text-[17px] font-sans font-normal mb-10">
-              Partner with Nine to Nine Hub for data-driven social media management, local SEO, commercial video promotion, paid ads, and Next.js web development.
+              Partner with Nine to Nine Hub for social media management, SEO, video production, paid ads and web development in Dubai.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -361,7 +414,7 @@ export default function HomePage() {
                 href="/contact"
                 className="group relative inline-flex items-center gap-3 px-9 py-4 rounded-full bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider shadow-wine transition-all transform hover:-translate-y-0.5"
               >
-                <span>START A PROJECT</span>
+                <span>Get a Free Proposal</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </Link>
               

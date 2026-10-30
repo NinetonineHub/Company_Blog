@@ -16,6 +16,7 @@ export interface Service {
   deliverables: string[];
   tag: string;
   accentColor: string;
+  exploreLabel?: string;
   clients?: ClientWork[];
   websitesCompleted?: ClientWork[];
   logoShowcase?: ClientWork[];
@@ -25,7 +26,8 @@ export const SERVICES_DATA: Service[] = [
   {
     id: "social-media-management",
     number: "01",
-    title: "Social Media Management",
+    title: "Social Media Management in Dubai",
+    exploreLabel: "Explore social media management",
     shortDescription: "End-to-end content creation, strategic scheduling, community engagement, content strategy, posters and carousels across GCC social platforms.",
     detailedDescription: "End-to-end content creation, strategic post scheduling, community engagement, content strategy, custom posters, carousels, and brand management tailored for UAE and GCC audiences. We curate visual brand feeds, maintain daily community engagement, and optimize brand authority.",
     tag: "SOCIAL & BRAND",
@@ -54,7 +56,8 @@ export const SERVICES_DATA: Service[] = [
   {
     id: "seo-search-engine-optimization",
     number: "02",
-    title: "SEO (Search Engine Optimization)",
+    title: "SEO Services in UAE",
+    exploreLabel: "Explore SEO services",
     shortDescription: "Comprehensive website optimization strategies to rank higher on Google search results and drive consistent organic traffic.",
     detailedDescription: "Comprehensive website optimization strategies to rank higher on Google search results and drive consistent organic traffic. We analyze search intent, resolve technical crawling blockers, optimize on-page structure, and improve overall search engine visibility.",
     tag: "ORGANIC SEARCH",
@@ -73,7 +76,8 @@ export const SERVICES_DATA: Service[] = [
   {
     id: "google-my-business",
     number: "03",
-    title: "Google My Business",
+    title: "Google Business Profile Management",
+    exploreLabel: "Explore local SEO",
     shortDescription: "Complete profile setup, local SEO optimization, review management and map positioning to improve local search visibility.",
     detailedDescription: "Complete profile setup, local SEO optimization, review management and map positioning to improve local search visibility across UAE and local GCC search areas.",
     tag: "LOCAL SEARCH",
@@ -91,7 +95,8 @@ export const SERVICES_DATA: Service[] = [
   {
     id: "video-promotion",
     number: "04",
-    title: "Video Production",
+    title: "Video Production & Reels",
+    exploreLabel: "Explore video production",
     shortDescription: "High-quality video production, creative scripting, professional editing and targeted promotion tailored for Reels, YouTube and brand campaigns.",
     detailedDescription: "High-quality video production, creative scripting, professional editing and targeted promotion tailored for Reels, YouTube and brand campaigns across multi-platform video channels.",
     tag: "VIDEO & REELS",
@@ -128,7 +133,7 @@ export const SERVICES_DATA: Service[] = [
         scope: ["Video Production"]
       },
       {
-        name: "Doc View",
+        name: "DocView",
         scope: ["Video Production"]
       },
       {
@@ -140,7 +145,8 @@ export const SERVICES_DATA: Service[] = [
   {
     id: "website-creation",
     number: "05",
-    title: "Website Creation",
+    title: "Website Development in Dubai",
+    exploreLabel: "Explore web development",
     shortDescription: "Custom, responsive, mobile-friendly and high-converting website design and development built specifically for business goals.",
     detailedDescription: "Custom, responsive, mobile-friendly and high-converting website design and development built specifically for business goals. We engineer modern, fast web platforms tailored for seamless user navigation and business conversion.",
     tag: "WEB CREATION",
@@ -188,7 +194,8 @@ export const SERVICES_DATA: Service[] = [
   {
     id: "logo-visual-design",
     number: "06",
-    title: "Logo & Visual Design",
+    title: "Logo & Brand Design",
+    exploreLabel: "Explore branding",
     shortDescription: "Crafting unique, memorable and professional visual identities, logos and branding collateral for modern businesses.",
     detailedDescription: "Crafting unique, memorable and professional visual identities, logos and branding collateral for modern businesses. We design brand guidelines, typography palettes, and visual design assets.",
     tag: "BRANDING",
@@ -223,7 +230,8 @@ export const SERVICES_DATA: Service[] = [
   {
     id: "ads-management",
     number: "07",
-    title: "Ads Management",
+    title: "Paid Ads Management",
+    exploreLabel: "Explore paid ads",
     shortDescription: "Paid campaign setup and optimization across Google, Meta (Instagram/Facebook) and TikTok.",
     detailedDescription: "Paid campaign setup and optimization across Google, Meta (Instagram/Facebook) and TikTok to drive targeted user acquisition and ROI growth.",
     tag: "PAID ADS",
@@ -235,13 +243,14 @@ export const SERVICES_DATA: Service[] = [
       "Continuous Campaign ROAS Optimization"
     ],
     clients: [
-      { name: "Doc View", scope: ["Performance Marketing"] }
+      { name: "DocView", scope: ["Performance Marketing"] }
     ]
   },
   {
     id: "lead-generation",
     number: "08",
     title: "Lead Generation",
+    exploreLabel: "Explore lead generation",
     shortDescription: "Targeted strategies and high-converting sales funnels designed to capture qualified business leads.",
     detailedDescription: "Targeted strategies and high-converting sales funnels designed to capture qualified business leads for commercial growth.",
     tag: "LEAD FUNNELS",
@@ -253,7 +262,7 @@ export const SERVICES_DATA: Service[] = [
       "Qualified Business Lead Intake Systems"
     ],
     clients: [
-      { name: "Doc View", scope: ["Lead Generation"] }
+      { name: "DocView", scope: ["Lead Generation"] }
     ]
   }
 ];

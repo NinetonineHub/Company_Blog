@@ -268,6 +268,7 @@ export default function Hero3DCanvas({ className = "" }: Hero3DCanvasProps) {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      aria-hidden="true"
       className={`relative w-full bg-transparent flex items-center justify-center cursor-grab active:cursor-grabbing pointer-events-auto ${className}`}
     >
       {/* 3D WebGL Canvas — Medium Composition Camera Framing */}

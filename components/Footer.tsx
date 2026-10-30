@@ -38,7 +38,7 @@ export default function Footer() {
               {COMPANY_INFO.tagline}
             </p>
             <p className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#F8F1E7]/80 leading-relaxed max-w-sm font-sans font-normal">
-              A UAE-based digital growth agency combining strategy, creative media, performance marketing, SEO, and web technology.
+              A Dubai-based digital marketing agency combining strategy, creative media, SEO and web development to grow UAE brands.
             </p>
 
             <div className="flex items-center gap-3 pt-3">

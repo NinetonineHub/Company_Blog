@@ -30,7 +30,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#5B0F18]/18 text-[#5B0F18] font-sans text-[10px] sm:text-[11px] lg:text-[12px] font-medium tracking-widest uppercase shadow-xs mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-[#5B0F18] animate-pulse" />
-          <span>// UAE-BASED DIGITAL GROWTH AGENCY</span>
+          <span>// DIGITAL MARKETING AGENCY IN DUBAI</span>
         </motion.div>
 
         {/* MIDDLE LAYER: LARGE ART-DIRECTED TYPOGRAPHY & OVERLAPPING MEDIUM-SIZED 3D CORE */}
@@ -41,10 +41,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[42px] sm:text-[62px] lg:text-[80px] xl:text-[84px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.08] text-center uppercase relative z-10"
+            className="text-[40px] sm:text-[58px] lg:text-[76px] xl:text-[80px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.08] text-center uppercase relative z-10"
           >
-            WE ENGINEER <br />
-            <span className="text-[#5B0F18]">DIGITAL GROWTH.</span>
+            Digital Marketing Agency in Dubai: <br />
+            <span className="text-[#5B0F18]">We Engineer Digital Growth</span>
           </motion.h1>
 
           {/* FRONT 3D OBJECT CANVAS (Medium Scale Composition, Fully Contained) */}
@@ -52,6 +52,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.85, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            aria-hidden="true"
             className="w-full -mt-20 sm:-mt-28 lg:-mt-36 relative z-20 pointer-events-auto flex items-center justify-center"
           >
             <Hero3DCanvas className="h-[420px] sm:h-[540px] lg:h-[640px] max-w-5xl mx-auto px-4" />
@@ -69,7 +70,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="text-[16px] sm:text-[18px] lg:text-[19px] text-[#6F6261] font-sans font-normal leading-relaxed mb-8 text-center"
           >
-            UAE-based digital growth solutions built around strategy, creativity, technology and measurable results.
+            Nine to Nine Hub is a digital marketing agency in Dubai, UAE. SEO, social media, video production, web development and paid ads, built around strategy and measurable results.
           </motion.p>
 
           {/* Action Buttons */}
@@ -83,7 +84,7 @@ export default function Hero() {
               href="/contact"
               className="group relative inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider shadow-wine transition-all transform hover:-translate-y-0.5"
             >
-              <span>START A PROJECT</span>
+              <span>Get a Free Proposal</span>
               <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
 
@@ -91,7 +92,7 @@ export default function Hero() {
               href="/services"
               className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-white border border-[#5B0F18]/30 text-[#5B0F18] hover:bg-[#5B0F18] hover:text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider transition-all shadow-xs"
             >
-              <span>EXPLORE SERVICES</span>
+              <span>Explore Our Services</span>
             </Link>
           </motion.div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionReveal from "./SectionReveal";
 import { SERVICES_DATA, Service } from "@/data/services";
@@ -45,13 +46,13 @@ export default function ServicesSection() {
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <h2 className="text-[34px] sm:text-[42px] lg:text-[52px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.15]">
-              EIGHT DIGITAL <br />
+              Our Digital Marketing <br />
               <span className="text-[#5B0F18]">
-                GROWTH SERVICES.
+                Services in Dubai
               </span>
             </h2>
             <p className="text-[#6F6261] max-w-md text-[16px] sm:text-[18px] lg:text-[19px] font-sans font-normal leading-relaxed">
-              Explore our 8 specialized services engineered to build, position, and scale UAE client brands.
+              Explore our 8 digital marketing services in Dubai, built to grow and scale UAE brands.
             </p>
           </div>
         </SectionReveal>
@@ -117,15 +118,15 @@ export default function ServicesSection() {
                     </div>
                   </div>
 
-                  {/* Premium Wine READ MORE CTA Button sitting naturally closer to description */}
+                  {/* Premium Wine Explore CTA Button */}
                   <div className="mt-5 pt-4 border-t border-[#5B0F18]/10">
-                    <button
-                      onClick={() => setSelectedService(service)}
+                    <Link
+                      href="/services"
                       className="w-full py-3 px-4 rounded-xl bg-[#5B0F18] text-[#F8F1E7] border border-[#5B0F18] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider hover:bg-[#430B12] hover:shadow-[0_4px_16px_rgba(91,15,24,0.35)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group/btn"
                     >
-                      <span>READ MORE</span>
+                      <span>{service.exploreLabel || `Explore ${service.title}`}</span>
                       <ArrowUpRight className="w-3.5 h-3.5 text-[#F8F1E7] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </SectionReveal>
@@ -177,9 +178,9 @@ export default function ServicesSection() {
               </div>
 
               {/* Modal Title */}
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-[#24191A] mb-4 leading-tight">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-[#24191A] mb-4 leading-tight">
                 {selectedService.title}
-              </h2>
+              </h3>
 
               {/* Detailed Description */}
               <p className="text-sm sm:text-base lg:text-base text-[#6F6261] leading-relaxed mb-8 font-sans font-normal border-b border-[#5B0F18]/12 pb-6">
