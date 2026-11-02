@@ -13,7 +13,7 @@ export default function HeroWireframeBackground() {
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center opacity-[0.08] sm:opacity-[0.11] md:opacity-[0.14] mix-blend-multiply scale-110 sm:scale-125 md:scale-135 transition-all duration-700 pointer-events-none"
         style={{
-          backgroundImage: `url('/images/wireframe-hands.jpg')`,
+          backgroundImage: `url('/images/wireframe-hands.webp')`,
           filter: "invert(1) sepia(1) hue-rotate(310deg) saturate(4) brightness(0.82)",
           backgroundPosition: "center center",
           transform: "translateZ(0)",

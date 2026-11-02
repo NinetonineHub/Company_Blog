@@ -15,14 +15,14 @@ const securityHeaders = [
   },
   {
     key: 'Strict-Transport-Security',
-    value: 'max-age=31536000',
+    value: 'max-age=31536000; includeSubDomains',
   },
   {
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=()',
   },
   {
-    key: 'Content-Security-Policy',
+    key: 'Content-Security-Policy-Report-Only',
     value: [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",

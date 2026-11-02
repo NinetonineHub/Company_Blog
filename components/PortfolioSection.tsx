@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionReveal from "./SectionReveal";
 import { PORTFOLIO_PROJECTS, PORTFOLIO_CATEGORIES, PortfolioProject } from "@/data/portfolio";
-import { Tag, ArrowUpRight } from "lucide-react";
+import { Tag, ArrowUpRight, ArrowDown } from "lucide-react";
 
 export default function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>("ALL");
@@ -20,7 +20,7 @@ export default function PortfolioSection() {
         );
 
   return (
-    <section className="relative py-28 bg-[#FCF9F5] border-t border-[#5B0F18]/12 overflow-hidden">
+    <section id="client-work" className="relative py-28 bg-[#FCF9F5] border-t border-[#5B0F18]/12 overflow-hidden scroll-mt-20">
       {/* Ambient Radial Wine Glow */}
       <div className="absolute right-0 top-1/3 w-[600px] h-[600px] bg-[#5B0F18]/4 rounded-full blur-[180px] pointer-events-none" />
       <div className="absolute left-0 bottom-1/3 w-[500px] h-[500px] bg-[#5B0F18]/3 rounded-full blur-[160px] pointer-events-none" />
@@ -120,7 +120,19 @@ export default function PortfolioSection() {
 
                     {/* Title */}
                     <h3 className="text-[26px] sm:text-[30px] lg:text-[36px] font-display font-semibold text-[#24191A] group-hover:text-[#5B0F18] transition-colors leading-tight mb-3">
-                      {project.title}
+                      {project.websiteUrl ? (
+                        <a
+                          href={project.websiteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-[#5B0F18] inline-flex items-center gap-2 group/link"
+                        >
+                          <span>{project.title}</span>
+                          <ArrowUpRight className="w-4 h-4 text-[#5B0F18] opacity-70 group-hover/link:opacity-100 transition-opacity" />
+                        </a>
+                      ) : (
+                        <span>{project.title}</span>
+                      )}
                     </h3>
 
                     {/* Description */}
@@ -131,13 +143,14 @@ export default function PortfolioSection() {
                     {/* Work Scope Service Tags */}
                     <div className="flex flex-wrap gap-1.5 mb-6">
                       {project.workTags.map((tag, idx) => (
-                        <span
+                        <Link
                           key={idx}
-                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#FCF9F5] border border-[#5B0F18]/12 text-[10px] sm:text-[11px] font-sans text-[#24191A] font-medium"
+                          href="/services"
+                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#FCF9F5] border border-[#5B0F18]/12 text-[10px] sm:text-[11px] font-sans text-[#24191A] font-medium hover:bg-[#5B0F18]/5 hover:border-[#5B0F18]/30 transition-colors"
                         >
                           <Tag className="w-2.5 h-2.5 text-[#5B0F18]" />
                           {tag}
-                        </span>
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -161,15 +174,15 @@ export default function PortfolioSection() {
           </AnimatePresence>
         </motion.div>
 
-        {/* View all case studies link */}
+        {/* Explore Our Client Work anchor link */}
         <div className="mt-14 text-center">
-          <Link
-            href="/portfolio"
+          <a
+            href="#client-work"
             className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#5B0F18] text-[#F8F1E7] hover:bg-[#430B12] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider transition-all shadow-wine transform hover:-translate-y-0.5"
           >
-            <span>View all case studies</span>
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
+            <span>Explore Our Client Work</span>
+            <ArrowDown className="w-4 h-4" />
+          </a>
         </div>
 
       </div>

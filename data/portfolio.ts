@@ -34,7 +34,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     packageLabel: "STARTER GROWTH",
     workTags: ["Social Media Management", "Posters & Carousels"],
     description: "Corporate advisory brand positioning, posters, and dedicated account handling.",
-    altText: "Beyond Numbers logo - client of Nine to Nine Hub.",
+    altText: "Beyond Numbers logo - client of Nine to Nine Hub",
   },
   {
     id: "bluemoon",
@@ -47,7 +47,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     workTags: ["Social Media Management", "Posters & Carousels", "Logo Design", "Website Design"],
     websiteUrl: "https://bluemoonsteelfab.ae",
     description: "Commercial construction social media management and content strategy.",
-    altText: "BlueMoon logo - client of Nine to Nine Hub.",
+    altText: "BlueMoon logo - client of Nine to Nine Hub",
   },
   {
     id: "curry-xpress",
@@ -59,7 +59,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     packageLabel: "BUSINESS SCALE",
     workTags: ["Video Production", "Social Media Management", "Posters & Carousels"],
     description: "Restaurant social media management and short-form video promotion campaigns.",
-    altText: "Curry Xpress logo - client of Nine to Nine Hub.",
+    altText: "Curry Xpress logo - client of Nine to Nine Hub digital marketing portfolio Dubai",
   },
   {
     id: "kanz-al-arab",
@@ -72,7 +72,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     workTags: ["Social Media Management", "Posters & Carousels", "Logo Design", "Website Design"],
     websiteUrl: "https://kanzalarab.ae",
     description: "Building materials social media handling, logo design, and website design.",
-    altText: "Kanz Al Arab logo - client of Nine to Nine Hub.",
+    altText: "Kanz Al Arab logo - client of Nine to Nine Hub",
   },
   {
     id: "noor-altrhal",
@@ -91,7 +91,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     ],
     websiteUrl: "https://nooraltrhal.com",
     description: "Full travel agency digital ecosystem, website, logo design, and backend infrastructure.",
-    altText: "Noor Altrhal logo - client of Nine to Nine Hub.",
+    altText: "Noor Altrhal logo - client of Nine to Nine Hub",
   },
   {
     id: "taza-biryani",
@@ -103,7 +103,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     packageLabel: "ELITE",
     workTags: ["Video Production", "Branding", "Social Media Management", "Content Strategy", "Posters & Carousels"],
     description: "High-impact dining video production, brand identity, and social media handling.",
-    altText: "Taza Biryani logo - client of Nine to Nine Hub.",
+    altText: "Taza Biryani logo - client of Nine to Nine Hub",
   },
   {
     id: "taza-meat-shop",
@@ -115,7 +115,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     packageLabel: "ELITE",
     workTags: ["Video Production", "Social Media Management", "Posters & Carousels"],
     description: "Meat shop brand identity and social media account management.",
-    altText: "Taza Meat Shop logo - client of Nine to Nine Hub.",
+    altText: "Taza Meat Shop logo - client of Nine to Nine Hub",
   },
   {
     id: "go-bus-tourism",
@@ -127,7 +127,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     packageLabel: "STARTER GROWTH",
     workTags: ["SEO", "Search Optimization"],
     description: "Search engine optimization and digital visibility strategy for UAE tourism.",
-    altText: "Go Bus Tourism logo - client of Nine to Nine Hub.",
+    altText: "Go Bus Tourism logo - client of Nine to Nine Hub",
   },
   {
     id: "vasanta-bhavan",
@@ -138,7 +138,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     image: "/images/portfolio/vasan.webp",
     workTags: ["Video Production", "Editing & Shooting"],
     description: "High-impact dining video production, shooting, and content editing.",
-    altText: "Vasanta Bhavan logo - client of Nine to Nine Hub.",
+    altText: "Vasanta Bhavan logo - client of Nine to Nine Hub",
   },
   {
     id: "doc-view",
@@ -149,7 +149,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     image: "/images/portfolio/doc.webp",
     workTags: ["Video Production", "Performance Marketing", "Lead Generation"],
     description: "Corporate business setup, video production, performance marketing, and lead funnels.",
-    altText: "DocView logo - client of Nine to Nine Hub.",
+    altText: "DocView logo - client of Nine to Nine Hub",
   },
   {
     id: "tiger-yacht",
@@ -160,7 +160,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     image: "/images/portfolio/tiger.webp",
     workTags: ["Content Creation", "Instagram Automation", "SEO", "Multi-Platform Management"],
     description: "Luxury yacht charter digital marketing, Instagram automation, SEO, and video promotion.",
-    altText: "Tiger Yacht logo - client of Nine to Nine Hub.",
+    altText: "Tiger Yacht logo - client of Nine to Nine Hub",
   },
   {
     id: "yacht-slots",
@@ -171,6 +171,6 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     image: "/images/portfolio/slots.webp",
     workTags: [],
     description: "Corporate charter bookings and luxury marine experiences.",
-    altText: "Yacht Slots logo - client of Nine to Nine Hub.",
+    altText: "Yacht Slots logo - client of Nine to Nine Hub",
   }
 ];

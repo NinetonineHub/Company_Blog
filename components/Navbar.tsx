@@ -104,7 +104,7 @@ export default function Navbar() {
               href="/contact"
               className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] text-[12px] sm:text-[13px] lg:text-[14px] font-sans font-semibold tracking-wider shadow-[0_4px_14px_rgba(91,15,24,0.25)] transition-all duration-300 transform hover:-translate-y-0.5"
             >
-              <span>START A PROJECT</span>
+              <span>Get a Free Proposal</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
 
@@ -169,7 +169,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full py-4 rounded-full bg-[#5B0F18] text-[#F8F1E7] text-center font-sans font-semibold text-[12px] sm:text-[13px] lg:text-[14px] tracking-wider shadow-wine flex items-center justify-center gap-2"
               >
-                <span>START A PROJECT</span>
+                <span>Get a Free Proposal</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
               <div className="flex justify-between text-[12px] sm:text-[13px] lg:text-[14px] text-[#6F6261] font-sans pt-2">
