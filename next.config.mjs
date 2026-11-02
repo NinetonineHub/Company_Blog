@@ -51,6 +51,15 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react', 'framer-motion', '@react-three/drei'],
   },
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/services',
+        destination: '/digital-marketing-services-dubai',
+        statusCode: 301,
+      },
+    ];
+  },
   async headers() {
     return [
       {

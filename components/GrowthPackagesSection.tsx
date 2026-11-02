@@ -11,6 +11,7 @@ const PACKAGES = [
     number: "01",
     label: "01 // STARTER GROWTH",
     title: "STARTER",
+    quoteText: "Get a Starter Quote",
     isRecommended: false,
     features: [
       {
@@ -54,6 +55,7 @@ const PACKAGES = [
     number: "02",
     label: "02 // BUSINESS SCALE",
     title: "BUSINESS SCALE",
+    quoteText: "Get a Business Scale Quote",
     isRecommended: true,
     badge: "RECOMMENDED FOR GROWING BRANDS",
     features: [
@@ -98,6 +100,7 @@ const PACKAGES = [
     number: "03",
     label: "03 // ULTIMATE ENTERPRISE",
     title: "ULTIMATE ENTERPRISE",
+    quoteText: "Get an Enterprise Quote",
     isRecommended: false,
     features: [
       {
@@ -140,33 +143,33 @@ const PACKAGES = [
 
 const ADDITIONAL_SERVICES = [
   {
-    icon: Video,
-    title: "VIDEO PROMOTION & SHOOT",
-    description: "Raw shooting, concept direction & professional equipment.",
-  },
-  {
     icon: Search,
-    title: "SEO — BASIC",
+    title: "Basic SEO Services",
     description: "Essential search engine optimization & local keyword strategy.",
   },
   {
     icon: Zap,
-    title: "SEO — ADVANCE",
+    title: "Advanced SEO Services",
     description: "Comprehensive technical SEO, backlink strategy & ranking acceleration.",
   },
   {
+    icon: Video,
+    title: "Video Promotion & Shoot",
+    description: "Raw shooting, concept direction & professional equipment.",
+  },
+  {
     icon: Globe,
-    title: "WEBSITE CREATION",
+    title: "Website Creation",
     description: "Custom responsive website layout built for mobile and conversion.",
   },
   {
     icon: Palette,
-    title: "LOGO & VISUAL DESIGN",
+    title: "Logo & Visual Design",
     description: "Professional vector logo design, branding assets & color identity.",
   },
   {
     icon: Cpu,
-    title: "BUSINESS SOFTWARE & AI AUTOMATION",
+    title: "Business Software & AI Automation",
     description: "ERP, POS, automation, forms and PDF tools, delivered with our partner Eyakkar.",
   },
 ];
@@ -190,12 +193,12 @@ export default function GrowthPackagesSection() {
           </div>
 
           <h2 className="text-[34px] sm:text-[42px] lg:text-[52px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.08] mb-6">
-            PACKAGES BUILT <br />
-            <span className="text-[#5B0F18]">TO SCALE.</span>
+            Digital Marketing Packages in Dubai: <br />
+            <span className="text-[#5B0F18]">Built to Scale</span>
           </h2>
 
           <p className="text-[#6F6261] text-[16px] sm:text-[18px] lg:text-[19px] max-w-2xl mx-auto font-sans font-normal leading-relaxed">
-            Choose the level of digital growth support that fits your business. Every package combines strategy, creative execution, performance marketing, and ongoing digital support.
+            Choose the digital marketing package that fits your business. Every package combines strategy, creative execution, performance marketing and ongoing support.
           </p>
         </SectionReveal>
 
@@ -220,7 +223,7 @@ export default function GrowthPackagesSection() {
                       )}
                     </div>
 
-                    {/* Card Title */}
+                    {/* Card Title (H3) */}
                     <h3 className="text-[25px] sm:text-[30px] lg:text-[34px] font-display font-semibold text-[#24191A] mb-6 pb-3 border-b border-[#5B0F18]/15 tracking-tight">
                       {pkg.title}
                     </h3>
@@ -253,7 +256,7 @@ export default function GrowthPackagesSection() {
                       href="/contact"
                       className="group/btn w-full py-3.5 px-6 rounded-xl bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider transition-all duration-300 shadow-wine flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
                     >
-                      <span>GET A QUOTE</span>
+                      <span>{pkg.quoteText || "GET A QUOTE"}</span>
                       <ArrowUpRight className="w-4 h-4 text-[#F8F1E7] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                     </Link>
                   </div>
@@ -265,51 +268,76 @@ export default function GrowthPackagesSection() {
 
         {/* PACKAGE 04 — ADDITIONAL SERVICES (Spans Full Width Below Grid) */}
         <SectionReveal delay={0.25} className="mb-16">
-          <div className="wine-glow-card">
+          <div id="additional-services" className="wine-glow-card">
             <div className="wine-glow-card-inner p-7 sm:p-9">
               <div className="flex flex-col md:flex-row md:items-center justify-between pb-5 mb-6 border-b border-[#5B0F18]/12 gap-4">
                 <div>
                   <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-sans tracking-widest text-[#5B0F18] font-medium uppercase block mb-1">
                     04 // STANDALONE SOLUTIONS
                   </span>
-                  <h3 className="text-[25px] sm:text-[30px] lg:text-[34px] font-display font-semibold text-[#24191A]">
-                    ADDITIONAL SERVICES
-                  </h3>
+                  <h2 className="text-[25px] sm:text-[30px] lg:text-[34px] font-display font-semibold text-[#24191A]">
+                    Additional Digital Marketing Services
+                  </h2>
                 </div>
 
                 <Link
                   href="/contact"
                   className="group/btn inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider transition-all shadow-wine w-max transform hover:-translate-y-0.5 shrink-0"
                 >
-                  <span>GET A QUOTE</span>
+                  <span>Get a Custom Quote</span>
                   <ArrowUpRight className="w-4 h-4 text-[#F8F1E7] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </Link>
               </div>
 
-              {/* 6 Standalone Services Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {ADDITIONAL_SERVICES.map((serv, sIdx) => {
-                  const Icon = serv.icon;
-                  return (
-                    <div
-                      key={sIdx}
-                      className="p-4 sm:p-5 rounded-2xl bg-[#FCF9F5] border border-[#5B0F18]/10 hover:border-[#5B0F18]/30 transition-all duration-300 flex items-start gap-4 hover:-translate-y-1 hover:shadow-sm"
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-[#5B0F18]/10 border border-[#5B0F18]/20 flex items-center justify-center text-[#5B0F18] shrink-0">
-                        <Icon className="w-5 h-5" />
-                      </div>
+              {/* Standalone Services Grid with Real Client Production Photo */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                {/* 6 Standalone Services (Col 1 to 8 on lg) */}
+                <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {ADDITIONAL_SERVICES.map((serv, sIdx) => {
+                    const Icon = serv.icon;
+                    return (
+                      <div
+                        key={sIdx}
+                        className="p-4 sm:p-5 rounded-2xl bg-[#FCF9F5] border border-[#5B0F18]/10 hover:border-[#5B0F18]/30 transition-all duration-300 flex items-start gap-4 hover:-translate-y-1 hover:shadow-sm"
+                      >
+                        <div className="w-10 h-10 rounded-xl bg-[#5B0F18]/10 border border-[#5B0F18]/20 flex items-center justify-center text-[#5B0F18] shrink-0">
+                          <Icon className="w-5 h-5" />
+                        </div>
 
-                      <div>
-                        <h4 className="text-[24px] font-display font-semibold text-[#24191A] mb-1 leading-snug">
-                          {serv.title}
-                        </h4>
-                        <p className="text-[13px] sm:text-[14px] lg:text-[15px] font-sans font-normal text-[#6F6261] leading-relaxed">
-                          {serv.description}
-                        </p>
+                        <div>
+                          <h3 className="text-[19px] sm:text-[21px] font-display font-semibold text-[#24191A] mb-1 leading-snug">
+                            {serv.title}
+                          </h3>
+                          <p className="text-[13px] sm:text-[14px] lg:text-[15px] font-sans font-normal text-[#6F6261] leading-relaxed">
+                            {serv.description}
+                          </p>
+                        </div>
                       </div>
+                    );
+                  })}
+                </div>
+
+                {/* Real project photograph (Col 9 to 12 on lg) */}
+                <div className="lg:col-span-4 flex flex-col">
+                  <div className="relative rounded-2xl overflow-hidden border border-[#5B0F18]/15 bg-[#FCF9F5] shadow-sm flex flex-col justify-between h-full min-h-[300px]">
+                    <div className="relative w-full h-full min-h-[220px] sm:min-h-[260px] flex-grow">
+                      <img
+                        src="/images/portfolio/3.webp"
+                        alt="Digital marketing services in Dubai - Nine to Nine Hub team at work"
+                        width={600}
+                        height={400}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover object-center"
+                      />
                     </div>
-                  );
-                })}
+                    <div className="p-3 bg-white/95 border-t border-[#5B0F18]/10 text-center">
+                      <span className="text-[10px] sm:text-[11px] font-sans text-[#5B0F18] font-medium uppercase tracking-wider block">
+                        // ON-SITE VIDEO SHOOT &amp; CLIENT PRODUCTION
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -326,9 +354,9 @@ export default function GrowthPackagesSection() {
                 NOT SURE WHICH PACKAGE FITS?
               </span>
 
-              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-display font-semibold text-[#24191A] mb-6">
-                Let&apos;s build the right growth system for your business.
-              </h3>
+              <h2 className="text-[24px] sm:text-[30px] lg:text-[36px] font-display font-semibold text-[#24191A] mb-6">
+                Let&apos;s Build the Right Digital Marketing Plan for Your Business
+              </h2>
 
               <Link
                 href="/contact"

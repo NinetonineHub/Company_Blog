@@ -29,7 +29,7 @@ export default function ServicesSection() {
   }, [selectedService]);
 
   return (
-    <section className="relative py-28 bg-[#FCF9F5] border-t border-[#5B0F18]/12 overflow-hidden">
+    <section id="our-services" className="relative py-28 bg-[#FCF9F5] border-t border-[#5B0F18]/12 overflow-hidden">
       {/* Ambient Glows */}
       <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-[#5B0F18]/5 rounded-full blur-[180px] pointer-events-none" />
       <div className="absolute left-0 bottom-1/4 w-[450px] h-[450px] bg-[#5B0F18]/3 rounded-full blur-[150px] pointer-events-none" />
@@ -119,9 +119,9 @@ export default function ServicesSection() {
                   </div>
 
                   {/* Premium Wine Explore CTA Button */}
-                  <div className="mt-5 pt-4 border-t border-[#5B0F18]/10">
+                  <div className="mt-5 pt-4 border-t border-[#5B0F18]/10 flex flex-col gap-2">
                     <Link
-                      href="/services"
+                      href="/contact"
                       className="w-full py-3 px-4 rounded-xl bg-[#5B0F18] text-[#F8F1E7] border border-[#5B0F18] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider hover:bg-[#430B12] hover:shadow-[0_4px_16px_rgba(91,15,24,0.35)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group/btn"
                     >
                       <span>{service.exploreLabel || `Explore ${service.title}`}</span>
@@ -132,6 +132,17 @@ export default function ServicesSection() {
               </SectionReveal>
             );
           })}
+        </div>
+
+        {/* Link below the 8 cards */}
+        <div className="mt-12 sm:mt-16 text-center">
+          <Link
+            href="/portfolio"
+            className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white border border-[#5B0F18]/30 hover:border-[#5B0F18] text-[#5B0F18] hover:bg-[#5B0F18] hover:text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tracking-wider transition-all duration-300 shadow-xs group"
+          >
+            <span>See our client work</span>
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </Link>
         </div>
 
       </div>

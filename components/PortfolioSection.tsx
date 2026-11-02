@@ -146,7 +146,7 @@ export default function PortfolioSection() {
                   {project.packageLabel && (
                     <div className="pt-4 border-t border-[#5B0F18]/12 flex items-center justify-end">
                       <Link
-                        href="/services#packages"
+                        href="/digital-marketing-services-dubai#packages"
                         className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#5B0F18] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] lg:text-[14px] font-semibold hover:bg-[#430B12] transition-all shadow-xs tracking-wider"
                       >
                         <span>{project.packageLabel}</span>

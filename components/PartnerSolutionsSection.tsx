@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import SectionReveal from "./SectionReveal";
 
 interface SolutionCard {
@@ -10,6 +11,7 @@ interface SolutionCard {
   description: string;
   deliverables: string[];
   partner: string;
+  enquireLabel: string;
 }
 
 const PARTNER_SOLUTIONS: SolutionCard[] = [
@@ -17,6 +19,7 @@ const PARTNER_SOLUTIONS: SolutionCard[] = [
     number: "01",
     category: "ERP & OPERATIONS",
     title: "ERP",
+    enquireLabel: "Enquire about ERP",
     description: "Run inventory, stock and daily operations from one system, with fewer manual errors.",
     deliverables: [
       "Inventory management",
@@ -30,6 +33,7 @@ const PARTNER_SOLUTIONS: SolutionCard[] = [
     number: "02",
     category: "POINT OF SALE",
     title: "POS",
+    enquireLabel: "Enquire about POS",
     description: "Fast billing and order management for shops, cafes, laundries and service businesses.",
     deliverables: [
       "Billing & invoicing",
@@ -43,6 +47,7 @@ const PARTNER_SOLUTIONS: SolutionCard[] = [
     number: "03",
     category: "AI AUTOMATION",
     title: "Automation",
+    enquireLabel: "Enquire about automation",
     description: "Replace repetitive manual work with AI-powered workflows that save time.",
     deliverables: [
       "Workflow automation",
@@ -56,6 +61,7 @@ const PARTNER_SOLUTIONS: SolutionCard[] = [
     number: "04",
     category: "FORMS & DATA",
     title: "Forms",
+    enquireLabel: "Enquire about forms",
     description: "Smart forms and datasheets that collect clean, organised business data.",
     deliverables: [
       "Custom online forms",
@@ -69,6 +75,7 @@ const PARTNER_SOLUTIONS: SolutionCard[] = [
     number: "05",
     category: "DOCUMENT TOOLS",
     title: "PDF Tools",
+    enquireLabel: "Enquire about PDF tools",
     description: "Handle PDFs and invoices quickly, without switching between multiple tools.",
     deliverables: [
       "Convert & edit PDFs",
@@ -82,7 +89,7 @@ const PARTNER_SOLUTIONS: SolutionCard[] = [
 
 export default function PartnerSolutionsSection() {
   return (
-    <section className="relative py-20 sm:py-28 bg-[#F8F1E7] border-t border-[#5B0F18]/12 overflow-hidden select-none">
+    <section id="business-software" className="relative py-20 sm:py-28 bg-[#F8F1E7] border-t border-[#5B0F18]/12 overflow-hidden select-none">
       {/* Subtle Ambient Wine Depth Glow */}
       <div className="absolute right-1/4 top-1/3 w-[600px] h-[500px] bg-[#5B0F18]/4 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute left-1/4 bottom-1/3 w-[500px] h-[400px] bg-[#5B0F18]/3 rounded-full blur-[140px] pointer-events-none" />
@@ -169,21 +176,26 @@ export default function PartnerSolutionsSection() {
                       PARTNER:
                     </span>
                     <p className="text-[12px] sm:text-[13px] font-sans text-[#6F6261] font-normal">
-                      {card.partner}
+                      <a
+                        href="https://eyakkar.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-[#5B0F18] transition-colors underline decoration-[#5B0F18]/30 underline-offset-4"
+                      >
+                        {card.partner}
+                      </a>
                     </p>
                   </div>
                 </div>
 
-                {/* Full-width Wine ENQUIRE NOW Button */}
+                {/* Full-width Wine ENQUIRE Link */}
                 <div className="pt-2">
-                  <a
-                    href="https://eyakkar.com/contact"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-3 px-4 rounded-xl bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[11px] sm:text-[12px] font-semibold tracking-wider uppercase text-center transition-all duration-300 shadow-wine hover:shadow-wine-lg transform hover:-translate-y-0.5 block"
+                  <Link
+                    href="/contact"
+                    className="w-full py-3 px-4 rounded-xl bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[11px] sm:text-[12px] font-semibold tracking-wider text-center transition-all duration-300 shadow-wine hover:shadow-wine-lg transform hover:-translate-y-0.5 block"
                   >
-                    ENQUIRE NOW
-                  </a>
+                    {card.enquireLabel}
+                  </Link>
                 </div>
               </div>
             </SectionReveal>
@@ -202,12 +214,12 @@ export default function PartnerSolutionsSection() {
               </h3>
             </div>
 
-            <a
-              href="https://ninetoninehub.com/contact"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] font-semibold tracking-wider uppercase transition-all duration-300 shadow-wine hover:shadow-wine-lg shrink-0 transform hover:-translate-y-0.5"
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-[#5B0F18] hover:bg-[#430B12] text-[#F8F1E7] font-sans text-[12px] sm:text-[13px] font-semibold tracking-wider transition-all duration-300 shadow-wine hover:shadow-wine-lg shrink-0 transform hover:-translate-y-0.5"
             >
-              TALK TO OUR TEAM
-            </a>
+              Talk to Our Team About Software
+            </Link>
           </div>
         </SectionReveal>
 

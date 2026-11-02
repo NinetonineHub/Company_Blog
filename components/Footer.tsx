@@ -45,7 +45,7 @@ export default function Footer() {
               <a
                 href={COMPANY_INFO.socials.instagram}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-9 h-9 rounded-full bg-[#F8F1E7]/10 border border-[#F8F1E7]/20 flex items-center justify-center text-[#F8F1E7] hover:bg-[#F8F1E7] hover:text-[#5B0F18] transition-colors"
               >
@@ -54,7 +54,7 @@ export default function Footer() {
               <a
                 href={COMPANY_INFO.socials.linkedin}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="w-9 h-9 rounded-full bg-[#F8F1E7]/10 border border-[#F8F1E7]/20 flex items-center justify-center text-[#F8F1E7] hover:bg-[#F8F1E7] hover:text-[#5B0F18] transition-colors"
               >
@@ -63,7 +63,7 @@ export default function Footer() {
               <a
                 href={COMPANY_INFO.socials.facebook}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="w-9 h-9 rounded-full bg-[#F8F1E7]/10 border border-[#F8F1E7]/20 flex items-center justify-center text-[#F8F1E7] hover:bg-[#F8F1E7] hover:text-[#5B0F18] transition-colors"
               >
@@ -72,7 +72,7 @@ export default function Footer() {
               <a
                 href={COMPANY_INFO.socials.youtube}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="YouTube"
                 className="w-9 h-9 rounded-full bg-[#F8F1E7]/10 border border-[#F8F1E7]/20 flex items-center justify-center text-[#F8F1E7] hover:bg-[#F8F1E7] hover:text-[#5B0F18] transition-colors"
               >
@@ -98,7 +98,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-[#F8F1E7]/80 hover:text-white transition-colors">
+                <Link href="/digital-marketing-services-dubai" className="text-[#F8F1E7]/80 hover:text-white transition-colors">
                   SERVICES
                 </Link>
               </li>

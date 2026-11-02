@@ -10,7 +10,7 @@ import { COMPANY_INFO } from "@/data/company";
 const NAV_ITEMS = [
   { name: "HOME", path: "/" },
   { name: "ABOUT", path: "/about" },
-  { name: "SERVICES", path: "/services" },
+  { name: "SERVICES", path: "/digital-marketing-services-dubai" },
   { name: "PORTFOLIO", path: "/portfolio" },
   { name: "CAREER", path: "/career" },
   { name: "CONTACT", path: "/contact" },

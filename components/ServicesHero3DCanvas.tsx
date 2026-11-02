@@ -319,6 +319,7 @@ export default function ServicesHero3DCanvas({ className = "" }: ServicesHero3DC
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      aria-hidden="true"
       className={`relative w-full h-full bg-transparent flex items-center justify-center cursor-grab active:cursor-grabbing pointer-events-auto select-none ${className}`}
     >
       <Canvas
