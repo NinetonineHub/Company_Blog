@@ -13,14 +13,14 @@ const SALES_EXECUTIVES = [
 
 // All 9 Team Members in 1 Single Horizontal Row
 const TEAM_MEMBERS = [
-  { id: "manosree", name: "MANOSREE", role: "DIGITAL MARKETING EXECUTIVE" },
+  { id: "manosree", name: "MANOSHREE", role: "DIGITAL MARKETING EXECUTIVE" },
   { id: "varshini", name: "VARSHINI", role: "WEBPAGE DESIGNER" },
   { id: "yadhu", name: "YADHU", role: "SEO SPECIALIST" },
   { id: "kaviyaras", name: "KAVIYARAS", role: "VIDEO EDITOR" },
   { id: "savad", name: "SAVAD", role: "VIDEOGRAPHER" },
   { id: "ganesh-pranesh", name: "GANESH,", name2: "PRANESH", role: "WEB DEVELOPMENT" },
   { id: "vignesh-thenmozhi", name: "VIGNESH,", name2: "THENMOZHI", role: "TELECALLING" },
-  { id: "shiyama", name: "SHIYAMA", role: "GRAPHIC DESIGNER" },
+  { id: "shiyama", name: "SHYAMA", role: "GRAPHIC DESIGNER" },
   { id: "kamaraj", name: "KAMARAJ", role: "TESTING" },
 ];
 
@@ -43,13 +43,13 @@ export default function OrgChartSection() {
             <span className="w-8 h-[2px] bg-[#5B0F18]" />
           </div>
 
-          <h2 className="text-[34px] sm:text-[42px] lg:text-[52px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.15] mb-4">
-            THE TEAM BEHIND <br />
-            <span className="text-[#5B0F18]">THE HUB.</span>
+          <h2 id="team" className="text-[34px] sm:text-[42px] lg:text-[52px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.15] mb-4 scroll-mt-24">
+            The Digital Marketing Team <br />
+            <span className="text-[#5B0F18]">Behind Nine to Nine Hub</span>
           </h2>
 
           <p className="text-[#6F6261] text-[16px] sm:text-[18px] lg:text-[19px] font-sans font-normal max-w-xl mx-auto">
-            A clear leadership and execution structure built for efficient, high-quality digital growth.
+            Meet the digital marketing team in Dubai: a clear leadership and execution structure built for efficient, high-quality growth.
           </p>
         </SectionReveal>
 
@@ -76,7 +76,7 @@ export default function OrgChartSection() {
                   </p>
 
                   <p className="text-[15px] sm:text-[16px] lg:text-[17px] text-[#6F6261] font-sans leading-relaxed font-normal max-w-xl mx-auto">
-                    Rias is the primary decision maker and principal financial backbone of ninetoninehub. Beyond providing visionary financial backing, he shapes the company’s long-term business vision, operational strategy, and future expansion plans. His strategic leadership and decisive direction ensure sustained growth, digital innovation, and long-term success for our clients across the GCC.
+                    Rias is the primary decision maker and principal financial backbone of Nine to Nine Hub. Beyond providing visionary financial backing, he shapes the company’s long-term business vision, operational strategy, and future expansion plans. His strategic leadership and decisive direction ensure sustained growth, digital innovation, and long-term success for our clients across the GCC.
                   </p>
                 </div>
               </div>
@@ -108,7 +108,7 @@ export default function OrgChartSection() {
                   </p>
 
                   <p className="text-[15px] sm:text-[16px] lg:text-[17px] text-[#6F6261] font-sans leading-relaxed font-normal max-w-xl mx-auto">
-                    As the Operations Director of ninetoninehub, Khishore leads daily operations, client relationships, and execution teams. His hands-on leadership ensures high-quality delivery, strong partnerships, and business growth across Dubai and the GCC.
+                    As the Operations Director of Nine to Nine Hub, Khishore leads daily operations, client relationships, and execution teams. His hands-on leadership ensures high-quality delivery, strong partnerships, and business growth across Dubai and the GCC.
                   </p>
                 </div>
               </div>
@@ -243,7 +243,7 @@ export default function OrgChartSection() {
                         <div className="relative w-full rounded-2xl bg-[#FFFDF9]/90 border border-[#5B0F18]/15 shadow-sm p-1 sm:p-1.5 h-full flex flex-col">
                           <div className="card-inset-light-team h-full flex flex-col flex-1">
                             <div className="inset-surface p-2 sm:p-2.5 text-center flex flex-col justify-center min-h-[110px] sm:min-h-[118px] relative overflow-hidden bg-arch-grid rounded-[calc(1rem-1.5px)] h-full flex-1">
-                              <h4
+                              <h3
                                 className={`${
                                   member.name === "MANOSHREE"
                                     ? "text-[12.5px] sm:text-[13.5px] lg:text-[14.5px] tracking-tight"
@@ -253,14 +253,12 @@ export default function OrgChartSection() {
                                 } font-display font-medium text-[#24191A] leading-snug break-words`}
                               >
                                 {member.name}
-                              </h4>
+                              </h3>
                               {member.name2 && (
-                                <h4 className="text-[12px] sm:text-[13px] lg:text-[14px] font-display font-medium text-[#24191A] leading-snug break-words">
-                                  {member.name2}
-                                </h4>
+                                <h3 className="text-[12px] sm:text-[13px] lg:text-[14px] font-display font-medium text-[#24191A] leading-snug break-words">{member.name2}</h3>
                               )}
                               {!member.name2 && <div className="mb-0.5" />}
-                              <p className="text-[7.5px] sm:text-[8px] lg:text-[8.5px] font-sans text-[#5B0F18] font-medium uppercase tracking-wider leading-relaxed mt-0.5">
+                              <p className="text-[10px] sm:text-[10.5px] lg:text-[11px] font-sans text-[#5B0F18] font-medium uppercase tracking-wider leading-relaxed mt-1">
                                 {member.role}
                               </p>
                             </div>
