@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Playfair_Display, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,16 +9,56 @@ import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const playfair = localFont({
+  src: [
+    {
+      path: "../public/fonts/playfair-display/PlayfairDisplay-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/playfair-display/PlayfairDisplay-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/playfair-display/PlayfairDisplay-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/playfair-display/PlayfairDisplay-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-playfair",
   display: "swap",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const inter = localFont({
+  src: [
+    {
+      path: "../public/fonts/inter/Inter-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/inter/Inter-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/inter/Inter-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/inter/Inter-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-inter",
   display: "swap",
 });
