@@ -1,196 +1,127 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import SectionReveal from "./SectionReveal";
-import { INDIA_ROLES, UAE_ROLES, TEAM_MEMBERS, COMPANY_VALUES, JobPosition } from "@/data/careers";
-import { Send, Check, Upload, ArrowDown, MapPin, AlertCircle, Users, Briefcase } from "lucide-react";
+import { INDIA_ROLES, UAE_ROLES, COMPANY_VALUES } from "@/data/careers";
+import {
+  MapPin,
+  ArrowDown,
+  ArrowUpRight,
+  Briefcase,
+  CheckCircle2,
+  HelpCircle,
+} from "lucide-react";
+import JobApplicationForm from "./JobApplicationForm";
 
 export default function CareerSection() {
   const [activeLocation, setActiveLocation] = useState<"India" | "UAE">("India");
-  const [formLocation, setFormLocation] = useState<"India" | "UAE">("India");
-  const [formPosition, setFormPosition] = useState<string>(INDIA_ROLES[0].title);
-
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [resumeFile, setResumeFile] = useState<File | null>(null);
-  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
-
-  // Active roles based on selected location filter toggle
-  const activeRoles = activeLocation === "India" ? INDIA_ROLES : UAE_ROLES;
-
-  // Available positions based on selected form location dropdown
-  const availableFormPositions = formLocation === "UAE" ? UAE_ROLES : INDIA_ROLES;
 
   const handleLocationToggle = (loc: "India" | "UAE") => {
     setActiveLocation(loc);
   };
 
-  const handleFormLocationChange = (newLocation: "India" | "UAE") => {
-    setFormLocation(newLocation);
-    const newPositions = newLocation === "UAE" ? UAE_ROLES : INDIA_ROLES;
-    setFormPosition(newPositions[0].title);
-    if (formErrors.location) {
-      setFormErrors((prev) => ({ ...prev, location: "" }));
-    }
-  };
-
-  const handleApplyNowClick = (roleTitle: string, roleLocation: "India" | "UAE") => {
-    setFormLocation(roleLocation);
-    setFormPosition(roleTitle);
-
-    // Clear errors if any
-    setFormErrors((prev) => ({ ...prev, location: "", position: "" }));
-
-    // Smooth scroll to form
-    const formElement = document.getElementById("application-form-block");
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    if (formErrors[name]) {
-      setFormErrors((prev) => ({ ...prev, [name]: "" }));
-    }
-    if (submitError) {
-      setSubmitError(null);
-    }
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-      
-      if (file.size > 10 * 1024 * 1024) {
-        setFormErrors((prev) => ({ ...prev, resume: "File size exceeds 10MB limit." }));
-        return;
-      }
-
-      setResumeFile(file);
-      if (formErrors.resume) {
-        setFormErrors((prev) => ({ ...prev, resume: "" }));
-      }
-      if (submitError) {
-        setSubmitError(null);
-      }
-    }
-  };
-
-  const validateForm = () => {
-    const errors: Record<string, string> = {};
-
-    if (!formData.fullName.trim()) {
-      errors.fullName = "Please enter your full name.";
-    }
-    if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = "Please enter a valid email address.";
-    }
-    if (!formData.phone.trim()) {
-      errors.phone = "Please enter your phone number.";
-    }
-    if (!formLocation) {
-      errors.location = "Please select a location.";
-    }
-    if (!formPosition) {
-      errors.position = "Please select a position.";
-    }
-    if (!resumeFile) {
-      errors.resume = "Please upload your resume.";
-    }
-    if (!formData.message.trim()) {
-      errors.message = "Please enter a short introduction.";
-    }
-
-    setFormErrors(errors);
-    return Object.keys(errors).length === 0;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-
-    setIsSubmitting(true);
-    setSubmitError(null);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          type: "career",
-          fullName: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          location: formLocation,
-          position: formPosition,
-          resume: resumeFile ? resumeFile.name : "Attached File",
-          message: formData.message,
-        }),
-      });
-
-      const result = await response.json();
-
-      if (response.ok && result.success) {
-        setIsSubmitted(true);
-      } else {
-        setSubmitError(
-          result.error ||
-            "Something went wrong while submitting your application. Please try again or contact our team directly."
-        );
-      }
-    } catch (err) {
-      setSubmitError(
-        "Something went wrong while submitting your application. Please try again or contact our team directly."
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
-    <section className="relative py-28 bg-[#FCF9F5] border-t border-[#5B0F18]/12 overflow-hidden">
+    <section className="relative py-16 sm:py-24 bg-[#FCF9F5] border-t border-[#5B0F18]/12 overflow-hidden">
       {/* Background Ambient Wine Glows */}
       <div className="absolute left-1/4 top-1/4 w-[500px] h-[500px] bg-[#5B0F18]/5 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute right-1/4 bottom-1/4 w-[500px] h-[500px] bg-[#5B0F18]/3 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
-        
-        {/* CAREER HERO INTRO */}
-        <SectionReveal className="mb-16 text-center max-w-4xl mx-auto">
+        {/* 1. VISIBLE BREADCRUMB */}
+        <nav aria-label="Breadcrumb" className="mb-6">
+          <ol className="flex items-center justify-center gap-2 text-xs font-sans text-[#6F6261]">
+            <li>
+              <Link href="/" className="hover:text-[#5B0F18] transition-colors">
+                Home
+              </Link>
+            </li>
+            <li aria-hidden="true" className="text-[#5B0F18]/40">
+              /
+            </li>
+            <li>
+              <span className="text-[#5B0F18] font-semibold" aria-current="page">
+                Careers
+              </span>
+            </li>
+          </ol>
+        </nav>
+
+        {/* 2. CAREER HERO INTRO */}
+        <SectionReveal className="mb-16 sm:mb-20 text-center max-w-4xl mx-auto">
           <span className="text-[11px] sm:text-[12px] font-sans tracking-[0.25em] text-[#5B0F18] uppercase mb-3 block font-semibold">
             // JOIN OUR TEAM
           </span>
-          <h1 className="text-[42px] sm:text-[62px] lg:text-[80px] xl:text-[84px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.1] mb-6">
-            BUILD YOUR <br />
-            <span className="text-[#5B0F18]">
-              NEXT CHAPTER WITH US.
-            </span>
+          <h1
+            className="font-display font-semibold text-[#24191A] tracking-tight leading-[1.1] mb-6 select-text"
+            style={{
+              fontSize: "clamp(2rem, 4.5vw, 4.25rem)",
+              overflowWrap: "normal",
+              wordBreak: "normal",
+              hyphens: "none",
+            }}
+          >
+            Digital Marketing Careers in{" "}
+            <span className="text-[#5B0F18]">Dubai & India</span>
           </h1>
-          <p className="text-[#6F6261] text-[16px] sm:text-[18px] max-w-2xl mx-auto leading-relaxed font-sans font-normal">
-            Join Nine to Nine Hub and grow with our team. We work across digital marketing, SEO, social media, design, video production, and business development.
+          <p className="text-[#6F6261] text-[16px] sm:text-[18px] max-w-2xl mx-auto leading-relaxed font-sans font-normal mb-8">
+            Nine to Nine Hub is hiring for open digital marketing and creative positions.
+            We have active opportunities across our Dubai headquarters and our India
+            production teams. Explore our open roles in SEO, social media, design, video
+            editing and administration. Learn more{" "}
+            <Link
+              href="/about"
+              className="text-[#5B0F18] font-semibold underline underline-offset-4 hover:text-[#430B12]"
+            >
+              About Nine to Nine Hub
+            </Link>
+            , explore{" "}
+            <Link
+              href="/services"
+              className="text-[#5B0F18] font-semibold underline underline-offset-4 hover:text-[#430B12]"
+            >
+              Our Services
+            </Link>
+            , or view{" "}
+            <Link
+              href="/portfolio"
+              className="text-[#5B0F18] font-semibold underline underline-offset-4 hover:text-[#430B12]"
+            >
+              Our Work
+            </Link>{" "}
+            to see what we build.
           </p>
+
+          {/* Hero Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#open-positions"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#5B0F18] text-[#F8F1E7] font-sans text-xs sm:text-sm font-semibold tracking-wider hover:bg-[#430B12] shadow-wine transition-all"
+            >
+              <span>Explore Open Positions</span>
+              <ArrowDown className="w-4 h-4 text-[#F8F1E7]" />
+            </a>
+            <a
+              href="#application-form-block"
+              className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white border border-[#5B0F18]/25 text-[#5B0F18] font-sans text-xs sm:text-sm font-semibold tracking-wider hover:bg-[#5B0F18]/5 transition-all shadow-xs"
+            >
+              <span>Submit Application</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
         </SectionReveal>
 
-        {/* WHAT WE VALUE */}
-        <SectionReveal className="mb-20">
-          <h2 className="text-[11px] sm:text-[12px] font-sans text-[#5B0F18] uppercase tracking-widest mb-8 text-center font-semibold">
-            // WHAT WE VALUE
-          </h2>
+        {/* 3. WHAT WE VALUE SECTION */}
+        <section className="mb-20">
+          <SectionReveal className="text-center mb-10 max-w-2xl mx-auto">
+            <span className="text-[11px] sm:text-[12px] font-sans text-[#5B0F18] uppercase tracking-widest block mb-2 font-semibold">
+              // OUR CULTURE
+            </span>
+            <h2 className="text-[28px] sm:text-[36px] font-display font-semibold text-[#24191A] tracking-tight">
+              Our Core Workplace Values
+            </h2>
+          </SectionReveal>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {COMPANY_VALUES.map((val, idx) => (
               <div
@@ -209,331 +140,321 @@ export default function CareerSection() {
               </div>
             ))}
           </div>
-        </SectionReveal>
+        </section>
 
-        {/* JOB OPPORTUNITY SECTION WITH LOCATION FILTER TOGGLE */}
-        <div className="mb-24">
-          <SectionReveal className="mb-10 text-center">
-            <h2 className="text-[11px] sm:text-[12px] font-sans tracking-[0.2em] text-[#5B0F18] uppercase block mb-3 font-semibold">
-              // CAREER OPPORTUNITIES
+        {/* 4. WHY WORK WITH US SECTION */}
+        <section className="mb-20 pt-12 border-t border-[#5B0F18]/10">
+          <div className="max-w-4xl mx-auto">
+            <SectionReveal className="text-center mb-8">
+              <span className="text-[11px] sm:text-[12px] font-sans text-[#5B0F18] uppercase tracking-widest block mb-2 font-semibold">
+                // TEAM EXPERIENCE
+              </span>
+              <h2 className="text-[28px] sm:text-[36px] font-display font-semibold text-[#24191A] tracking-tight">
+                Why Work With Us?
+              </h2>
+            </SectionReveal>
+
+            <SectionReveal>
+              <div className="p-8 sm:p-10 rounded-3xl bg-white border border-[#5B0F18]/15 shadow-soft-card space-y-4 text-[15px] sm:text-[16px] text-[#6F6261] font-sans leading-relaxed">
+                <p>
+                  Nine to Nine Hub brings commercial strategy, creative storytelling,
+                  search engine marketing, and modern web development together. Working
+                  with our team means contributing directly to real client campaigns
+                  across Dubai, Abu Dhabi, and the wider GCC region.
+                </p>
+                <p>
+                  Our work environment emphasizes practical skill development and direct
+                  execution. Rather than isolated tasks, team members collaborate across
+                  SEO, social media management, graphic design, video editing, and software
+                  engineering.
+                </p>
+                <p>
+                  You work on varied projects spanning restaurants, hospitality brands,
+                  travel agencies, construction firms, and corporate advisory clients. We
+                  value transparent communication, mutual accountability, and continuous
+                  learning through collective teamwork.
+                </p>
+              </div>
+            </SectionReveal>
+          </div>
+        </section>
+
+        {/* 5. HOW TO APPLY SECTION */}
+        <section className="mb-20 pt-12 border-t border-[#5B0F18]/10">
+          <SectionReveal className="text-center mb-10 max-w-2xl mx-auto">
+            <span className="text-[11px] sm:text-[12px] font-sans text-[#5B0F18] uppercase tracking-widest block mb-2 font-semibold">
+              // RECRUITMENT STEPS
+            </span>
+            <h2 className="text-[28px] sm:text-[36px] font-display font-semibold text-[#24191A] tracking-tight">
+              How to Apply
             </h2>
-            
+          </SectionReveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className="p-6 rounded-2xl bg-white border border-[#5B0F18]/12 shadow-soft-card">
+              <div className="w-8 h-8 rounded-lg bg-[#5B0F18]/10 text-[#5B0F18] flex items-center justify-center font-bold text-xs mb-3 font-sans">
+                01
+              </div>
+              <h3 className="text-base font-display font-semibold text-[#24191A] mb-2">
+                Explore Open Roles
+              </h3>
+              <p className="text-xs sm:text-sm font-sans text-[#6F6261] leading-relaxed">
+                Review active vacancies across our Dubai and India locations to find an opening that aligns with your professional background.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[#5B0F18]/12 shadow-soft-card">
+              <div className="w-8 h-8 rounded-lg bg-[#5B0F18]/10 text-[#5B0F18] flex items-center justify-center font-bold text-xs mb-3 font-sans">
+                02
+              </div>
+              <h3 className="text-base font-display font-semibold text-[#24191A] mb-2">
+                Review Role Details
+              </h3>
+              <p className="text-xs sm:text-sm font-sans text-[#6F6261] leading-relaxed">
+                Visit the specific job page to review responsibilities, required technical skills, and everyday expectations.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[#5B0F18]/12 shadow-soft-card">
+              <div className="w-8 h-8 rounded-lg bg-[#5B0F18]/10 text-[#5B0F18] flex items-center justify-center font-bold text-xs mb-3 font-sans">
+                03
+              </div>
+              <h3 className="text-base font-display font-semibold text-[#24191A] mb-2">
+                Submit Your Resume
+              </h3>
+              <p className="text-xs sm:text-sm font-sans text-[#6F6261] leading-relaxed">
+                Fill out the application form with your contact details, resume (.pdf, .doc, .docx), and an introductory cover note.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[#5B0F18]/12 shadow-soft-card">
+              <div className="w-8 h-8 rounded-lg bg-[#5B0F18]/10 text-[#5B0F18] flex items-center justify-center font-bold text-xs mb-3 font-sans">
+                04
+              </div>
+              <h3 className="text-base font-display font-semibold text-[#24191A] mb-2">
+                Profile Review
+              </h3>
+              <p className="text-xs sm:text-sm font-sans text-[#6F6261] leading-relaxed">
+                Our talent acquisition team evaluates candidate qualifications and reaches out to shortlisted candidates for discovery meetings.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. JOB OPPORTUNITIES SECTION (BOTH TABS SERVER-RENDERED IN HTML) */}
+        <section id="open-positions" className="mb-24 pt-12 border-t border-[#5B0F18]/10 scroll-mt-24">
+          <SectionReveal className="mb-10 text-center">
+            <span className="text-[11px] sm:text-[12px] font-sans tracking-[0.2em] text-[#5B0F18] uppercase block mb-3 font-semibold">
+              // CAREER OPPORTUNITIES
+            </span>
+            <h2 className="text-[28px] sm:text-[36px] font-display font-semibold text-[#24191A] tracking-tight mb-6">
+              Open Positions in Dubai & India
+            </h2>
+
             {/* LOCATION SELECTOR / TOGGLE: [ INDIA ] [ UAE ] */}
             <div className="flex items-center justify-center gap-3 p-2 rounded-2xl bg-white border border-[#5B0F18]/15 w-max mx-auto mb-6 shadow-sm">
               <button
+                type="button"
                 onClick={() => handleLocationToggle("India")}
-                className={`relative px-8 py-3 rounded-xl text-[12px] sm:text-[13px] font-sans font-semibold tracking-wider transition-all duration-300 ${
+                className={`relative px-8 py-3 rounded-xl text-[12px] sm:text-[13px] font-sans font-semibold tracking-wider transition-all duration-300 cursor-pointer ${
                   activeLocation === "India"
                     ? "bg-[#5B0F18] text-[#F8F1E7] shadow-wine"
                     : "bg-transparent text-[#24191A] hover:text-[#5B0F18]"
                 }`}
               >
-                <span>INDIA</span>
+                <span>INDIA ({INDIA_ROLES.length})</span>
               </button>
-              
+
               <button
+                type="button"
                 onClick={() => handleLocationToggle("UAE")}
-                className={`relative px-8 py-3 rounded-xl text-[12px] sm:text-[13px] font-sans font-semibold tracking-wider transition-all duration-300 ${
+                className={`relative px-8 py-3 rounded-xl text-[12px] sm:text-[13px] font-sans font-semibold tracking-wider transition-all duration-300 cursor-pointer ${
                   activeLocation === "UAE"
                     ? "bg-[#5B0F18] text-[#F8F1E7] shadow-wine"
                     : "bg-transparent text-[#24191A] hover:text-[#5B0F18]"
                 }`}
               >
-                <span>UAE</span>
+                <span>UAE / DUBAI ({UAE_ROLES.length})</span>
               </button>
             </div>
 
-            {/* OPEN ROLE COUNT INDICATOR */}
+            {/* Indicator */}
             <div className="flex items-center justify-center gap-2 text-xs font-sans text-[#6F6261]">
               <MapPin className="w-4 h-4 text-[#5B0F18]" />
-              <span className="font-semibold text-[#24191A] uppercase">{activeLocation}</span>
+              <span className="font-semibold text-[#24191A] uppercase">
+                {activeLocation === "UAE" ? "Dubai, UAE" : "India"}
+              </span>
               <span className="text-[#6F6261]">•</span>
               <span className="px-3 py-1 rounded-full bg-white border border-[#5B0F18]/15 font-semibold text-[#5B0F18] shadow-sm">
-                0{activeRoles.length} OPEN ROLES
+                {activeLocation === "UAE" ? UAE_ROLES.length : INDIA_ROLES.length} OPEN ROLES
               </span>
             </div>
           </SectionReveal>
 
-          {/* DYNAMICALLY ANIMATED CARDS GRID */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeLocation}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.35, ease: "easeInOut" }}
-              className={`grid grid-cols-1 ${
-                activeLocation === "UAE"
-                  ? "sm:grid-cols-3 max-w-4xl mx-auto"
-                  : "sm:grid-cols-2 lg:grid-cols-3"
-              } gap-6`}
-            >
-              {activeRoles.map((role) => (
-                <div
-                  key={role.id}
-                  className="group p-6 rounded-2xl bg-white border border-[#5B0F18]/12 hover:border-[#5B0F18]/40 transition-all duration-300 flex flex-col justify-between h-full hover:shadow-soft-card"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[11px] font-sans px-2.5 py-1 rounded bg-[#F8F1E7] border border-[#5B0F18]/10 text-[#5B0F18] font-medium">
-                        LOCATION: {role.location}
-                      </span>
-                      <span className="text-[11px] font-sans px-2.5 py-0.5 rounded bg-emerald-50 border border-emerald-300 text-emerald-700 font-medium">
-                        {role.status}
-                      </span>
-                    </div>
-
-                    <h3 className="text-[24px] sm:text-[28px] font-display font-semibold text-[#24191A] mb-6 leading-tight group-hover:text-[#5B0F18] transition-colors">
-                      {role.title}
-                    </h3>
+          {/* CRITICAL SEO REQUIREMENT: BOTH INDIA AND UAE JOB CARDS EXIST IN SERVER-RENDERED HTML */}
+          {/* INDIA ROLES PANEL */}
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ${
+              activeLocation === "India" ? "block" : "hidden"
+            }`}
+          >
+            {INDIA_ROLES.map((role) => (
+              <div
+                key={role.id}
+                className="group p-6 rounded-2xl bg-white border border-[#5B0F18]/12 hover:border-[#5B0F18]/40 transition-all duration-300 flex flex-col justify-between h-full hover:shadow-soft-card"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-[11px] font-sans px-2.5 py-1 rounded bg-[#F8F1E7] border border-[#5B0F18]/10 text-[#5B0F18] font-medium">
+                      Location: {role.city}, {role.country}
+                    </span>
+                    <span className="text-[11px] font-sans px-2.5 py-0.5 rounded bg-emerald-50 border border-emerald-300 text-emerald-700 font-medium">
+                      {role.status}
+                    </span>
                   </div>
 
-                  <button
-                    onClick={() => handleApplyNowClick(role.title, role.location)}
-                    className="w-full py-2.5 rounded-xl bg-[#F8F1E7] border border-[#5B0F18]/20 text-[12px] sm:text-[13px] font-sans font-semibold text-[#5B0F18] hover:bg-[#5B0F18] hover:text-[#F8F1E7] hover:border-[#5B0F18] transition-all text-center flex items-center justify-center gap-2 group-button shadow-sm"
-                  >
-                    <span>APPLY NOW</span>
-                    <ArrowDown className="w-3.5 h-3.5 group-button-hover:translate-y-0.5 transition-transform" />
-                  </button>
-                </div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* CAREER APPLICATION FORM */}
-        <div id="application-form-block" className="max-w-3xl mx-auto pt-6 mb-24">
-          <SectionReveal>
-            <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#5B0F18]/15 backdrop-blur-2xl shadow-soft-card">
-              <span className="text-[11px] sm:text-[12px] font-sans tracking-[0.2em] text-[#5B0F18] uppercase block mb-2 font-semibold">
-                // SUBMIT CANDIDACY
-              </span>
-              <h2 className="text-[28px] sm:text-[34px] font-display font-semibold text-[#24191A] mb-2">
-                CAREER APPLICATION FORM
-              </h2>
-              <p className="text-[13px] sm:text-[14px] font-sans text-[#6F6261] mb-8">
-                Submit your profile directly to Nine to Nine Hub talent acquisition.
-              </p>
-
-              {isSubmitted ? (
-                <div className="p-8 rounded-2xl bg-[#FCF9F5] border border-[#5B0F18]/30 text-center py-10">
-                  <div className="w-12 h-12 rounded-full bg-[#5B0F18]/10 text-[#5B0F18] mx-auto flex items-center justify-center mb-4">
-                    <Check className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-display font-bold text-[#24191A] mb-2">
-                    APPLICATION TRANSMITTED
+                  <h3 className="text-[22px] sm:text-[24px] font-display font-semibold text-[#24191A] mb-2 leading-tight group-hover:text-[#5B0F18] transition-colors">
+                    {role.title}
                   </h3>
-                  <p className="text-[13px] sm:text-[14px] text-[#6F6261] leading-relaxed max-w-md mx-auto font-sans">
-                    Thank you. Our talent acquisition division will review your profile and contact qualified candidates.
+                  <p className="text-[11px] font-sans text-[#5B0F18] uppercase tracking-wider mb-3 font-medium">
+                    Department: {role.department}
+                  </p>
+                  <p className="text-[13px] font-sans text-[#6F6261] leading-relaxed mb-6 line-clamp-3">
+                    {role.description}
                   </p>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  
-                  {/* Error Banner if submission fails */}
-                  {submitError && (
-                    <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-sans flex items-start gap-3">
-                      <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
-                      <span>{submitError}</span>
-                    </div>
-                  )}
 
-                  {/* Full Name & Email */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-[11px] sm:text-[12px] font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
-                        FULL NAME *
-                      </label>
-                      <input
-                        type="text"
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleInputChange}
-                        placeholder="John Doe"
-                        className={`w-full px-4 py-3 rounded-xl bg-[#FCF9F5] border text-[#24191A] text-[13px] sm:text-[14px] font-sans focus:outline-none transition-colors ${
-                          formErrors.fullName ? "border-red-500" : "border-[#5B0F18]/15 focus:border-[#5B0F18]"
-                        }`}
-                      />
-                      {formErrors.fullName && (
-                        <span className="text-[11px] font-sans text-red-600 mt-1 flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3 shrink-0" />
-                          {formErrors.fullName}
-                        </span>
-                      )}
-                    </div>
-
-                    <div>
-                      <label className="block text-[11px] sm:text-[12px] font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
-                        EMAIL ADDRESS *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="john@example.com"
-                        className={`w-full px-4 py-3 rounded-xl bg-[#FCF9F5] border text-[#24191A] text-[13px] sm:text-[14px] font-sans focus:outline-none transition-colors ${
-                          formErrors.email ? "border-red-500" : "border-[#5B0F18]/15 focus:border-[#5B0F18]"
-                        }`}
-                      />
-                      {formErrors.email && (
-                        <span className="text-[11px] font-sans text-red-600 mt-1 flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3 shrink-0" />
-                          {formErrors.email}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Phone & Location */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-[11px] sm:text-[12px] font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
-                        PHONE NUMBER *
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="+971 50 128 2100"
-                        className={`w-full px-4 py-3 rounded-xl bg-[#FCF9F5] border text-[#24191A] text-[13px] sm:text-[14px] font-sans focus:outline-none transition-colors ${
-                          formErrors.phone ? "border-red-500" : "border-[#5B0F18]/15 focus:border-[#5B0F18]"
-                        }`}
-                      />
-                      {formErrors.phone && (
-                        <span className="text-[11px] font-sans text-red-600 mt-1 flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3 shrink-0" />
-                          {formErrors.phone}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* LOCATION DROPDOWN (India / UAE) */}
-                    <div>
-                      <label className="block text-[11px] sm:text-[12px] font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
-                        LOCATION *
-                      </label>
-                      <select
-                        value={formLocation}
-                        onChange={(e) => handleFormLocationChange(e.target.value as "India" | "UAE")}
-                        className="w-full px-4 py-3 rounded-xl bg-[#FCF9F5] border border-[#5B0F18]/15 text-[#24191A] text-[13px] sm:text-[14px] font-sans focus:border-[#5B0F18] focus:outline-none transition-colors"
-                      >
-                        <option value="India">India</option>
-                        <option value="UAE">UAE</option>
-                      </select>
-                      {formErrors.location && (
-                        <span className="text-[11px] font-sans text-red-600 mt-1 flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3 shrink-0" />
-                          {formErrors.location}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* APPLYING FOR DROPDOWN (DYNAMICALLY FILTERED) */}
-                  <div>
-                    <label className="block text-[11px] sm:text-[12px] font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
-                      APPLYING FOR * ({formLocation})
-                    </label>
-                    <select
-                      value={formPosition}
-                      onChange={(e) => {
-                        setFormPosition(e.target.value);
-                        if (formErrors.position) setFormErrors((prev) => ({ ...prev, position: "" }));
-                      }}
-                      className="w-full px-4 py-3 rounded-xl bg-[#FCF9F5] border border-[#5B0F18]/15 text-[#24191A] text-[13px] sm:text-[14px] font-sans focus:border-[#5B0F18] focus:outline-none transition-colors"
-                    >
-                      {availableFormPositions.map((p) => (
-                        <option key={p.id} value={p.title} className="bg-white text-[#24191A]">
-                          {p.title} ({p.location})
-                        </option>
-                      ))}
-                    </select>
-                    {formErrors.position && (
-                      <span className="text-[11px] font-sans text-red-600 mt-1 flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3 shrink-0" />
-                        {formErrors.position}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* RESUME UPLOAD — REQUIRED */}
-                  <div>
-                    <label className="block text-[11px] sm:text-[12px] font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
-                      RESUME * (.PDF, .DOC, .DOCX)
-                    </label>
-                    <label
-                      className={`flex flex-col items-center justify-center p-6 rounded-2xl bg-[#FCF9F5] border border-dashed transition-colors cursor-pointer text-center ${
-                        formErrors.resume ? "border-red-500 bg-red-50" : "border-[#5B0F18]/20 hover:border-[#5B0F18]"
-                      }`}
-                    >
-                      <Upload className="w-6 h-6 text-[#5B0F18] mb-2" />
-                      <span className="text-xs font-sans text-[#24191A] font-semibold mb-1">
-                        {resumeFile ? resumeFile.name : "DRAG & DROP YOUR RESUME OR CLICK TO UPLOAD"}
-                      </span>
-                      <span className="text-[11px] font-sans text-[#6F6261]">
-                        Max file size: 10MB
-                      </span>
-                      <input
-                        type="file"
-                        accept=".pdf,.doc,.docx"
-                        onChange={handleFileChange}
-                        className="hidden"
-                      />
-                    </label>
-                    {formErrors.resume && (
-                      <span className="text-[11px] font-sans text-red-600 mt-1 flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3 shrink-0" />
-                        {formErrors.resume}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Cover Message */}
-                  <div>
-                    <label className="block text-[11px] sm:text-[12px] font-sans text-[#24191A] mb-2 font-medium uppercase tracking-wider">
-                      COVER MESSAGE / INTRO *
-                    </label>
-                    <textarea
-                      name="message"
-                      rows={4}
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Briefly introduce your background..."
-                      className={`w-full px-4 py-3 rounded-xl bg-[#FCF9F5] border text-[#24191A] text-[13px] sm:text-[14px] font-sans focus:outline-none transition-colors ${
-                        formErrors.message ? "border-red-500" : "border-[#5B0F18]/15 focus:border-[#5B0F18]"
-                      }`}
-                    />
-                    {formErrors.message && (
-                      <span className="text-[11px] font-sans text-red-600 mt-1 flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3 shrink-0" />
-                        {formErrors.message}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 rounded-xl bg-[#5B0F18] text-[#F8F1E7] font-sans font-semibold text-[13px] sm:text-[14px] tracking-wider shadow-wine flex items-center justify-center gap-2 hover:bg-[#430B12] transition-all"
+                <div className="space-y-2 pt-2 border-t border-[#5B0F18]/10">
+                  <Link
+                    href={`/career/${role.slug}`}
+                    className="w-full py-2.5 rounded-xl bg-[#5B0F18] text-[#F8F1E7] hover:bg-[#430B12] text-[12px] sm:text-[13px] font-sans font-semibold transition-all text-center flex items-center justify-center gap-2 shadow-sm"
                   >
-                    {isSubmitting ? (
-                      <span>TRANSMITTING...</span>
-                    ) : (
-                      <>
-                        <span>SUBMIT APPLICATION</span>
-                        <Send className="w-4 h-4" />
-                      </>
-                    )}
-                  </button>
+                    <span>Apply for {role.title}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
 
-                </form>
-              )}
-            </div>
+          {/* UAE / DUBAI ROLES PANEL */}
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto gap-6 ${
+              activeLocation === "UAE" ? "block" : "hidden"
+            }`}
+          >
+            {UAE_ROLES.map((role) => (
+              <div
+                key={role.id}
+                className="group p-6 rounded-2xl bg-white border border-[#5B0F18]/12 hover:border-[#5B0F18]/40 transition-all duration-300 flex flex-col justify-between h-full hover:shadow-soft-card"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-[11px] font-sans px-2.5 py-1 rounded bg-[#F8F1E7] border border-[#5B0F18]/10 text-[#5B0F18] font-medium">
+                      Location: {role.city}, {role.country}
+                    </span>
+                    <span className="text-[11px] font-sans px-2.5 py-0.5 rounded bg-emerald-50 border border-emerald-300 text-emerald-700 font-medium">
+                      {role.status}
+                    </span>
+                  </div>
+
+                  <h3 className="text-[22px] sm:text-[24px] font-display font-semibold text-[#24191A] mb-2 leading-tight group-hover:text-[#5B0F18] transition-colors">
+                    {role.title}
+                  </h3>
+                  <p className="text-[11px] font-sans text-[#5B0F18] uppercase tracking-wider mb-3 font-medium">
+                    Department: {role.department}
+                  </p>
+                  <p className="text-[13px] font-sans text-[#6F6261] leading-relaxed mb-6 line-clamp-3">
+                    {role.description}
+                  </p>
+                </div>
+
+                <div className="space-y-2 pt-2 border-t border-[#5B0F18]/10">
+                  <Link
+                    href={`/career/${role.slug}`}
+                    className="w-full py-2.5 rounded-xl bg-[#5B0F18] text-[#F8F1E7] hover:bg-[#430B12] text-[12px] sm:text-[13px] font-sans font-semibold transition-all text-center flex items-center justify-center gap-2 shadow-sm"
+                  >
+                    <span>Apply for {role.title}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 7. CAREER APPLICATION FORM */}
+        <section className="max-w-3xl mx-auto pt-6 mb-24">
+          <SectionReveal>
+            <JobApplicationForm />
           </SectionReveal>
-        </div>
+        </section>
+
+        {/* 8. QUESTIONS ABOUT WORKING WITH US (FAQ SECTION) */}
+        <section className="pt-12 border-t border-[#5B0F18]/10">
+          <SectionReveal className="text-center mb-12 max-w-2xl mx-auto">
+            <span className="text-[11px] sm:text-[12px] font-sans text-[#5B0F18] uppercase tracking-widest block mb-2 font-semibold">
+              // FAQ
+            </span>
+            <h2 className="text-[28px] sm:text-[36px] font-display font-semibold text-[#24191A] tracking-tight">
+              Questions About Working With Us
+            </h2>
+          </SectionReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="p-6 rounded-2xl bg-white border border-[#5B0F18]/15 shadow-soft-card">
+              <h3 className="text-base sm:text-lg font-display font-semibold text-[#24191A] mb-2.5">
+                How can I apply for a job at Nine to Nine Hub?
+              </h3>
+              <p className="text-xs sm:text-sm font-sans text-[#6F6261] leading-relaxed">
+                Select your preferred position on this page or visit the individual role listing. Fill out the application form with your contact details, resume, and introductory message.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[#5B0F18]/15 shadow-soft-card">
+              <h3 className="text-base sm:text-lg font-display font-semibold text-[#24191A] mb-2.5">
+                Which locations currently have open positions?
+              </h3>
+              <p className="text-xs sm:text-sm font-sans text-[#6F6261] leading-relaxed">
+                We currently have active openings across our Dubai headquarters (UAE) as well as our India operational divisions.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[#5B0F18]/15 shadow-soft-card">
+              <h3 className="text-base sm:text-lg font-display font-semibold text-[#24191A] mb-2.5">
+                Can I apply for more than one position?
+              </h3>
+              <p className="text-xs sm:text-sm font-sans text-[#6F6261] leading-relaxed">
+                Yes. If your skills bridge multiple disciplines (for example, video editing and motion design), you may submit an application outlining your multidisciplinary background.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[#5B0F18]/15 shadow-soft-card">
+              <h3 className="text-base sm:text-lg font-display font-semibold text-[#24191A] mb-2.5">
+                What file formats are accepted for resumes?
+              </h3>
+              <p className="text-xs sm:text-sm font-sans text-[#6F6261] leading-relaxed">
+                Our application form securely accepts .pdf, .doc, and .docx formats up to 10MB in file size.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[#5B0F18]/15 shadow-soft-card md:col-span-2">
+              <h3 className="text-base sm:text-lg font-display font-semibold text-[#24191A] mb-2.5">
+                How can I contact the recruitment team?
+              </h3>
+              <p className="text-xs sm:text-sm font-sans text-[#6F6261] leading-relaxed">
+                For recruitment questions or follow-ups, visit our{" "}
+                <Link
+                  href="/contact"
+                  className="text-[#5B0F18] font-semibold underline underline-offset-4 hover:text-[#430B12]"
+                >
+                  Contact Page
+                </Link>{" "}
+                to connect with our Dubai office by email, phone, or WhatsApp.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   );

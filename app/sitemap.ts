@@ -1,10 +1,11 @@
 import { MetadataRoute } from "next";
+import { getAllJobs } from "@/data/careers";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://ninetoninehub.com";
   const now = new Date();
 
-  return [
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/`,
       lastModified: now,
@@ -42,4 +43,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
   ];
+
+  const jobPages: MetadataRoute.Sitemap = getAllJobs().map((job) => ({
+    url: `${baseUrl}/career/${job.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...jobPages];
 }
