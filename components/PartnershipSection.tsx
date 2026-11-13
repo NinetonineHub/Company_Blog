@@ -36,7 +36,7 @@ export default function PartnershipSection() {
                 {/* Logo Area on Top */}
                 <div className="py-8 sm:py-10 px-6 flex flex-col items-center justify-center bg-white min-h-[160px] sm:min-h-[180px]">
                   <img
-                    src="/images/portfolio/Elogo.png"
+                    src="/images/portfolio/Elogo.webp"
                     alt="Eyakkar Technologies"
                     width={200}
                     height={80}

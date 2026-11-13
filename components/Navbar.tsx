@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { name: "ABOUT", path: "/about" },
   { name: "SERVICES", path: "/digital-marketing-services-dubai" },
   { name: "PORTFOLIO", path: "/portfolio" },
+  { name: "BLOG", path: "/blog" },
   { name: "CAREER", path: "/career" },
   { name: "CONTACT", path: "/contact" },
 ];

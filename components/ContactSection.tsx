@@ -202,7 +202,7 @@ export default function ContactSection() {
             . Tell us your goals in the form below and we will reply with a free
             proposal within 24 business hours. Explore our{" "}
             <Link
-              href="/services"
+              href="/digital-marketing-services-dubai"
               className="text-[#5B0F18] font-semibold underline underline-offset-4 hover:text-[#430B12] transition-colors"
             >
               services
@@ -689,21 +689,21 @@ export default function ContactSection() {
               <p className="text-xs sm:text-sm font-sans text-[#6F6261] leading-relaxed">
                 You can inquire about{" "}
                 <Link
-                  href="/services"
+                  href="/digital-marketing-services-dubai"
                   className="text-[#5B0F18] underline font-medium hover:text-[#430B12]"
                 >
                   SEO services
                 </Link>
                 ,{" "}
                 <Link
-                  href="/services"
+                  href="/digital-marketing-services-dubai"
                   className="text-[#5B0F18] underline font-medium hover:text-[#430B12]"
                 >
                   social media management
                 </Link>
                 , video production,{" "}
                 <Link
-                  href="/services"
+                  href="/digital-marketing-services-dubai"
                   className="text-[#5B0F18] underline font-medium hover:text-[#430B12]"
                 >
                   website development

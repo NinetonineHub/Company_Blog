@@ -193,7 +193,7 @@ export default function PortfolioPage() {
               <p>
                 As part of our social media management portfolio, Dubai eateries gain mouth-watering short-form reels, menu photography, and promotional campaigns. Our tailored{" "}
                 <Link
-                  href="/services"
+                  href="/digital-marketing-services-dubai"
                   className="text-[#5B0F18] font-semibold underline underline-offset-4 hover:text-[#430B12] transition-colors"
                 >
                   social media management and content creation
@@ -204,7 +204,7 @@ export default function PortfolioPage() {
               <p>
                 Travel and tourism brands require steady customer inquiries and international bookings. We build connected digital ecosystems for tour operators and charter services. With comprehensive{" "}
                 <Link
-                  href="/services"
+                  href="/digital-marketing-services-dubai"
                   className="text-[#5B0F18] font-semibold underline underline-offset-4 hover:text-[#430B12] transition-colors"
                 >
                   SEO and digital marketing services
@@ -215,7 +215,7 @@ export default function PortfolioPage() {
               <p>
                 For construction contractors and corporate firms, professional positioning is vital. Our video production portfolio Dubai enterprises rely on showcases commercial capability through crisp corporate reels and site walkthroughs. Our custom{" "}
                 <Link
-                  href="/services"
+                  href="/digital-marketing-services-dubai"
                   className="text-[#5B0F18] font-semibold underline underline-offset-4 hover:text-[#430B12] transition-colors"
                 >
                   website creation and video production

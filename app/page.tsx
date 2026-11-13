@@ -10,14 +10,14 @@ import { ArrowUpRight } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Agency in Dubai, UAE | Nine to Nine Hub",
+  title: "Digital Marketing Agency in Dubai | Nine to Nine Hub",
   description:
     "Digital marketing agency in Dubai offering SEO, social media, video production, web development & paid ads. Get a free proposal today.",
   alternates: {
     canonical: "https://ninetoninehub.com/",
   },
   openGraph: {
-    title: "Digital Marketing Agency in Dubai, UAE | Nine to Nine Hub",
+    title: "Digital Marketing Agency in Dubai | Nine to Nine Hub",
     description:
       "Digital marketing agency in Dubai offering SEO, social media, video production, web development & paid ads. Get a free proposal today.",
     url: "https://ninetoninehub.com/",

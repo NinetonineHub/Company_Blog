@@ -29,21 +29,21 @@ export default function AboutSection() {
               <p>
                 We provide{" "}
                 <Link
-                  href="/services"
+                  href="/digital-marketing-services-dubai"
                   className="text-[#5B0F18] font-semibold underline underline-offset-4 hover:text-[#430B12] transition-colors"
                 >
                   SEO
                 </Link>
                 ,{" "}
                 <Link
-                  href="/services"
+                  href="/digital-marketing-services-dubai"
                   className="text-[#5B0F18] font-semibold underline underline-offset-4 hover:text-[#430B12] transition-colors"
                 >
                   social media management
                 </Link>
                 , video production and{" "}
                 <Link
-                  href="/services"
+                  href="/digital-marketing-services-dubai"
                   className="text-[#5B0F18] font-semibold underline underline-offset-4 hover:text-[#430B12] transition-colors"
                 >
                   web development

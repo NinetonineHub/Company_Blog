@@ -145,7 +145,7 @@ export default function PortfolioSection() {
                       {project.workTags.map((tag, idx) => (
                         <Link
                           key={idx}
-                          href="/services"
+                          href="/digital-marketing-services-dubai"
                           className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#FCF9F5] border border-[#5B0F18]/12 text-[10px] sm:text-[11px] font-sans text-[#24191A] font-medium hover:bg-[#5B0F18]/5 hover:border-[#5B0F18]/30 transition-colors"
                         >
                           <Tag className="w-2.5 h-2.5 text-[#5B0F18]" />

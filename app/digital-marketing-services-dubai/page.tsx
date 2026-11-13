@@ -16,14 +16,14 @@ const ServicesHero3DCanvas = dynamic(() => import("@/components/ServicesHero3DCa
 });
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Services in Dubai: 8 Proven Solutions | Nine to Nine Hub",
+  title: "Digital Marketing Services in Dubai | Nine to Nine Hub",
   description:
     "Digital marketing services in Dubai from Nine to Nine Hub: SEO, social media, video production, web development & paid ads. Get a free quote today.",
   alternates: {
     canonical: "https://ninetoninehub.com/digital-marketing-services-dubai",
   },
   openGraph: {
-    title: "Digital Marketing Services in Dubai: 8 Proven Solutions | Nine to Nine Hub",
+    title: "Digital Marketing Services in Dubai | Nine to Nine Hub",
     description:
       "Digital marketing services in Dubai from Nine to Nine Hub: SEO, social media, video production, web development & paid ads. Get a free quote today.",
     url: "https://ninetoninehub.com/digital-marketing-services-dubai",
@@ -191,7 +191,7 @@ export default function ServicesPage() {
                 <h1 className="text-[38px] sm:text-[54px] lg:text-[70px] xl:text-[76px] font-display font-semibold text-[#24191A] tracking-tight leading-[1.1] mb-6">
                   Digital Marketing Services in Dubai: <br />
                   <span className="text-[#5B0F18]">
-                    Integrated Solutions for Brand Scaling
+                    Solutions for Brand Scaling
                   </span>
                 </h1>
 
